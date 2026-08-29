@@ -1,4 +1,4 @@
-# zhangruopan.com
+# zhangruopan-site
 
 Recovered deployment package for Zhangruopan's personal portfolio.
 
@@ -12,4 +12,3 @@ Recovered deployment package for Zhangruopan's personal portfolio.
 6. Update DNS only after the preview has been verified.
 
 The portfolio works as a static site. The chat widget falls back to its built-in local answers when `/api/chat` is not configured.
-
