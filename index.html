@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>张若磐｜AI 产品经理</title>
+<meta name="description" content="张若磐的个人作品集：AI 产品经历、项目案例、文章与联系方式。">
+<meta name="theme-color" content="#0c0c0f">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="张若磐｜AI 产品经理">
+<meta property="og:description" content="AI 产品经历、项目案例、文章与联系方式。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="张若磐｜AI 产品经理">
+<meta name="twitter:description" content="AI 产品经历、项目案例、文章与联系方式。">
+<link rel="icon" href="media/favicon.svg" type="image/svg+xml">
+<script src="./resources.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; background: #0c0c0f; }
+  body { margin: 0; min-height: 100vh; overflow-x: hidden; background:#0c0c0f; color:#f4f1ea; font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: inherit; }
+  /* ---- 冷调宝石光 tokens：每对 deep(暗端) → bright(亮端)，
+     所有交互渐变一律 90deg 左暗右亮（spec: docs/specs/2026-07-27-light-trace-design.md）---- */
+  :root {
+    --lx-sapphire-deep:#28497c; --lx-sapphire:#8fc2ff;
+    --lx-glacier-deep:#1e5c58;  --lx-glacier:#7fe3dc;
+    --lx-amethyst-deep:#463a76; --lx-amethyst:#c4b5f5;
+    --lx-jade-deep:#2c5c47;     --lx-jade:#a3e3c2;
+  }
+  /* 注册角度属性，彗星光迹才能平滑旋转（未注册的自定义属性只会离散翻转） */
+  @property --lx-trace-angle { syntax:"<angle>"; inherits:false; initial-value:0deg; }
+  a:focus-visible, button:focus-visible, input:focus-visible { outline:2px solid var(--lx-sapphire); outline-offset:3px; }
+  ::selection { background:var(--lx-sapphire); color:#0c0c0f; }
+  .skip-link { position:fixed; left:16px; top:12px; z-index:200; transform:translateY(-160%); border-radius:999px; background:#f4f1ea; padding:9px 16px; color:#0c0c0f; transition:transform 160ms ease; }
+  .skip-link:focus { transform:translateY(0); color:#fff; }
+  @keyframes ink-drift-1 {
+    0%, 100% { transform: translate(-6%, -4%) scale(1); opacity: 0.5; }
+    50% { transform: translate(4%, 3%) scale(1.18); opacity: 0.72; }
+  }
+  @keyframes ink-drift-2 {
+    0%, 100% { transform: translate(5%, 2%) scale(1.1); opacity: 0.4; }
+    50% { transform: translate(-4%, -3%) scale(0.96); opacity: 0.6; }
+  }
+  @keyframes ink-drift-3 {
+    0%, 100% { transform: translate(0%, 4%) scale(1.05); opacity: 0.32; }
+    50% { transform: translate(3%, -2%) scale(1.22); opacity: 0.5; }
+  }
+  @keyframes hero-title-reveal {
+    from { opacity:0; clip-path:inset(0 100% 0 0); transform:translateY(28px) skewY(2deg); }
+    to { opacity:1; clip-path:inset(0 0 0 0); transform:none; }
+  }
+  @keyframes hero-content-in {
+    from { opacity:0; transform:translateY(18px); }
+    to { opacity:1; transform:none; }
+  }
+  @keyframes rule-grow {
+    from { transform:scaleX(0); }
+    to { transform:scaleX(1); }
+  }
+  @keyframes detail-enter {
+    from { opacity:0; clip-path:inset(0 0 100% 0); transform:translateY(-10px); }
+    to { opacity:1; clip-path:inset(0 0 0 0); transform:none; }
+  }
+  @keyframes detail-item-in {
+    from { opacity:0; transform:translateY(8px); }
+    to { opacity:1; transform:none; }
+  }
+  /* --nav-deep = 暗端、--nav-accent = 亮端；胶囊渐变 90deg 左暗右亮 */
+  .nav-section-link { --nav-deep:var(--lx-sapphire-deep); --nav-accent:var(--lx-sapphire); position:relative; z-index:0; min-height:38px; display:inline-flex; align-items:center; justify-content:center; box-sizing:border-box; border:1px solid transparent; border-radius:12px; padding:0 15px; color:rgba(26,26,28,.62) !important; transition:color 220ms ease,border-color 220ms ease,transform 260ms cubic-bezier(.16,1,.3,1),box-shadow 260ms ease; }
+  .nav-section-link[data-nav-target="experience"] { --nav-deep:var(--lx-amethyst-deep); --nav-accent:var(--lx-amethyst); }
+  .nav-section-link[data-nav-target="projects"] { --nav-deep:var(--lx-sapphire-deep); --nav-accent:var(--lx-sapphire); }
+  .nav-section-link[data-nav-target="articles"] { --nav-deep:var(--lx-glacier-deep); --nav-accent:var(--lx-glacier); }
+  .nav-section-link[data-nav-target="contact"] { --nav-deep:var(--lx-jade-deep); --nav-accent:var(--lx-jade); }
+  .nav-section-link::before { content:''; position:absolute; inset:0; z-index:-1; pointer-events:none; border-radius:inherit; opacity:0; transform:scale(.86) translateY(2px); background:linear-gradient(90deg,color-mix(in srgb,var(--nav-deep) 30%,var(--nav-accent)),var(--nav-accent) 66%,color-mix(in srgb,var(--nav-accent) 55%,#fff)); transition:opacity 220ms ease,transform 420ms cubic-bezier(.16,1,.3,1); }
+  .nav-section-link::after { content:''; position:absolute; width:5px; height:5px; right:8px; top:8px; border-radius:1.5px; background:currentColor; opacity:0; transform:rotate(45deg) scale(0); transition:opacity 180ms ease,transform 340ms cubic-bezier(.16,1,.3,1); }
+  .nav-section-link:hover { color:#1a1a1c !important; border-color:rgba(26,26,28,.12); }
+  .nav-section-link:hover::before { opacity:.08; transform:scale(1); }
+  .nav-section-link.is-active { color:#0c0c0f !important; border-color:rgba(255,255,255,.5); transform:translateY(-1px); box-shadow:0 10px 28px color-mix(in srgb,var(--nav-accent) 22%,transparent); }
+  .nav-section-link.is-active::before { opacity:1; transform:none; }
+  .nav-section-link.is-active::after { opacity:.42; transform:rotate(45deg) scale(1); }
+  .nav-section-link:active { transform:translateY(0) scale(.97); }
+  .hero-stage { --hero-x:0px; --hero-y:0px; --hero-tilt-x:0deg; --hero-tilt-y:0deg; min-height:620px; }
+  .hero-ink-field { position:absolute; inset:-5%; transform:translate3d(var(--hero-x),var(--hero-y),0) rotateX(var(--hero-tilt-x)) rotateY(var(--hero-tilt-y)); transform-origin:72% 44%; transition:transform 700ms cubic-bezier(.2,.72,.2,1); will-change:transform; }
+  .hero-pixel-trail { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; mix-blend-mode:multiply; opacity:1; image-rendering:pixelated; contain:strict; }
+  .hero-grain { position:absolute; inset:0; opacity:.035; mix-blend-mode:multiply; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.75'/%3E%3C/svg%3E"); background-size:180px 180px; }
+  .hero-kicker { animation:hero-content-in 700ms 120ms cubic-bezier(.2,.72,.2,1) both; }
+  .hero-title { animation:hero-title-reveal 1050ms 180ms cubic-bezier(.16,1,.3,1) both; transform-origin:left center; }
+  .hero-intro { animation:hero-content-in 760ms 460ms cubic-bezier(.2,.72,.2,1) both; }
+  .hero-video-button { animation:hero-content-in 700ms 610ms cubic-bezier(.2,.72,.2,1) both; }
+  .motion-rule { transform:scaleX(0); transform-origin:left center; transition:transform 900ms cubic-bezier(.16,1,.3,1); }
+  .motion-ready .motion-reveal { opacity:0; transform:translateY(24px); transition:opacity 680ms cubic-bezier(.2,.72,.2,1), transform 760ms cubic-bezier(.16,1,.3,1); transition-delay:var(--reveal-delay,0ms); }
+  .motion-ready .motion-reveal.is-visible { opacity:1; transform:none; }
+  .motion-ready .motion-rule.is-visible { transform:scaleX(1); }
+  /* The float and the wiggle deliberately animate different properties.
+     Two animations both writing `transform` do not compose — the later one in
+     the animation list wins outright — which previously cancelled the float and
+     left the pet frozen between wiggles. `translate` and `rotate` are
+     standalone properties, so the browser runs both simultaneously. */
+  @keyframes pet-bob {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -7px; }
+  }
+  @keyframes pet-shadow {
+    0%, 100% { transform: scaleX(1); opacity: 0.92; }
+    50% { transform: scaleX(0.86); opacity: 0.58; }
+  }
+  /* Idles flat for most of the cycle, then a single damped shake that settles
+     back to rest — a decaying oscillation reads as alive, a sharp one reads as
+     a glitch. */
+  @keyframes pet-wiggle {
+    0%, 72%, 100% { rotate: 0deg; }
+    78% { rotate: -3.2deg; }
+    84% { rotate: 2.2deg; }
+    89% { rotate: -1.3deg; }
+    94% { rotate: 0.5deg; }
+  }
+  @keyframes pet-drag-swing {
+    0%, 100% { rotate: -5deg; }
+    50% { rotate: 5deg; }
+  }
+  /* Shared wrapper for the live sprite and the cross-fade ghost. Carrying the
+     ambient animation here keeps the two images exactly superimposed while one
+     fades into the other. */
+  .pet-sprite-stack { position:absolute; inset:0; transform-origin:50% 90%; }
+  /* Aura: a soft gem-coloured pool of light under the dragon, so it reads as
+     part of the same light system as the cards. Colour follows the action. */
+  .pet-aura { position:absolute; left:50%; bottom:6%; width:118%; height:46%; transform:translateX(-50%); pointer-events:none; z-index:0; opacity:.5; background:radial-gradient(ellipse at 50% 72%,color-mix(in srgb,var(--pet-glow,var(--lx-sapphire)) 34%,transparent),transparent 68%); filter:blur(9px); mix-blend-mode:screen; transition:opacity 420ms ease,background 520ms ease; animation:pet-aura-breathe 3.6s ease-in-out infinite; }
+  .pet-open-button:hover .pet-aura { opacity:.85; }
+  @keyframes pet-aura-breathe { 0%,100% { transform:translateX(-50%) scale(1); } 50% { transform:translateX(-50%) scale(1.09); } }
+  [data-pet-image], [data-pet-ghost] {
+    position:absolute; inset:0; width:100%; height:100%; object-fit:contain;
+    pointer-events:none; transform-origin:50% 90%;
+    filter:drop-shadow(0 12px 20px rgba(60,80,180,0.28));
+  }
+  /* A pose change is staged as a small body movement, not a flat dissolve.
+     The outgoing pose lifts and settles away while the incoming pose grows
+     gently from the shared foot line. Keeping the motion on nested image
+     layers lets the wrapper continue its ambient bob without conflicts. */
+  @keyframes pet-pose-enter {
+    0% { scale:.955; translate:0 4px; }
+    62% { scale:1.012; translate:0 -1px; }
+    100% { scale:1; translate:0 0; }
+  }
+  @keyframes pet-pose-leave {
+    0% { opacity:1; scale:1; translate:0 0; }
+    34% { opacity:.88; scale:1.008; translate:0 -1px; }
+    100% { opacity:0; scale:.965; translate:0 4px; }
+  }
+  [data-pet-image].pet-pose-enter { animation:pet-pose-enter 460ms cubic-bezier(.16,.82,.22,1) both; }
+  [data-pet-ghost].pet-pose-leave { animation:pet-pose-leave 460ms cubic-bezier(.2,.72,.2,1) both; }
+  /* The live sprite is permanently opaque; only the ghost above it is faded.
+     A cross-fade that relied on fading the live sprite *in* would leave the pet
+     invisible whenever the transition never runs — a backgrounded tab pauses
+     transitions indefinitely. Fading the outgoing frame out instead degrades to
+     a plain cut in that case, which is harmless. */
+  [data-pet-image] { opacity:1; }
+  [data-pet-ghost] { opacity:0; }
+  @media (prefers-reduced-motion: reduce) {
+    .pet-sprite-stack { animation: none !important; }
+    [data-pet-image], [data-pet-ghost] { transition: none !important; animation:none !important; }
+    .pet-aura { animation: none !important; }
+  }
+  .resume-entry { position:relative; }
+  .resume-entry::after { content:''; position:absolute; left:0; right:0; bottom:0; height:1px; background:rgba(26,26,28,0.07); transform:scaleX(0); transform-origin:left center; transition:transform 850ms cubic-bezier(.16,1,.3,1) 120ms; }
+  .resume-entry.is-visible::after { transform:scaleX(1); }
+  .resume-entry > summary { list-style:none; cursor:pointer; }
+  .resume-entry > summary:focus-visible { box-shadow:inset 3px 0 0 rgba(26,26,28,.3); }
+  .resume-entry > summary::-webkit-details-marker { display:none; }
+  .resume-row { display:grid; grid-template-columns:160px 1fr 28px; gap:24px; padding:24px 0; }
+  .resume-toggle { width:28px; height:28px; margin-top:1px; display:grid; place-items:center; color:#1a1a1c; transition:transform 240ms ease, opacity 180ms ease; }
+  .resume-toggle::before { content:''; width:9px; height:9px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:translateY(-2px) rotate(45deg); }
+  .resume-entry[open] .resume-toggle { transform:rotate(180deg); }
+  .resume-entry > summary:hover .resume-toggle { opacity:.58; }
+  .resume-detail { margin:0 0 28px 184px; padding:22px 24px 24px; border-left:1px solid rgba(26,26,28,0.14); background:rgba(255,255,255,0.42); transform-origin:top center; }
+  .resume-entry[open] .resume-detail { animation:detail-enter 460ms cubic-bezier(.16,1,.3,1) both; }
+  .resume-entry[open] .resume-detail-block { animation:detail-item-in 440ms 110ms cubic-bezier(.2,.72,.2,1) both; }
+  .resume-entry[open] .resume-detail-block:nth-child(2) { animation-delay:180ms; }
+  .resume-detail-label { margin:0 0 8px; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:rgba(26,26,28,.62); }
+  .resume-detail-block + .resume-detail-block { margin-top:20px; }
+  .resume-detail ul { margin:0; padding-left:18px; }
+  .resume-detail li { margin:7px 0; padding-left:3px; font-size:14px; line-height:1.72; color:rgba(26,26,28,.68); text-wrap:pretty; }
+  .contact-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-top:1px solid rgba(26,26,28,.1); border-bottom:1px solid rgba(26,26,28,.1); }
+  .contact-item { min-width:0; border:0; border-right:1px solid rgba(26,26,28,.08); background:transparent; padding:24px 22px; text-align:left; cursor:pointer; color:#1a1a1c; transition:background 180ms ease; }
+  .contact-item:last-child { border-right:0; }
+  .contact-item:hover { background:rgba(255,255,255,.5); }
+  .contact-item:focus-visible { outline:1px solid rgba(26,26,28,.38); outline-offset:-1px; }
+  .contact-value { display:block; margin-top:8px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-family:'Instrument Serif',Georgia,serif; font-size:20px; }
+  .contact-heading { display:flex; align-items:end; justify-content:space-between; gap:28px; margin-bottom:30px; }
+  @keyframes copy-dialog-in { from { opacity:0; transform:translateY(7px) scale(.98); } to { opacity:1; transform:none; } }
+  @keyframes video-modal-in { from { opacity:0; transform:translateY(14px) scale(.985); } to { opacity:1; transform:none; } }
+  .hero-video-button { display:inline-flex; align-items:center; gap:12px; margin-top:30px; border:0; background:transparent; padding:0; cursor:pointer; color:#1a1a1c; }
+  .hero-video-button-circle { width:42px; height:42px; display:grid; place-items:center; border:1px solid rgba(26,26,28,.16); border-radius:50%; background:rgba(255,255,255,.42); transition:background 180ms ease, color 180ms ease, transform 180ms ease; }
+  .hero-video-button:hover .hero-video-button-circle { background:#1a1a1c; color:#f7f6f3; transform:scale(1.04); }
+  /* The pet and its assistant surface share one calm, gem-lit visual system. */
+  .pet-dock { position:fixed; z-index:70; user-select:none; touch-action:none; }
+  .pet-dock::before { content:""; position:absolute; left:15px; right:15px; bottom:2px; height:28px; border:1px solid color-mix(in srgb,var(--pet-glow,var(--lx-sapphire)) 18%,transparent); border-radius:50%; background:rgba(13,14,20,.34); box-shadow:0 10px 34px rgba(0,0,0,.38); transform:perspective(70px) rotateX(58deg); pointer-events:none; }
+  .pet-bubble { position:absolute; right:72px; bottom:108px; width:max-content; max-width:205px; border:1px solid color-mix(in srgb,var(--lx-sapphire) 30%,transparent); border-radius:16px 16px 5px 16px; background:linear-gradient(145deg,rgba(25,27,37,.92),rgba(13,14,20,.9)); box-shadow:0 14px 38px rgba(0,0,0,.42),0 0 30px color-mix(in srgb,var(--lx-sapphire) 10%,transparent); backdrop-filter:blur(14px) saturate(1.3); -webkit-backdrop-filter:blur(14px) saturate(1.3); padding:10px 13px; color:rgba(244,241,234,.82); font-size:12px; line-height:1.5; pointer-events:none; }
+  .pet-bubble::after { content:""; position:absolute; right:-5px; bottom:-5px; width:12px; height:12px; border-right:1px solid color-mix(in srgb,var(--lx-sapphire) 30%,transparent); border-bottom:1px solid color-mix(in srgb,var(--lx-sapphire) 30%,transparent); background:rgba(14,15,21,.94); transform:rotate(45deg); }
+  .pet-chip { display:flex; align-items:center; justify-content:center; border:1px solid color-mix(in srgb,var(--lx-sapphire) 26%,transparent); cursor:pointer; border-radius:9999px; background:rgba(16,17,24,.82); color:rgba(244,241,234,.68); box-shadow:0 8px 24px rgba(0,0,0,.34); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); line-height:1; transition:opacity 180ms ease,color 180ms ease,border-color 180ms ease,background 180ms ease,transform 180ms ease,box-shadow 220ms ease; }
+  .pet-chip:hover,.pet-chip:focus-visible { color:#f4f1ea; border-color:color-mix(in srgb,var(--lx-sapphire) 56%,transparent); background:rgba(25,27,37,.94); box-shadow:0 0 20px color-mix(in srgb,var(--lx-sapphire) 24%,transparent); transform:translateY(-1px); }
+  .pet-minimize { opacity:0; }
+  .pet-dock:hover .pet-minimize,.pet-dock:focus-within .pet-minimize { opacity:1; }
+  .pet-open-button { position:relative; display:block; width:100px; height:130px; border:0; background:transparent; padding:0; cursor:grab; color:inherit; }
+  .pet-open-button:active { cursor:grabbing; }
+  @keyframes chat-panel-in { from { opacity:0; scale:.975; translate:0 12px; } to { opacity:1; scale:1; translate:0 0; } }
+  @keyframes chat-status-breathe { 0%,100% { opacity:.72; box-shadow:0 0 0 0 color-mix(in srgb,var(--lx-jade) 35%,transparent); } 50% { opacity:1; box-shadow:0 0 0 5px transparent; } }
+  @keyframes chat-avatar-float { 0%,100% { translate:0 1px; } 50% { translate:0 -2px; } }
+  .chat-panel { position:fixed; z-index:80; width:440px; max-width:calc(100vw - 24px); height:min(580px,calc(100dvh - 24px)); display:grid; grid-template-rows:auto minmax(0,1fr) auto auto; isolation:isolate; overflow:hidden; border-radius:28px; background:rgba(13,14,20,.94); box-shadow:0 36px 100px rgba(0,0,0,.64),18px 8px 80px -36px color-mix(in srgb,var(--lx-sapphire) 36%,transparent); backdrop-filter:blur(30px) saturate(1.38); -webkit-backdrop-filter:blur(30px) saturate(1.38); transform-origin:100% 100%; animation:chat-panel-in 320ms cubic-bezier(.16,1,.3,1) both; }
+  .chat-panel-welcome { height:auto; min-height:0; grid-template-rows:auto auto auto auto; }
+  .chat-panel::before { content:''; position:absolute; inset:0; z-index:4; border-radius:inherit; padding:1px; background:linear-gradient(150deg,color-mix(in srgb,var(--lx-sapphire) 62%,transparent),rgba(244,241,234,.1) 34%,rgba(244,241,234,.035) 68%,color-mix(in srgb,var(--lx-amethyst) 26%,transparent)); -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none; }
+  .chat-panel::after { content:""; position:absolute; z-index:-1; width:240px; height:240px; right:-100px; top:-125px; border-radius:50%; background:radial-gradient(circle,color-mix(in srgb,var(--lx-sapphire) 20%,transparent),transparent 68%); filter:blur(8px); pointer-events:none; }
+  .chat-header { display:flex; align-items:center; gap:13px; padding:16px 17px 14px; border-bottom:1px solid rgba(244,241,234,.075); }
+  .chat-avatar { position:relative; width:52px; height:52px; flex:0 0 auto; display:grid; place-items:center; overflow:hidden; border:1px solid color-mix(in srgb,var(--lx-sapphire) 34%,transparent); border-radius:17px; background:radial-gradient(circle at 50% 78%,color-mix(in srgb,var(--lx-sapphire) 24%,transparent),rgba(255,255,255,.035) 58%,transparent); box-shadow:inset 0 0 18px rgba(255,255,255,.025),0 8px 24px rgba(0,0,0,.28); }
+  .chat-avatar img { width:68px; height:68px; object-fit:contain; animation:chat-avatar-float 3.4s ease-in-out infinite; }
+  .chat-heading { min-width:0; flex:1; }
+  .chat-kicker { display:flex; align-items:center; gap:7px; margin:0 0 3px; color:rgba(244,241,234,.44); font-size:9px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
+  .chat-status { width:6px; height:6px; border-radius:50%; background:var(--lx-jade); animation:chat-status-breathe 2.4s ease-in-out infinite; }
+  .chat-title { margin:0; color:#f4f1ea; font-family:'Instrument Serif',Georgia,serif; font-size:23px; font-weight:400; letter-spacing:-.02em; line-height:1.05; }
+  .chat-subtitle { margin:4px 0 0; overflow:hidden; color:rgba(244,241,234,.46); font-size:10.5px; line-height:1.3; text-overflow:ellipsis; white-space:nowrap; }
+  .chat-close { display:flex; height:34px; width:34px; flex:0 0 auto; align-items:center; justify-content:center; border:1px solid rgba(244,241,234,.11); cursor:pointer; border-radius:12px; background:rgba(255,255,255,.035); color:rgba(244,241,234,.58); font-size:12px; transition:background 160ms ease,color 160ms ease,border-color 160ms ease,transform 160ms ease; }
+  .chat-close:hover,.chat-close:focus-visible { border-color:color-mix(in srgb,var(--lx-sapphire) 42%,transparent); background:color-mix(in srgb,var(--lx-sapphire) 11%,transparent); color:#f4f1ea; transform:rotate(3deg); }
+  .chat-log { min-height:0; display:flex; flex-direction:column; gap:10px; overflow-y:auto; padding:15px 17px 12px; font-size:13.5px; scroll-behavior:smooth; scrollbar-color:rgba(143,194,255,.24) transparent; scrollbar-width:thin; }
+  .chat-message-row { display:flex; }
+  .chat-message { max-width:88%; border:1px solid transparent; padding:10px 13px; white-space:pre-line; line-height:1.62; text-wrap:pretty; }
+  .chat-message-agent { border-color:rgba(244,241,234,.065); border-radius:6px 17px 17px 17px; background:linear-gradient(145deg,rgba(244,241,234,.065),rgba(244,241,234,.035)); color:rgba(244,241,234,.8); }
+  .chat-message-user { border-radius:17px 17px 6px 17px; background:linear-gradient(135deg,#a9d1ff,#7fb9ff); color:#0c0c0f; box-shadow:0 8px 24px rgba(40,73,124,.34); }
+  .chat-thinking { display:flex; align-items:center; gap:7px; margin:0; color:rgba(244,241,234,.5); font-size:12px; }
+  .chat-thinking::before { content:""; width:6px; height:6px; border-radius:50%; background:var(--lx-amethyst); animation:chat-status-breathe 1.4s ease-in-out infinite; }
+  .chat-reference-list { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; padding-top:10px; border-top:1px solid rgba(244,241,234,.09); }
+  .chat-reference { display:inline-flex; align-items:center; gap:6px; border:1px solid color-mix(in srgb,var(--lx-sapphire) 26%,transparent); cursor:pointer; border-radius:9px; background:color-mix(in srgb,var(--lx-sapphire) 8%,transparent); padding:6px 8px; color:rgba(244,241,234,.72); font-size:10.5px; line-height:1.2; transition:background 160ms ease,color 160ms ease,border-color 160ms ease,transform 160ms ease; }
+  .chat-reference:hover { border-color:color-mix(in srgb,var(--lx-sapphire) 48%,transparent); background:color-mix(in srgb,var(--lx-sapphire) 15%,transparent); color:#f4f1ea; transform:translateY(-1px); }
+  .chat-reference:focus-visible { outline:2px solid var(--lx-sapphire); outline-offset:2px; }
+  .chat-starters { padding:0 17px 13px; }
+  .chat-starters-label { margin:0 0 8px; color:rgba(244,241,234,.37); font-size:9px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+  .chat-suggestion-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px; }
+  .chat-suggestion { min-width:0; border:1px solid rgba(244,241,234,.1); cursor:pointer; border-radius:12px; background:rgba(255,255,255,.03); padding:9px 10px; color:rgba(244,241,234,.67); font-size:11px; line-height:1.3; text-align:left; transition:background 160ms ease,color 160ms ease,border-color 160ms ease,box-shadow 200ms ease,transform 160ms ease; }
+  .chat-suggestion::before { content:"↗"; margin-right:6px; color:var(--lx-sapphire); }
+  .chat-suggestion:hover,.chat-suggestion:focus-visible { border-color:color-mix(in srgb,var(--lx-sapphire) 46%,transparent); background:color-mix(in srgb,var(--lx-sapphire) 12%,transparent); color:#f4f1ea; box-shadow:0 0 18px color-mix(in srgb,var(--lx-sapphire) 12%,transparent); transform:translateY(-1px); }
+  .chat-form { display:flex; align-items:center; gap:8px; margin:0 12px 12px; border:1px solid rgba(244,241,234,.11); border-radius:17px; background:rgba(255,255,255,.045); padding:7px 7px 7px 14px; box-shadow:inset 0 1px 0 rgba(255,255,255,.025); }
+  .chat-form:focus-within { border-color:color-mix(in srgb,var(--lx-sapphire) 48%,transparent) !important; box-shadow:0 0 0 3px color-mix(in srgb,var(--lx-sapphire) 10%,transparent),inset 0 1px 0 rgba(255,255,255,.04) !important; }
+  .chat-input { min-width:0; flex:1; border:none; background:transparent; color:#f4f1ea; font-size:13px; line-height:1.4; outline:none; }
+  .chat-input::placeholder { color:rgba(244,241,234,.36); }
+  .chat-send-button { display:flex; height:38px; width:38px; flex:0 0 auto; align-items:center; justify-content:center; border:none; cursor:pointer; border-radius:13px; background:linear-gradient(135deg,#a9d1ff,var(--lx-sapphire) 62%,#72aef5); color:#0c0c0f; font-size:14px; box-shadow:0 8px 20px rgba(65,119,184,.28); transition:filter 160ms ease,transform 160ms ease,box-shadow 160ms ease; }
+  .chat-send-button:hover,.chat-send-button:focus-visible { filter:brightness(1.08); box-shadow:0 10px 26px color-mix(in srgb,var(--lx-sapphire) 34%,transparent); transform:translateY(-1px) scale(1.025); }
+  .chat-suggestion:disabled,.chat-send-button:disabled { cursor:wait !important; opacity:.44; transform:none; }
+  .article-link { position:relative; transition:background 180ms ease; }
+  .article-link h3 { transition:transform 360ms cubic-bezier(.16,1,.3,1); }
+  .article-link:hover h3 { transform:translateX(8px); }
+  @keyframes aura-float {
+    0%,100% { transform:translate3d(0,0,0) scale(1); }
+    50% { transform:translate3d(-4%,5%,0) scale(1.08); }
+  }
+  @keyframes status-pulse {
+    0%,100% { box-shadow:0 0 0 0 rgba(151,255,183,.36); }
+    50% { box-shadow:0 0 0 7px rgba(151,255,183,0); }
+  }
+  @keyframes sheen {
+    from { transform:translateX(-120%) skewX(-18deg); }
+    to { transform:translateX(420%) skewX(-18deg); }
+  }
+  @keyframes ambient-drift {
+    0%,100% { transform:translate3d(0,0,0) scale(1); }
+    33% { transform:translate3d(4%,-3%,0) scale(1.06); }
+    66% { transform:translate3d(-3%,4%,0) scale(.96); }
+  }
+  @keyframes impact-breathe {
+    0%,100% { opacity:.42; transform:scale(.88); }
+    50% { opacity:.78; transform:scale(1.12); }
+  }
+  @keyframes impact-camera {
+    0%,100% { transform:translate3d(0,-5%,0) scale(1.075); }
+    50% { transform:translate3d(-.7%,-6%,0) scale(1.095); }
+  }
+  .portfolio-shell { position:relative; min-height:100vh; overflow:hidden; background:#0c0c0f; color:#f4f1ea; }
+  .portfolio-shell::before { content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.18; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px); background-size:64px 64px; mask-image:radial-gradient(ellipse at 50% 22%,#000 5%,transparent 70%); }
+  .portfolio-shell::after { content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.045; mix-blend-mode:screen; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.8'/%3E%3C/svg%3E"); background-size:180px 180px; }
+  .ambient-background { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
+  .ambient-glow { position:absolute; border-radius:50%; filter:blur(42px); opacity:.55; animation:ambient-drift 18s ease-in-out infinite; }
+  .ambient-glow-one { width:min(72vw,940px); height:620px; left:-34%; top:17%; background:radial-gradient(ellipse at center,rgba(104,76,190,.2),rgba(70,52,145,.07) 48%,transparent 72%); }
+  .ambient-glow-two { width:min(68vw,860px); height:720px; right:-32%; top:42%; background:radial-gradient(ellipse at center,rgba(36,137,176,.16),rgba(46,88,155,.06) 48%,transparent 72%); animation-delay:-6s; }
+  .ambient-glow-three { width:min(72vw,900px); height:680px; left:-20%; top:70%; background:radial-gradient(ellipse at center,rgba(182,75,96,.14),rgba(128,64,119,.055) 50%,transparent 73%); animation-delay:-12s; }
+  .ambient-ribbon { position:absolute; width:130%; height:300px; left:-15%; top:54%; opacity:.13; transform:rotate(-8deg); filter:blur(36px); background:linear-gradient(90deg,transparent 8%,rgba(255,158,123,.36) 28%,rgba(184,156,255,.58) 52%,rgba(111,211,255,.34) 74%,transparent 92%); mask-image:linear-gradient(to bottom,transparent,#000 38%,#000 62%,transparent); }
+  .ambient-vignette { position:absolute; inset:0; background:linear-gradient(180deg,transparent 8%,rgba(12,12,15,.68) 30%,rgba(12,12,15,.2) 53%,rgba(12,12,15,.75) 78%,#0c0c0f 100%); }
+  .top-nav { position:sticky !important; top:14px !important; z-index:40; width:min(1180px,calc(100% - 32px)); box-sizing:border-box; margin:14px auto 0; padding:7px 8px 7px 14px !important; border:1px solid rgba(255,255,255,.1) !important; border-radius:20px; background:rgba(16,16,20,.72) !important; box-shadow:0 18px 60px rgba(0,0,0,.2); backdrop-filter:blur(22px) saturate(1.35) !important; -webkit-backdrop-filter:blur(22px) saturate(1.35) !important; }
+  .brand-lockup { display:flex; align-items:center; gap:10px; color:#f4f1ea !important; font-size:14px; font-weight:700; letter-spacing:-.02em; }
+  .brand-mark { position:relative; width:30px; height:30px; display:grid; place-items:center; overflow:hidden; border-radius:9px; background:linear-gradient(135deg,#ff916e,#b89cff 52%,#7bdcff); color:#0c0c0f; font-family:"Instrument Serif",Georgia,serif; font-size:21px; font-style:italic; box-shadow:0 0 24px rgba(184,156,255,.25); }
+  .nav-section-link { color:rgba(244,241,234,.62) !important; }
+  .nav-section-link:hover { color:#fff !important; border-color:rgba(255,255,255,.11); }
+  .nav-section-link.is-active { color:#0c0c0f !important; border-color:rgba(255,255,255,.38); }
+  .locale-button { min-height:38px; border-color:rgba(255,255,255,.13) !important; border-radius:12px !important; background:rgba(255,255,255,.06) !important; padding:0 15px !important; color:#f4f1ea !important; transition:background 220ms ease,border-color 220ms ease,transform 220ms ease !important; }
+  .locale-button:hover { border-color:rgba(201,185,255,.34) !important; background:rgba(201,185,255,.12) !important; transform:translateY(-1px); }
+  .locale-button:active { transform:scale(.97); }
+  .hero-stage { min-height:760px; isolation:isolate; }
+  .hero-stage::after { content:""; position:absolute; left:50%; bottom:-1px; z-index:3; width:min(1180px,calc(100% - 48px)); height:1px; transform:translateX(-50%); background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent); }
+  .hero-impact-scene { position:absolute; inset:0; overflow:hidden; background:#080a12; }
+  .hero-impact-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 100%; opacity:.88; filter:saturate(.9) contrast(1.06) brightness(.82); transform-origin:77% 64%; animation:impact-camera 16s ease-in-out infinite; }
+  .hero-impact-scene::before { content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(90deg,#0c0c0f 0%,rgba(12,12,15,.98) 24%,rgba(12,12,15,.8) 43%,rgba(12,12,15,.22) 68%,rgba(12,12,15,.05) 100%); }
+  .hero-impact-scene::after { content:""; position:absolute; inset:0; z-index:2; background:linear-gradient(180deg,rgba(8,8,13,.25) 0%,transparent 20%,transparent 64%,#0c0c0f 99%),radial-gradient(circle at 78% 58%,transparent 0 19%,rgba(8,8,13,.12) 43%,rgba(8,8,13,.5) 100%); }
+  .hero-impact-glow { position:absolute; z-index:3; width:min(24vw,340px); aspect-ratio:1; right:6%; top:47%; border-radius:50%; opacity:.55; background:radial-gradient(circle,rgba(255,239,214,.32) 0 3%,rgba(218,176,255,.26) 10%,rgba(118,108,255,.16) 27%,transparent 68%); filter:blur(13px); mix-blend-mode:screen; animation:impact-breathe 4.8s ease-in-out infinite; }
+  .hero-veil { position:absolute; inset:0; background:radial-gradient(circle at 77% 46%,rgba(255,255,255,.035),transparent 32%),linear-gradient(180deg,rgba(12,12,15,.03),#0c0c0f 98%); }
+  .hero-pixel-trail { mix-blend-mode:screen; opacity:.42; }
+  .hero-grain { opacity:.075; mix-blend-mode:screen; }
+  .hero-shell { position:relative; z-index:4; width:min(1180px,calc(100% - 64px)); max-width:none !important; box-sizing:border-box; margin:0 auto; padding:118px 0 78px !important; }
+  .hero-eyebrow { display:inline-flex; align-items:center; gap:9px; margin:0; border:1px solid rgba(255,255,255,.14); border-radius:999px; background:rgba(255,255,255,.045); padding:7px 12px; color:rgba(244,241,234,.72); font-size:11px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; }
+  .status-dot { width:7px; height:7px; border-radius:50%; background:var(--lx-jade); animation:status-pulse 2.2s ease-in-out infinite; }
+  .hero-name { width:max-content; max-width:100%; margin:32px 0 0; padding-right:.08em; font-family:"Instrument Serif",Georgia,serif; font-size:clamp(82px,12vw,168px); font-weight:400; font-style:italic; line-height:.82; letter-spacing:-.055em; color:transparent; background:linear-gradient(92deg,#f4f1ea 2%,#eadfff 48%,#a9dcff 100%); -webkit-background-clip:text; background-clip:text; filter:drop-shadow(0 0 28px rgba(184,156,255,.13)); }
+  .hero-bottom { display:grid; grid-template-columns:minmax(0,600px) auto; align-items:end; justify-content:space-between; gap:40px; margin-top:46px; }
+  .hero-copy { margin:0; max-width:600px; color:rgba(244,241,234,.65); font-size:18px; line-height:1.75; text-wrap:pretty; }
+  .hero-actions { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .primary-action,.secondary-action { position:relative; min-height:52px; display:inline-flex; align-items:center; justify-content:center; gap:10px; box-sizing:border-box; overflow:hidden; border-radius:999px; padding:0 22px; font:600 13px/1 "Manrope",sans-serif; cursor:pointer; }
+  .primary-action { border:0; background:#f4f1ea; color:#0c0c0f !important; box-shadow:0 12px 40px rgba(0,0,0,.24); }
+  .primary-action::after { content:""; position:absolute; top:-20%; bottom:-20%; left:-34%; width:26%; background:rgba(255,255,255,.75); filter:blur(8px); animation:sheen 5.5s 1.4s ease-in-out infinite; }
+  .primary-action:hover { transform:translateY(-2px); }
+  .secondary-action { border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.055); color:#f4f1ea; }
+  .secondary-action:hover { background:rgba(255,255,255,.11); }
+  .hero-metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-top:70px; }
+  .metric-card { position:relative; min-height:132px; overflow:hidden; border:1px solid rgba(255,255,255,.1); border-radius:20px; background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025)); padding:20px; transition:transform 260ms cubic-bezier(.16,1,.3,1),border-color 220ms ease,box-shadow 280ms ease; }
+  .metric-card::before { content:""; position:absolute; width:100px; height:100px; right:-32px; top:-42px; border-radius:50%; background:radial-gradient(circle,color-mix(in srgb,var(--treasure-accent) 20%,transparent),transparent 68%); }
+  .metric-card:nth-child(4n+1) { --treasure-deep:var(--lx-sapphire-deep); --treasure-accent:var(--lx-sapphire); }
+  .metric-card:nth-child(4n+2) { --treasure-deep:var(--lx-glacier-deep); --treasure-accent:var(--lx-glacier); }
+  .metric-card:nth-child(4n+3) { --treasure-deep:var(--lx-amethyst-deep); --treasure-accent:var(--lx-amethyst); }
+  .metric-card:nth-child(4n+4) { --treasure-deep:var(--lx-jade-deep); --treasure-accent:var(--lx-jade); }
+  .metric-card:hover,.metric-card:focus-within { transform:translateY(-5px); border-color:color-mix(in srgb,var(--treasure-accent) 44%,transparent); }
+  /* 关键数字：左暗右亮的渐变文字，右端烧到近白；deep 起点在黑底上仍可读 */
+  .metric-value { display:block; font-family:"Instrument Serif",Georgia,serif; font-size:42px; line-height:1; letter-spacing:-.03em; background:linear-gradient(90deg,color-mix(in srgb,var(--treasure-deep) 45%,var(--treasure-accent)) 0%,var(--treasure-accent) 62%,color-mix(in srgb,var(--treasure-accent) 50%,#fff) 100%); -webkit-background-clip:text; background-clip:text; color:transparent; transition:filter 260ms ease,transform 260ms cubic-bezier(.16,1,.3,1); }
+  .metric-card:hover .metric-value,.metric-card:focus-within .metric-value { transform:translateY(-2px); filter:drop-shadow(0 0 14px color-mix(in srgb,var(--treasure-accent) 52%,transparent)); }
+  .metric-label { display:block; margin-top:28px; color:rgba(244,241,234,.55); font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
+  /* ---- 光迹描边系统：--treasure-deep(暗端) / --treasure-accent(亮端) ----
+     三层分工：.treasure-light = 指针径向光晕（hover 显现）；
+     .treasure-trace::before = 常驻渐变边框（左暗右亮，hover 升档）；
+     .treasure-trace::after = 彗星光迹（hover 沿轮廓旋转，尾深头亮）。 */
+  .treasure-surface { --treasure-x:50%; --treasure-y:50%; --treasure-deep:var(--lx-sapphire-deep); --treasure-accent:var(--lx-sapphire); isolation:isolate; }
+  .treasure-surface > :not(.treasure-light):not(.treasure-trace) { position:relative; z-index:2; }
+  .treasure-light { position:absolute; inset:0; z-index:1; overflow:hidden; border-radius:inherit; pointer-events:none; opacity:0; background:radial-gradient(340px circle at var(--treasure-x) var(--treasure-y),color-mix(in srgb,var(--treasure-accent) 20%,transparent),color-mix(in srgb,var(--treasure-deep) 14%,transparent) 42%,transparent 64%); mix-blend-mode:screen; transition:opacity 260ms ease; }
+  .treasure-surface:hover .treasure-light,.treasure-surface:focus-within .treasure-light { opacity:.65; }
+  .treasure-trace { position:absolute; inset:0; z-index:3; border-radius:inherit; pointer-events:none; }
+  .treasure-trace::before { content:""; position:absolute; inset:0; border-radius:inherit; padding:1px; background:linear-gradient(90deg,rgba(244,241,234,.05) 0%,color-mix(in srgb,var(--treasure-deep) 55%,transparent) 42%,color-mix(in srgb,var(--treasure-accent) 80%,transparent) 100%); -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; transition:background 300ms ease,filter 300ms ease; }
+  .treasure-surface:hover .treasure-trace::before,.treasure-surface:focus-within .treasure-trace::before { filter:drop-shadow(0 0 7px color-mix(in srgb,var(--treasure-accent) 45%,transparent)); background:linear-gradient(90deg,color-mix(in srgb,var(--treasure-deep) 40%,transparent) 0%,var(--treasure-accent) 62%,color-mix(in srgb,var(--treasure-accent) 40%,#fff) 100%); }
+  .treasure-trace::after { content:""; position:absolute; inset:0; border-radius:inherit; padding:1.5px; opacity:0; background:conic-gradient(from var(--lx-trace-angle),transparent 0 52%,color-mix(in srgb,var(--treasure-deep) 55%,transparent) 66%,var(--treasure-accent) 86%,color-mix(in srgb,var(--treasure-accent) 45%,#fff) 92%,transparent 100%); -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; transition:opacity 300ms ease; }
+  .treasure-surface:hover .treasure-trace::after,.treasure-surface:focus-within .treasure-trace::after { opacity:1; animation:lx-trace 1.5s linear infinite; }
+  @keyframes lx-trace { from { --lx-trace-angle:0deg; } to { --lx-trace-angle:360deg; } }
+  /* hover 外发光只在右侧——光源在右，左侧只有黑影 */
+  .treasure-surface:hover,.treasure-surface:focus-within { box-shadow:0 24px 70px rgba(0,0,0,.5),16px 0 48px -18px color-mix(in srgb,var(--treasure-accent) 34%,transparent); }
+  @media (prefers-reduced-motion: reduce) {
+    .treasure-trace::after { animation:none; opacity:0; }
+  }
+  .portfolio-section { position:relative; z-index:2; width:min(1180px,calc(100% - 64px)); box-sizing:border-box; margin:0 auto; padding:108px 0 32px !important; scroll-margin-top:110px; }
+  /* 板块标题分隔线：从黑暗浮起、右端最亮并缀一颗亮星（色对随板块） */
+  .section-head { --sec-deep:var(--lx-sapphire-deep); --sec-bright:var(--lx-sapphire); position:relative; display:grid; grid-template-columns:150px minmax(0,1fr); align-items:end; gap:24px; padding-bottom:34px; }
+  #experience .section-head { --sec-deep:var(--lx-amethyst-deep); --sec-bright:var(--lx-amethyst); }
+  #projects .section-head { --sec-deep:var(--lx-sapphire-deep); --sec-bright:var(--lx-sapphire); }
+  #articles .section-head { --sec-deep:var(--lx-glacier-deep); --sec-bright:var(--lx-glacier); }
+  .section-head::after { content:""; position:absolute; left:0; right:0; bottom:0; height:1px; background:linear-gradient(90deg,transparent 0%,color-mix(in srgb,var(--sec-deep) 60%,transparent) 34%,var(--sec-bright) 88%,color-mix(in srgb,var(--sec-bright) 55%,#fff) 100%); }
+  .section-head::before { content:""; position:absolute; right:-2px; bottom:-2px; width:5px; height:5px; border-radius:50%; background:color-mix(in srgb,var(--sec-bright) 70%,#fff); box-shadow:0 0 8px 1px color-mix(in srgb,var(--sec-bright) 80%,transparent); }
+  .section-index { align-self:start; color:rgba(244,241,234,.42); font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; }
+  .section-title { margin:0; font-family:"Instrument Serif",Georgia,serif; font-size:clamp(44px,5vw,68px); font-weight:400; line-height:.95; letter-spacing:-.035em; color:#f4f1ea; }
+  .section-intro { margin:0; color:rgba(244,241,234,.55); font-size:14px; line-height:1.75; text-wrap:pretty; }
+  .experience-stack { display:grid; gap:12px; margin-top:24px; }
+  .experience-card { overflow:hidden; border:1px solid rgba(255,255,255,.1); border-radius:22px; background:rgba(255,255,255,.035); transition:border-color 220ms ease,background 220ms ease,transform 260ms cubic-bezier(.16,1,.3,1),box-shadow 280ms ease; }
+  .experience-card:nth-child(3n+1) { --treasure-deep:var(--lx-amethyst-deep); --treasure-accent:var(--lx-amethyst); }
+  .experience-card:nth-child(3n+2) { --treasure-deep:var(--lx-sapphire-deep); --treasure-accent:var(--lx-sapphire); }
+  .experience-card:nth-child(3n+3) { --treasure-deep:var(--lx-glacier-deep); --treasure-accent:var(--lx-glacier); }
+  .experience-card:hover,.experience-card:focus-within { border-color:color-mix(in srgb,var(--treasure-accent) 44%,transparent); background:rgba(255,255,255,.055); transform:translateY(-4px); }
+  .experience-card::after { display:none; }
+  .experience-card .resume-row { grid-template-columns:155px minmax(0,1fr) 32px; padding:26px 28px; }
+  .experience-card .resume-period { color:rgba(244,241,234,.45) !important; }
+  .experience-card h3 { color:#f4f1ea !important; }
+  .experience-card .resume-main p { color:rgba(244,241,234,.57) !important; }
+  .experience-card .resume-toggle { color:#f4f1ea; transition:color 220ms ease,transform 240ms ease,filter 240ms ease; }
+  .experience-card:hover .resume-toggle,.experience-card:focus-within .resume-toggle { color:var(--treasure-accent); filter:drop-shadow(0 0 10px color-mix(in srgb,var(--treasure-accent) 58%,transparent)); }
+  .experience-card .resume-detail { margin:0; border:0; border-top:1px solid rgba(255,255,255,.09); background:rgba(0,0,0,.16); padding:28px; }
+  .resume-detail-label { color:var(--treasure-accent); }
+  .resume-detail li { color:rgba(244,241,234,.62); }
+  .project-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:24px; }
+  .project-card { --card-deep:var(--lx-sapphire-deep); --card-accent:var(--lx-sapphire); --treasure-deep:var(--card-deep); --treasure-accent:var(--card-accent); position:relative; min-width:0; overflow:hidden; border:1px solid rgba(255,255,255,.1); border-radius:26px; background:linear-gradient(90deg,#0e0e12 0%,#111115 48%,color-mix(in srgb,var(--card-accent) 8%,#111115) 100%); transition:transform 260ms cubic-bezier(.16,1,.3,1),border-color 220ms ease,box-shadow 280ms ease; }
+  .project-card:first-of-type { grid-column:span 2; }
+  .project-card:last-of-type:nth-of-type(even) { grid-column:span 2; }
+  .project-card:hover,.project-card:focus-within { transform:translateY(-6px); border-color:color-mix(in srgb,var(--card-accent) 62%,transparent); }
+  .project-card::before { content:""; position:absolute; width:260px; height:260px; right:-110px; top:-125px; border-radius:50%; background:radial-gradient(circle,color-mix(in srgb,var(--card-accent) 28%,transparent),transparent 66%); pointer-events:none; }
+  .project-card::after { display:none; }
+  .project-summary { min-height:330px; display:flex; flex-direction:column; padding:28px; list-style:none; cursor:pointer; }
+  .project-summary::-webkit-details-marker { display:none; }
+  .project-card:first-of-type .project-summary { min-height:360px; }
+  .project-topline { display:flex; align-items:center; justify-content:space-between; gap:18px; color:rgba(244,241,234,.48); font-size:11px; letter-spacing:.09em; text-transform:uppercase; }
+  .project-role { display:inline-flex; border:1px solid rgba(255,255,255,.13); border-radius:999px; padding:5px 10px; color:rgba(244,241,234,.7); }
+  .project-metric { margin-top:auto; padding-top:52px; }
+  .project-metric strong { display:block; font-family:"Instrument Serif",Georgia,serif; font-size:clamp(48px,6vw,78px); font-weight:400; line-height:.8; letter-spacing:-.05em; background:linear-gradient(90deg,color-mix(in srgb,var(--card-deep) 45%,var(--card-accent)) 0%,var(--card-accent) 62%,color-mix(in srgb,var(--card-accent) 50%,#fff) 100%); -webkit-background-clip:text; background-clip:text; color:transparent; transition:filter 280ms ease,transform 280ms cubic-bezier(.16,1,.3,1); }
+  .project-card:hover .project-metric strong,.project-card:focus-within .project-metric strong { transform:translateY(-3px); filter:drop-shadow(0 0 20px color-mix(in srgb,var(--card-accent) 46%,transparent)); }
+  .project-metric span { display:block; margin-top:14px; color:rgba(244,241,234,.46); font-size:11px; letter-spacing:.09em; text-transform:uppercase; }
+  .project-title { margin:28px 0 0; max-width:720px; font-size:clamp(22px,2.5vw,34px); font-weight:600; line-height:1.16; letter-spacing:-.04em; color:#f4f1ea; }
+  .project-summary-copy { margin:14px 0 0; max-width:760px; color:rgba(244,241,234,.55); font-size:14px; line-height:1.7; text-wrap:pretty; }
+  .project-open { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,.09); color:rgba(244,241,234,.58); font-size:12px; }
+  .project-card .resume-toggle { margin:0; color:#f4f1ea; }
+  .project-card:hover .resume-toggle,.project-card:focus-within .resume-toggle { color:var(--card-accent); filter:drop-shadow(0 0 10px color-mix(in srgb,var(--card-accent) 56%,transparent)); }
+  .project-card .resume-detail { margin:0; border:0; border-top:1px solid rgba(255,255,255,.09); background:rgba(0,0,0,.2); padding:28px; }
+  .article-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:24px; }
+  .article-card { min-height:230px; display:flex !important; flex-direction:column; align-items:stretch !important; gap:0 !important; box-sizing:border-box; border:1px solid rgba(255,255,255,.1) !important; border-radius:22px; background:rgba(255,255,255,.035); padding:22px !important; transition:transform 260ms cubic-bezier(.16,1,.3,1),border-color 220ms ease,background 220ms ease,box-shadow 280ms ease; }
+  .article-card:nth-child(3n+1) { --treasure-deep:var(--lx-glacier-deep); --treasure-accent:var(--lx-glacier); }
+  .article-card:nth-child(3n+2) { --treasure-deep:var(--lx-sapphire-deep); --treasure-accent:var(--lx-sapphire); }
+  .article-card:nth-child(3n+3) { --treasure-deep:var(--lx-amethyst-deep); --treasure-accent:var(--lx-amethyst); }
+  .article-card:hover,.article-card:focus-visible { transform:translateY(-7px) scale(1.01); border-color:color-mix(in srgb,var(--treasure-accent) 58%,transparent) !important; background:color-mix(in srgb,var(--treasure-accent) 7%,#151519) !important; }
+  .article-card h3 { margin:28px 0 0 !important; font-family:"Manrope",sans-serif !important; font-size:17px !important; font-weight:600 !important; line-height:1.45 !important; letter-spacing:-.025em; color:#f4f1ea !important; transition:transform 280ms cubic-bezier(.16,1,.3,1),text-shadow 240ms ease; }
+  .article-card:hover h3,.article-card:focus-visible h3 { transform:translateY(-3px); text-shadow:0 0 24px color-mix(in srgb,var(--treasure-accent) 30%,transparent); }
+  .article-meta { display:flex; align-items:center; justify-content:space-between; gap:12px; color:rgba(244,241,234,.42); font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
+  .article-footer { display:flex; align-items:center; justify-content:space-between; gap:14px; margin-top:auto; padding-top:24px; color:rgba(244,241,234,.55); font-size:12px; }
+  .article-arrow { width:32px; height:32px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.12); border-radius:50%; transition:transform 300ms cubic-bezier(.16,1,.3,1),background 220ms ease,box-shadow 240ms ease; }
+  .article-card:hover .article-arrow,.article-card:focus-visible .article-arrow { transform:rotate(45deg) scale(1.08); border-color:transparent; background:var(--treasure-accent); color:#0c0c0f; box-shadow:0 0 26px color-mix(in srgb,var(--treasure-accent) 38%,transparent); }
+  .contact-footer { position:relative; z-index:2; width:min(1180px,calc(100% - 32px)); margin:110px auto 16px; overflow:hidden; border:1px solid rgba(255,255,255,.1) !important; border-radius:30px; background:radial-gradient(circle at 86% 12%,rgba(184,156,255,.25),transparent 34%),radial-gradient(circle at 8% 92%,rgba(255,126,92,.18),transparent 35%),#131318; }
+  .contact-shell { max-width:none !important; padding:72px 40px 30px !important; }
+  .contact-heading { align-items:start; margin-bottom:52px; }
+  .contact-kicker { color:rgba(244,241,234,.5) !important; }
+  .contact-title { max-width:760px; font-size:clamp(50px,7vw,92px) !important; line-height:.92; letter-spacing:-.045em; color:#f4f1ea !important; }
+  .contact-intro { color:rgba(244,241,234,.6) !important; }
+  .contact-grid { border-color:rgba(255,255,255,.12); }
+  .contact-item { --treasure-deep:var(--lx-jade-deep); --treasure-accent:var(--lx-jade); position:relative; overflow:hidden; border-radius:16px; border-color:rgba(255,255,255,.1); color:#f4f1ea; transition:background 220ms ease,transform 260ms cubic-bezier(.16,1,.3,1),box-shadow 280ms ease; }
+  .contact-item:nth-child(2) { --treasure-deep:var(--lx-glacier-deep); --treasure-accent:var(--lx-glacier); }
+  .contact-item:nth-child(3) { --treasure-deep:var(--lx-sapphire-deep); --treasure-accent:var(--lx-sapphire); }
+  .contact-item:hover,.contact-item:focus-visible { background:color-mix(in srgb,var(--treasure-accent) 8%,transparent); transform:translateY(-3px); }
+  .contact-item span { color:inherit; }
+  .contact-value { font-family:"Manrope",sans-serif; font-size:16px; font-weight:500; transition:color 220ms ease,text-shadow 220ms ease; }
+  .contact-item:hover .contact-value,.contact-item:focus-visible .contact-value { color:#fff; text-shadow:0 0 18px color-mix(in srgb,var(--treasure-accent) 42%,transparent); }
+  .footer-meta { color:rgba(244,241,234,.4) !important; }
+  .motion-ready .experience-card.motion-reveal.is-visible:hover,.motion-ready .experience-card.motion-reveal.is-visible:focus-within { transform:translateY(-4px); }
+  .motion-ready .project-card.motion-reveal.is-visible:hover,.motion-ready .project-card.motion-reveal.is-visible:focus-within { transform:translateY(-6px); }
+  .motion-ready .article-card.motion-reveal.is-visible:hover,.motion-ready .article-card.motion-reveal.is-visible:focus-visible { transform:translateY(-7px) scale(1.01); }
+  @media (max-width:980px) {
+    .hero-bottom { grid-template-columns:1fr; align-items:start; }
+    .hero-actions { justify-content:flex-start; }
+    .section-head { grid-template-columns:110px minmax(0,1fr); }
+    .article-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  }
+  @media (max-width:680px) {
+    .top-nav { top:8px !important; width:calc(100% - 16px); margin-top:8px; padding:8px 9px 8px 10px !important; }
+    .brand-lockup > span:last-child { display:none; }
+    nav > .nav-links { gap:8px !important; }
+    nav > .nav-links .nav-section-link { display:none; }
+    nav > .nav-links > * { flex:0 0 auto; }
+    .hero-shell,.portfolio-section { width:calc(100% - 32px); }
+    .hero-shell { padding:92px 0 58px !important; }
+    .hero-impact-image { width:176%; left:-76%; object-position:76% 100%; opacity:.68; filter:saturate(.88) contrast(1.08) brightness(.72); }
+    .hero-impact-scene::before { background:linear-gradient(180deg,rgba(12,12,15,.32),rgba(12,12,15,.76) 48%,#0c0c0f 92%),linear-gradient(90deg,rgba(12,12,15,.92),rgba(12,12,15,.18)); }
+    .hero-impact-scene::after { background:linear-gradient(180deg,transparent 42%,#0c0c0f 91%); }
+    .hero-impact-glow { width:260px; right:-24%; top:37%; opacity:.34; }
+    .hero-name { width:auto; margin-top:26px; font-size:clamp(64px,20vw,92px) !important; line-height:.88; overflow-wrap:anywhere; }
+    .hero-bottom { margin-top:32px; gap:26px; }
+    .hero-copy { font-size:15px; line-height:1.7; }
+    .hero-actions { display:grid; grid-template-columns:1fr 1fr; width:100%; }
+    .primary-action,.secondary-action { min-height:48px; padding:0 14px; font-size:12px; }
+    .hero-metrics { grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:46px; }
+    .metric-card { min-height:112px; padding:17px; }
+    .metric-value { font-size:36px; }
+    .metric-label { margin-top:22px; font-size:10px; }
+    .portfolio-section { padding-top:80px !important; }
+    .section-head { grid-template-columns:1fr; gap:12px; padding-bottom:24px; }
+    .section-title { font-size:46px; }
+    .resume-row { grid-template-columns:1fr 28px; gap:14px; }
+    .resume-period { grid-column:1; }
+    .resume-main { grid-column:1; }
+    .resume-toggle { grid-column:2; grid-row:1 / span 2; }
+    .resume-detail { margin-left:0; padding:20px; }
+    .experience-card .resume-row { grid-template-columns:1fr 26px; padding:22px 20px; }
+    .project-grid { grid-template-columns:1fr; }
+    .project-card:first-of-type,.project-card:last-of-type:nth-of-type(even) { grid-column:auto; }
+    .project-summary,.project-card:first-of-type .project-summary { min-height:320px; padding:22px; }
+    .project-topline { align-items:flex-start; }
+    .project-role { max-width:48%; text-align:right; }
+    .project-metric { padding-top:42px; }
+    .project-title { font-size:24px; }
+    .article-grid { grid-template-columns:1fr; }
+    .article-card { min-height:200px; }
+    .contact-footer { width:calc(100% - 16px); margin-top:82px; border-radius:24px; }
+    .contact-shell { padding:48px 20px 24px !important; }
+    .contact-grid { grid-template-columns:1fr; }
+    .contact-item { border-right:0; border-bottom:1px solid rgba(255,255,255,.09); padding:19px 4px; }
+    .contact-item:last-child { border-bottom:0; }
+    .contact-heading { display:block; }
+    .contact-heading > p { margin-top:14px !important; text-align:left !important; }
+    .hero-stage { min-height:auto; }
+    .hero-ink-field { transform:translate3d(0,0,0) !important; }
+    .ambient-glow { opacity:.38; filter:blur(54px); }
+    .ambient-ribbon { opacity:.08; }
+    .footer-meta { align-items:flex-start !important; flex-direction:column; }
+    .chat-panel { left:12px !important; top:auto !important; bottom:max(12px,env(safe-area-inset-bottom)); width:calc(100vw - 24px); max-width:none; height:min(650px,calc(100dvh - 24px)); border-radius:24px; transform-origin:50% 100%; }
+    .chat-panel-welcome { height:auto; max-height:calc(100dvh - 24px); }
+    .chat-header { padding:13px 14px 12px; }
+    .chat-avatar { width:46px; height:46px; border-radius:15px; }
+    .chat-avatar img { width:60px; height:60px; }
+    .chat-title { font-size:21px; }
+    .chat-log { padding:13px 14px 10px; }
+    .chat-message { max-width:94%; }
+    .chat-starters { padding:0 14px 11px; }
+    .chat-suggestion-list { gap:6px; }
+    .chat-suggestion { padding:8px 9px; font-size:10.5px; }
+    .chat-form { margin:0 9px max(9px,env(safe-area-inset-bottom)); }
+  }
+  @media (prefers-reduced-motion:reduce) {
+    html { scroll-behavior:auto; }
+    *, *::before, *::after { animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+    .hero-ink-field { transform:none !important; }
+    .hero-pixel-trail { display:none; }
+    .motion-ready .motion-reveal, .motion-ready .motion-rule { opacity:1; transform:none; }
+    .resume-entry::after { transform:scaleX(1); }
+  }
+</style>
+</helmet>
+
+<section class="portfolio-shell" data-screen-label="张若磐 AI 产品作品集">
+
+  <a class="skip-link" href="#main-content">{{ tSkipToContent }}</a>
+  <div class="ambient-background" aria-hidden="true">
+    <span class="ambient-glow ambient-glow-one"></span>
+    <span class="ambient-glow ambient-glow-two"></span>
+    <span class="ambient-glow ambient-glow-three"></span>
+    <span class="ambient-ribbon"></span>
+    <span class="ambient-vignette"></span>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="top-nav" aria-label="{{ tPrimaryNav }}" style="display:flex; align-items:center; justify-content:space-between; gap:24px">
+    <a class="brand-lockup" href="#"><span class="brand-mark" aria-hidden="true">Z</span><span>Zhangruopan</span></a>
+    <div class="nav-links" style="display:flex; align-items:center; gap:32px; font-size:14px">
+      <a class="{{ navExperienceClass }}" data-nav-target="experience" href="#experience" aria-current="{{ navExperienceCurrent }}" onClick="{{ onNavExperience }}">{{ tNavExperience }}</a>
+      <a class="{{ navProjectsClass }}" data-nav-target="projects" href="#projects" aria-current="{{ navProjectsCurrent }}" onClick="{{ onNavProjects }}">{{ tNavProjects }}</a>
+      <a class="{{ navArticlesClass }}" data-nav-target="articles" href="#articles" aria-current="{{ navArticlesCurrent }}" onClick="{{ onNavArticles }}">{{ tNavArticles }}</a>
+      <a class="{{ navContactClass }}" data-nav-target="contact" href="#contact" aria-current="{{ navContactCurrent }}" onClick="{{ onNavContact }}">{{ tNavContact }}</a>
+      <button class="locale-button" type="button" onClick="{{ toggleLocale }}" style="border:1px solid; cursor:pointer; border-radius:9999px; padding:8px 15px; font-size:12px; font-weight:600; transition:background 150ms">{{ tLangLabel }}</button>
+    </div>
+  </nav>
+
+  <main id="main-content" tabindex="-1">
+
+  <!-- ============ HERO：高对比动态舞台 ============ -->
+  <header class="hero-stage" onPointerDown="{{ onHeroPointerDown }}" onPointerMove="{{ onHeroPointerMove }}" onPointerLeave="{{ resetHeroPointer }}" style="position:relative; overflow:hidden">
+    <div aria-hidden="true" style="position:absolute; inset:0; pointer-events:none">
+      <sc-if value="{{ hasHeroVideo }}" hint-placeholder-val="{{ false }}">
+        <video data-hero-video="" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="metadata" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.24; filter:grayscale(.35) contrast(1.08) saturate(.8)"></video>
+      </sc-if>
+      <sc-if value="{{ noHeroVideo }}" hint-placeholder-val="{{ true }}">
+        <div class="hero-ink-field" style="position:absolute; inset:0">
+          <div class="hero-impact-scene">
+            <img class="hero-impact-image" src="media/meteor-impact-hero.jpg" alt="" decoding="async" fetchpriority="high">
+            <span class="hero-impact-glow"></span>
+          </div>
+        </div>
+      </sc-if>
+      <canvas id="hero-pixel-trail" class="hero-pixel-trail"></canvas>
+      <div class="hero-grain"></div>
+      <div class="hero-veil"></div>
+    </div>
+
+    <div class="hero-inner hero-shell">
+      <p class="hero-kicker hero-eyebrow"><span class="status-dot" aria-hidden="true"></span>{{ tHeroEyebrow }}</p>
+      <h1 class="hero-title hero-name">Zhangruopan</h1>
+      <div class="hero-bottom">
+        <p class="hero-intro hero-copy">{{ tHeroIntro }}</p>
+        <div class="hero-actions">
+          <a class="primary-action" href="#projects">{{ tExploreProjects }} <span aria-hidden="true">↘</span></a>
+          <button type="button" class="secondary-action" onClick="{{ openIntroVideo }}" aria-label="{{ tVideoButtonAria }}"><span aria-hidden="true">▶</span>{{ tVideoButton }}</button>
+        </div>
+      </div>
+      <div class="hero-metrics" aria-label="{{ tHeroMetricsLabel }}">
+        <sc-for list="{{ heroMetrics }}" as="metric" hint-placeholder-count="4">
+          <div class="metric-card treasure-surface">
+            <span class="treasure-light" aria-hidden="true"></span><span class="treasure-trace" aria-hidden="true"></span>
+            <strong class="metric-value">{{ metric.value }}</strong>
+            <span class="metric-label">{{ metric.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </header>
+
+  <sc-if value="{{ videoOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeIntroVideo }}" role="presentation" style="position:fixed; inset:0; z-index:120; display:grid; place-items:center; padding:28px; background:rgba(20,20,22,.76); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px)">
+      <div onClick="{{ stopPress }}" role="dialog" aria-modal="true" aria-labelledby="intro-video-title" style="width:min(960px,calc(100vw - 40px)); animation:video-modal-in 220ms cubic-bezier(.2,.8,.2,1) both">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:20px; margin-bottom:12px; color:#f7f6f3">
+          <div><p style="margin:0; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:rgba(247,246,243,.55)">{{ tVideoEyebrow }}</p><h2 id="intro-video-title" style="margin:4px 0 0; font-family:'Instrument Serif',Georgia,serif; font-size:24px; font-weight:400">{{ tVideoTitle }}</h2></div>
+          <button id="intro-video-close" type="button" onClick="{{ closeIntroVideo }}" aria-label="{{ tVideoClose }}" style="width:36px; height:36px; flex:0 0 auto; border:1px solid rgba(247,246,243,.22); border-radius:50%; background:rgba(247,246,243,.08); cursor:pointer; color:#f7f6f3; font-size:14px" style-hover="background:rgba(247,246,243,.16)">✕</button>
+        </div>
+        <div style="overflow:hidden; border:1px solid rgba(247,246,243,.13); border-radius:14px; background:#09090a; box-shadow:0 30px 80px rgba(0,0,0,.38)">
+          <video id="intro-video-player" data-src="Zhangruopan-AI-Homepage-Bookline-v2.mp4" controls="{{ true }}" autoPlay="{{ true }}" playsInline="{{ true }}" preload="metadata" style="display:block; width:100%; aspect-ratio:16/9; background:#09090a"></video>
+        </div>
+        <p style="margin:11px 2px 0; font-size:11px; color:rgba(247,246,243,.48)">{{ tVideoHint }}</p>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ============ 工作经历 ============ -->
+  <section id="experience" class="portfolio-section motion-section">
+    <div class="section-head motion-reveal">
+      <span class="section-index">01 / Experience</span>
+      <h2 class="section-title">{{ tNavExperience }}</h2>
+    </div>
+    <div class="experience-stack">
+      <sc-for list="{{ experiences }}" as="job" hint-placeholder-count="2">
+        <details class="experience-card resume-entry motion-reveal treasure-surface">
+          <summary class="resume-row">
+            <div class="resume-period" style="font-size:13px; font-variant-numeric:tabular-nums; padding-top:3px">{{ job.period }}</div>
+            <div class="resume-main">
+              <h3 style="margin:0; font-size:18px; font-weight:600">{{ job.title }}</h3>
+              <p style="margin:10px 0 0; font-size:14px; line-height:1.72; max-width:720px; text-wrap:pretty">{{ job.body }}</p>
+            </div>
+            <span class="resume-toggle" aria-hidden="true"></span>
+          </summary>
+          <span class="treasure-light" aria-hidden="true"></span><span class="treasure-trace" aria-hidden="true"></span>
+          <div class="resume-detail">
+            <div class="resume-detail-block">
+              <p class="resume-detail-label">{{ tResponsibilities }}</p>
+              <ul><sc-for list="{{ job.responsibilities }}" as="item"><li>{{ item }}</li></sc-for></ul>
+            </div>
+            <div class="resume-detail-block">
+              <p class="resume-detail-label">{{ tKeyResults }}</p>
+              <ul><sc-for list="{{ job.results }}" as="item"><li>{{ item }}</li></sc-for></ul>
+            </div>
+          </div>
+        </details>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ============ 项目经历 ============ -->
+  <section id="projects" class="portfolio-section motion-section">
+    <div class="section-head motion-reveal">
+      <span class="section-index">02 / Selected work</span>
+      <h2 class="section-title">{{ tNavProjects }}</h2>
+    </div>
+    <div class="project-grid">
+      <sc-for list="{{ projectItems }}" as="project" hint-placeholder-count="4">
+        <details id="{{ project.anchor }}" class="project-card motion-reveal treasure-surface" style="--card-accent:{{ project.accent }}; scroll-margin-top:96px">
+          <summary class="project-summary">
+            <div class="project-topline">
+              <span>{{ project.indexLabel }} · {{ project.period }}</span>
+              <span class="project-role">{{ project.role }}</span>
+            </div>
+            <div class="project-metric"><strong>{{ project.metric }}</strong><span>{{ project.metricLabel }}</span></div>
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-summary-copy">{{ project.summary }}</p>
+            <div class="project-open"><span>{{ tOpenCase }}</span><span class="resume-toggle" aria-hidden="true"></span></div>
+          </summary>
+          <span class="treasure-light" aria-hidden="true"></span><span class="treasure-trace" aria-hidden="true"></span>
+          <div class="resume-detail">
+            <div class="resume-detail-block">
+              <p class="resume-detail-label">{{ tProjectWork }}</p>
+              <ul><sc-for list="{{ project.work }}" as="item"><li>{{ item }}</li></sc-for></ul>
+            </div>
+            <div class="resume-detail-block">
+              <p class="resume-detail-label">{{ tProjectImpact }}</p>
+              <ul><sc-for list="{{ project.impact }}" as="item"><li>{{ item }}</li></sc-for></ul>
+            </div>
+          </div>
+        </details>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ============ 文章作品集 ============ -->
+  <section id="articles" class="portfolio-section motion-section">
+    <div class="section-head motion-reveal">
+      <span class="section-index">03 / Writing</span>
+      <h2 class="section-title">{{ tNavArticles }}</h2>
+    </div>
+    <div class="article-grid">
+      <sc-for list="{{ articleItems }}" as="article" hint-placeholder-count="3">
+        <a class="article-card article-link motion-reveal treasure-surface" href="{{ article.externalUrl }}" target="_blank" rel="noreferrer">
+          <span class="treasure-light" aria-hidden="true"></span><span class="treasure-trace" aria-hidden="true"></span>
+          <div class="article-meta"><span>{{ article.indexLabel }}</span><span>{{ article.date }}</span></div>
+          <h3>{{ article.title }}</h3>
+          <div class="article-footer"><span>{{ article.platform }}</span><span class="article-arrow" aria-hidden="true">↗</span></div>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="contact" class="contact-footer motion-section motion-reveal" style="scroll-margin-top:96px">
+    <div class="contact-shell">
+      <div class="contact-heading">
+        <div>
+          <p class="contact-kicker" style="margin:0 0 16px; font-size:11px; letter-spacing:.13em; text-transform:uppercase">{{ tContactEyebrow }}</p>
+          <h2 class="contact-title" style="margin:0; font-family:'Instrument Serif',Georgia,serif; font-weight:400">{{ tContactTitle }}</h2>
+        </div>
+        <p class="contact-intro" style="margin:0; max-width:360px; font-size:14px; line-height:1.75; text-align:right">{{ tContactIntro }}</p>
+      </div>
+      <div class="contact-grid">
+        <sc-for list="{{ contactItems }}" as="contact" hint-placeholder-count="3">
+          <button type="button" class="contact-item treasure-surface" onClick="{{ contact.onClick }}" aria-label="{{ contact.ariaLabel }}">
+            <span class="treasure-light" aria-hidden="true"></span><span class="treasure-trace" aria-hidden="true"></span>
+            <span style="display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:rgba(244,241,234,.48)"><span>{{ contact.label }}</span><span aria-hidden="true" style="font-size:16px; letter-spacing:0">↗</span></span>
+            <span class="contact-value">{{ contact.value }}</span>
+          </button>
+        </sc-for>
+      </div>
+      <div class="footer-meta" style="display:flex; align-items:center; justify-content:space-between; gap:20px; padding-top:30px; font-size:12px">
+        <span>© 2026 Zhangruopan</span>
+        <span>{{ tContactHint }}</span>
+      </div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ copyDialogVisible }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeCopyDialog }}" role="presentation" style="position:fixed; inset:0; z-index:110; display:grid; place-items:center; padding:20px; background:rgba(247,246,243,.46); backdrop-filter:blur(5px); -webkit-backdrop-filter:blur(5px)">
+      <div onClick="{{ stopPress }}" role="dialog" aria-modal="true" aria-labelledby="copy-dialog-title" style="width:300px; max-width:calc(100vw - 40px); border:1px solid rgba(26,26,28,.1); border-radius:16px; background:rgba(255,255,255,.94); box-shadow:0 18px 50px rgba(26,26,28,.14); padding:20px; animation:copy-dialog-in 180ms ease both">
+        <p style="margin:0; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:rgba(26,26,28,.64)">{{ copyDialogLabel }}</p>
+        <h2 id="copy-dialog-title" style="margin:7px 0 0; font-family:'Instrument Serif',Georgia,serif; font-weight:400; font-size:25px; color:#1a1a1c">{{ tCopyQuestion }}</h2>
+        <p style="margin:12px 0 0; padding:10px 12px; border-radius:9px; background:rgba(26,26,28,.045); font-size:13px; line-height:1.5; color:rgba(26,26,28,.68); overflow-wrap:anywhere">{{ copyDialogValue }}</p>
+        <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:18px">
+          <button type="button" onClick="{{ closeCopyDialog }}" style="border:0; cursor:pointer; border-radius:999px; background:transparent; padding:8px 14px; font-size:13px; color:rgba(26,26,28,.68)" style-hover="background:rgba(26,26,28,.05); color:#1a1a1c">{{ tCancel }}</button>
+          <button id="copy-confirm-button" type="button" onClick="{{ confirmCopy }}" style="border:0; cursor:pointer; border-radius:999px; background:#1a1a1c; padding:8px 17px; min-width:70px; font-size:13px; color:#fff; transition:opacity 150ms" style-hover="opacity:.84">{{ copyButtonLabel }}</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ============ AGENT PET ============ -->
+  <sc-if value="{{ petVisible }}" hint-placeholder-val="{{ false }}">
+    <div class="pet-dock" style="left:{{ petLeft }}; top:{{ petTop }}; --pet-glow:{{ petGlow }}">
+      <sc-if value="{{ bubbleVisible }}" hint-placeholder-val="{{ false }}">
+        <div class="pet-bubble">{{ tBubble }}</div>
+      </sc-if>
+      <button id="agent-pet-button" type="button" class="pet-open-button" onPointerDown="{{ onPetDown }}" onClick="{{ onPetActivate }}" onKeyDown="{{ onPetKeyDown }}" aria-label="{{ tOpenAgent }}" style="cursor:{{ petCursor }}">
+        <span class="pet-aura" aria-hidden="true" style="--pet-glow:{{ petGlow }}"></span>
+        <span style="position:absolute; left:16px; right:16px; bottom:-2px; height:12px; border-radius:9999px; background:rgba(26,26,28,0.16); filter:blur(6px); animation:{{ shadowAnim }}"></span>
+        <span class="pet-sprite-stack" style="animation:{{ petAnim }}">
+          <img data-pet-image="" alt="" draggable="{{ false }}">
+          <img data-pet-ghost="" alt="" aria-hidden="true" draggable="{{ false }}">
+        </span>
+      </button>
+      <button type="button" class="pet-chip pet-minimize" onClick="{{ minimizePet }}" onPointerDown="{{ stopPress }}" aria-label="{{ tMinimizeAgent }}" style="position:absolute; right:0; top:0; height:24px; width:24px; font-size:12px">−</button>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ petMinimized }}" hint-placeholder-val="{{ false }}">
+    <button type="button" class="pet-chip" onClick="{{ restorePet }}" aria-label="{{ tRestoreAgent }}" style="position:fixed; bottom:20px; right:20px; z-index:70; height:46px; width:46px; padding:4px; overflow:hidden; box-shadow:0 14px 34px rgba(0,0,0,.45)">
+      <img src="media/agent-pet/actions/idle.png" alt="" style="width:100%; height:100%; object-fit:cover; object-position:50% 16%; border-radius:9999px">
+    </button>
+  </sc-if>
+
+  <!-- ============ AGENT CHAT PANEL ============ -->
+  <sc-if value="{{ chatOpen }}" hint-placeholder-val="{{ false }}">
+    <div class="{{ chatPanelClass }}" role="region" aria-labelledby="agent-chat-title" style="left:{{ panelLeft }}; top:{{ panelTop }}">
+      <div class="chat-header">
+        <div class="chat-avatar" aria-hidden="true"><img data-chat-avatar="" alt=""></div>
+        <div class="chat-heading">
+          <p class="chat-kicker"><span class="chat-status" aria-hidden="true"></span>{{ tAgentKicker }}</p>
+          <h2 id="agent-chat-title" class="chat-title">{{ tAgentTitle }}</h2>
+          <p class="chat-subtitle">{{ tAgentSubtitle }}</p>
+        </div>
+        <button type="button" class="chat-close" onClick="{{ closeChat }}" aria-label="{{ tCloseAgent }}">✕</button>
+      </div>
+
+      <div id="agent-chat-log" class="chat-log" role="log" aria-live="polite" aria-relevant="additions text" aria-busy="{{ chatLoading }}">
+        <sc-for list="{{ messages }}" as="msg" hint-placeholder-count="1">
+          <div class="chat-message-row" style="justify-content:{{ msg.justify }}">
+            <div class="{{ msg.className }}">
+              <span>{{ msg.content }}</span>
+              <sc-if value="{{ msg.actionsVisible }}" hint-placeholder-val="{{ false }}">
+                <div class="chat-reference-list" aria-label="{{ msg.referencesLabel }}">
+                  <sc-for list="{{ msg.actions }}" as="action" hint-placeholder-count="1">
+                    <button type="button" class="chat-reference" onClick="{{ action.onClick }}"><span aria-hidden="true">↗</span>{{ action.label }}</button>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+        </sc-for>
+        <sc-if value="{{ chatLoading }}" hint-placeholder-val="{{ false }}">
+          <p class="chat-thinking">{{ tThinking }}</p>
+        </sc-if>
+      </div>
+
+      <sc-if value="{{ showSuggestions }}" hint-placeholder-val="{{ true }}">
+        <div class="chat-starters">
+          <p class="chat-starters-label">{{ tStarters }}</p>
+          <div class="chat-suggestion-list">
+            <sc-for list="{{ suggestions }}" as="sug" hint-placeholder-count="4">
+              <button class="chat-suggestion" type="button" disabled="{{ chatLoading }}" onClick="{{ sug.onClick }}">{{ sug.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <form class="chat-form" onSubmit="{{ onChatSubmit }}">
+        <input id="agent-chat-input" class="chat-input" value="{{ chatInput }}" disabled="{{ chatLoading }}" onChange="{{ onChatInput }}" maxlength="600" autocomplete="off" aria-label="{{ tChatInputAria }}" placeholder="{{ tChatPlaceholder }}">
+        <button class="chat-send-button" type="submit" disabled="{{ chatLoading }}" aria-label="{{ tSendMessage }}">↑</button>
+      </form>
+    </div>
+  </sc-if>
+
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#1a1a1c&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#1a1a1c&quot;, &quot;#2A5FDB&quot;, &quot;#1F8A5B&quot;, &quot;#B4552D&quot;], &quot;section&quot;: &quot;外观&quot;}, &quot;showPet&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;AI 模块&quot;}, &quot;heroVideoUrl&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;首页视频&quot;}}">
+class Component extends DCLogic {
+  state = {
+    locale: "zh",
+    petMinimized: false,
+    chatOpen: false,
+    chatInput: "",
+    chatLoading: false,
+    messages: [],
+    petPos: null,
+    dragging: false,
+    petAction: "wave",
+    copyItem: null,
+    copyDone: false,
+    videoOpen: false,
+    viewportRevision: 0,
+    activeSection: ""
+  };
+
+  componentDidMount() {
+    this.updateDocumentMeta(this.state.locale);
+    try {
+      const saved = JSON.parse(window.localStorage.getItem("zrp-pet-pos"));
+      if (saved && typeof saved.x === "number" && typeof saved.y === "number") {
+        this.setState({ petPos: this.clampPos(saved.x, saved.y) });
+      }
+    } catch (err) { /* ignore */ }
+    this.petAssets().forEach((src) => { const image = new Image(); image.src = src; });
+    this.setPetAction("wave", 1800);
+    this.scheduleIdleAction();
+    this._onKeyDown = (event) => {
+      if (event.key === "Tab" && (this.state.videoOpen || this.state.copyItem)) {
+        this.trapDialogFocus(event);
+        return;
+      }
+      if (event.key !== "Escape") return;
+      if (this.state.videoOpen) this.closeIntroVideo();
+      else if (this.state.copyItem) this.closeCopyDialog();
+      else if (this.state.chatOpen) this.closeChat();
+    };
+    this._onViewportChange = () => {
+      this.setState((state) => ({
+        petPos: state.petPos ? this.clampPos(state.petPos.x, state.petPos.y) : null,
+        viewportRevision: state.viewportRevision + 1
+      }));
+      window.cancelAnimationFrame(this._pixelResizeFrame);
+      this._pixelResizeFrame = window.requestAnimationFrame(() => this.resizePixelTrail());
+    };
+    window.addEventListener("keydown", this._onKeyDown);
+    window.addEventListener("resize", this._onViewportChange);
+    if (window.visualViewport) window.visualViewport.addEventListener("resize", this._onViewportChange);
+    this._onPageScroll = () => {
+      if (this._navScrollFrame) return;
+      this._navScrollFrame = window.requestAnimationFrame(() => {
+        this._navScrollFrame = null;
+        this.updateActiveSection();
+      });
+    };
+    window.addEventListener("scroll", this._onPageScroll, { passive: true });
+    this._onPageScroll();
+    this._motionFrame = window.requestAnimationFrame(() => this.setupScrollMotion());
+    this._pixelSetupFrame = window.requestAnimationFrame(() => this.setupPixelTrail());
+    this._mediaSyncFrame = window.requestAnimationFrame(() => this.syncDynamicMedia());
+    this._onTreasurePointerMove = (event) => {
+      if (event.pointerType === "touch") return;
+      const card = event.target && event.target.closest ? event.target.closest(".treasure-surface") : null;
+      if (!card) return;
+      this._treasureTarget = card;
+      this._treasureClientX = event.clientX;
+      this._treasureClientY = event.clientY;
+      if (this._treasureFrame) return;
+      this._treasureFrame = window.requestAnimationFrame(() => {
+        this._treasureFrame = null;
+        if (!this._treasureTarget || !this._treasureTarget.isConnected) return;
+        const rect = this._treasureTarget.getBoundingClientRect();
+        this._treasureTarget.style.setProperty("--treasure-x", (this._treasureClientX - rect.left) + "px");
+        this._treasureTarget.style.setProperty("--treasure-y", (this._treasureClientY - rect.top) + "px");
+      });
+    };
+    document.addEventListener("pointermove", this._onTreasurePointerMove, { passive: true });
+  }
+
+  componentDidUpdate() {
+    this.updateDocumentMeta(this.state.locale);
+    this.syncDynamicMedia();
+  }
+
+  componentWillUnmount() {
+    window.clearTimeout(this._actionTimer);
+    window.clearTimeout(this._idleTimer);
+    window.clearTimeout(this._copyTimer);
+    window.cancelAnimationFrame(this._motionFrame);
+    window.cancelAnimationFrame(this._navScrollFrame);
+    window.cancelAnimationFrame(this._pixelSetupFrame);
+    window.cancelAnimationFrame(this._pixelResizeFrame);
+    window.cancelAnimationFrame(this._mediaSyncFrame);
+    window.cancelAnimationFrame(this._chatScrollFrame);
+    window.cancelAnimationFrame(this._treasureFrame);
+    this.destroyPixelTrail();
+    if (this._motionObserver) this._motionObserver.disconnect();
+    document.documentElement.classList.remove("motion-ready");
+    window.removeEventListener("keydown", this._onKeyDown);
+    window.removeEventListener("resize", this._onViewportChange);
+    window.removeEventListener("scroll", this._onPageScroll);
+    document.removeEventListener("pointermove", this._onTreasurePointerMove);
+    if (window.visualViewport) window.visualViewport.removeEventListener("resize", this._onViewportChange);
+    document.body.style.overflow = this._bodyOverflow ?? "";
+  }
+
+  petAssets() {
+    return ["idle", "wave", "think", "talk", "celebrate", "sleep", "drag"]
+      .map((name) => `media/agent-pet/actions/${name}.png`);
+  }
+
+  setPetAction(action, duration) {
+    window.clearTimeout(this._actionTimer);
+    this.setState({ petAction: action });
+    if (duration) {
+      this._actionTimer = window.setTimeout(() => this.setState({ petAction: "idle" }), duration);
+    }
+  }
+
+  scrollChatToBottom() {
+    window.cancelAnimationFrame(this._chatScrollFrame);
+    this._chatScrollFrame = window.requestAnimationFrame(() => {
+      const log = document.getElementById("agent-chat-log");
+      if (log) log.scrollTop = log.scrollHeight;
+    });
+  }
+
+  scheduleIdleAction() {
+    window.clearTimeout(this._idleTimer);
+    this._idleTimer = window.setTimeout(() => {
+      if (!this.state.dragging && !this.state.chatLoading) {
+        const actions = this.state.chatOpen ? ["think", "wave"] : ["wave", "celebrate", "sleep"];
+        const action = actions[Math.floor(Math.random() * actions.length)];
+        this.setPetAction(action, action === "sleep" ? 3600 : 1800);
+      }
+      this.scheduleIdleAction();
+    }, 9000 + Math.random() * 7000);
+  }
+
+  clampPos(x, y) {
+    const w = 100, h = 130;
+    const maxX = Math.max(4, window.innerWidth - w - 4);
+    const maxY = Math.max(4, window.innerHeight - h - 4);
+    return {
+      x: Math.min(Math.max(x, 4), maxX),
+      y: Math.min(Math.max(y, 4), maxY)
+    };
+  }
+
+  // Tucked into the bottom-right corner. Keep these margins in sync with the
+  // CSS fallback in petLeft/petTop, or the pet jumps on its first frame.
+  defaultPos() {
+    return { x: window.innerWidth - 100 - 16, y: window.innerHeight - 130 - 16 };
+  }
+
+  t(zh, en) {
+    return this.state.locale === "zh" ? zh : en;
+  }
+
+  updateDocumentMeta(locale) {
+    const isZh = locale === "zh";
+    const title = isZh ? "张若磐｜AI 产品经理" : "Zhangruopan | AI Product Manager";
+    const description = isZh
+      ? "张若磐的个人作品集：AI 产品经历、项目案例、文章与联系方式。"
+      : "Zhangruopan's portfolio: AI product experience, project cases, writing, and contact details.";
+    document.documentElement.lang = isZh ? "zh-CN" : "en";
+    document.title = title;
+    const setContent = (selector, value) => {
+      const element = document.head.querySelector(selector);
+      if (element) element.setAttribute("content", value);
+    };
+    setContent('meta[name="description"]', description);
+    setContent('meta[property="og:locale"]', isZh ? "zh_CN" : "en_US");
+    setContent('meta[property="og:title"]', title);
+    setContent('meta[property="og:description"]', description);
+    setContent('meta[name="twitter:title"]', title);
+    setContent('meta[name="twitter:description"]', description);
+  }
+
+  // All seven sprites are built onto one 512² canvas at a fixed height
+  // (scripts/build-pet-sprites.mjs), so every state renders at the same size
+  // and no per-state scale correction is needed.
+  currentPetSprite() {
+    const action = (this.state.dragging || this.state.petAction === "drag")
+      ? "drag"
+      : this.state.petAction;
+    return { src: `media/agent-pet/actions/${action}.png`, scale: "1" };
+  }
+
+  // The aura colour ties the pet into the site's gem light system: it glows
+  // with the same token the matching section uses.
+  currentPetGlow() {
+    const byAction = {
+      idle: "var(--lx-sapphire)",
+      wave: "var(--lx-sapphire)",
+      think: "var(--lx-amethyst)",
+      talk: "var(--lx-sapphire)",
+      celebrate: "var(--lx-jade)",
+      sleep: "var(--lx-amethyst)",
+      drag: "var(--lx-glacier)"
+    };
+    if (this.state.dragging) return byAction.drag;
+    return byAction[this.state.petAction] || byAction.idle;
+  }
+
+  // Swapping an <img> src repaints in a single frame — CSS transitions cannot
+  // interpolate image data, only property values — so the outgoing frame is
+  // lifted onto the ghost layer above and dissolved away, revealing the new
+  // sprite already in place underneath.
+  crossFadePet(petImage, ghost, next) {
+    const previous = petImage.getAttribute("src");
+    const previousScale = petImage.style.scale || "1";
+
+    if (!ghost || !previous) {
+      petImage.setAttribute("src", next.src);
+      petImage.style.scale = next.scale;
+      return;
+    }
+    ghost.setAttribute("src", previous);
+    ghost.style.scale = previousScale;
+
+    // Restarting classes instead of stacking transition callbacks makes rapid
+    // think → talk → celebrate changes deterministic: the latest outgoing
+    // frame always replaces the previous ghost and begins one clean gesture.
+    ghost.classList.remove("pet-pose-leave");
+    petImage.classList.remove("pet-pose-enter");
+    void ghost.offsetWidth;
+
+    petImage.setAttribute("src", next.src);
+    petImage.style.scale = next.scale;
+    ghost.classList.add("pet-pose-leave");
+    petImage.classList.add("pet-pose-enter");
+  }
+
+  syncDynamicMedia() {
+    const petImage = document.querySelector("[data-pet-image]");
+    const petGhost = document.querySelector("[data-pet-ghost]");
+    const petSprite = this.currentPetSprite();
+    if (petImage && petImage.getAttribute("src") !== petSprite.src) {
+      this.crossFadePet(petImage, petGhost, petSprite);
+    }
+    const chatAvatar = document.querySelector("[data-chat-avatar]");
+    if (chatAvatar && chatAvatar.getAttribute("src") !== petSprite.src) {
+      chatAvatar.setAttribute("src", petSprite.src);
+    }
+    const heroVideo = document.querySelector("[data-hero-video]");
+    const heroSrc = String(this.props.heroVideoUrl || "").trim();
+    if (heroVideo && heroSrc && heroVideo.getAttribute("src") !== heroSrc) heroVideo.setAttribute("src", heroSrc);
+  }
+
+  trapDialogFocus(event) {
+    const dialog = document.querySelector('[role="dialog"][aria-modal="true"]');
+    if (!dialog) return;
+    const focusable = Array.from(dialog.querySelectorAll('button:not([disabled]), [href], input:not([disabled]), video[controls], [tabindex]:not([tabindex="-1"])'));
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const active = document.activeElement;
+    if (event.shiftKey && (active === first || !dialog.contains(active))) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && (active === last || !dialog.contains(active))) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+
+  setupPixelTrail() {
+    this.destroyPixelTrail();
+    const canvas = document.getElementById("hero-pixel-trail");
+    if (!canvas || typeof canvas.getContext !== "function") return;
+    const context = canvas.getContext("2d");
+    if (!context) return;
+    const motionQuery = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+    const trail = {
+      canvas,
+      context,
+      cells: new Map(),
+      width: 0,
+      height: 0,
+      pixelSize: 20,
+      fadeDuration: 860,
+      maxCells: 180,
+      dpr: 1,
+      frame: 0,
+      lastPoint: null,
+      enabled: !(motionQuery && motionQuery.matches),
+      motionQuery,
+      motionHandler: null,
+      resizeObserver: null
+    };
+    this._pixelTrail = trail;
+    trail.motionHandler = (event) => {
+      trail.enabled = !event.matches;
+      trail.canvas.hidden = !trail.enabled;
+      trail.cells.clear();
+      trail.lastPoint = null;
+      if (trail.frame) window.cancelAnimationFrame(trail.frame);
+      trail.frame = 0;
+      trail.context.clearRect(0, 0, trail.width, trail.height);
+      if (trail.enabled) this.resizePixelTrail();
+      else {
+        trail.canvas.width = 1;
+        trail.canvas.height = 1;
+      }
+    };
+    if (motionQuery) {
+      if (typeof motionQuery.addEventListener === "function") motionQuery.addEventListener("change", trail.motionHandler);
+      else if (typeof motionQuery.addListener === "function") motionQuery.addListener(trail.motionHandler);
+    }
+    if (typeof ResizeObserver === "function") {
+      trail.resizeObserver = new ResizeObserver(() => this.resizePixelTrail());
+      trail.resizeObserver.observe(canvas);
+    }
+    canvas.hidden = !trail.enabled;
+    if (trail.enabled) this.resizePixelTrail();
+  }
+
+  resizePixelTrail() {
+    const trail = this._pixelTrail;
+    if (!trail || !trail.enabled || !trail.canvas.isConnected) return;
+    const rect = trail.canvas.getBoundingClientRect();
+    if (rect.width < 1 || rect.height < 1) return;
+    const nativeDpr = Math.min(Math.max(window.devicePixelRatio || 1, 1), 2);
+    const areaLimitedDpr = Math.sqrt(6000000 / Math.max(rect.width * rect.height, 1));
+    const dpr = Math.max(1, Math.min(nativeDpr, areaLimitedDpr));
+    const pixelSize = window.innerWidth <= 680 ? 14 : 20;
+    const backingWidth = Math.max(1, Math.round(rect.width * dpr));
+    const backingHeight = Math.max(1, Math.round(rect.height * dpr));
+    if (trail.canvas.width === backingWidth && trail.canvas.height === backingHeight && trail.pixelSize === pixelSize && trail.dpr === dpr) return;
+    trail.canvas.width = backingWidth;
+    trail.canvas.height = backingHeight;
+    trail.context.setTransform(dpr, 0, 0, dpr, 0, 0);
+    trail.width = rect.width;
+    trail.height = rect.height;
+    trail.dpr = dpr;
+    trail.pixelSize = pixelSize;
+    trail.fadeDuration = window.innerWidth <= 680 ? 720 : 860;
+    trail.maxCells = window.innerWidth <= 680 ? 110 : 180;
+    trail.cells.clear();
+    trail.lastPoint = null;
+  }
+
+  destroyPixelTrail() {
+    const trail = this._pixelTrail;
+    if (!trail) return;
+    trail.enabled = false;
+    if (trail.frame) window.cancelAnimationFrame(trail.frame);
+    if (trail.resizeObserver) trail.resizeObserver.disconnect();
+    if (trail.motionQuery && trail.motionHandler) {
+      if (typeof trail.motionQuery.removeEventListener === "function") trail.motionQuery.removeEventListener("change", trail.motionHandler);
+      else if (typeof trail.motionQuery.removeListener === "function") trail.motionQuery.removeListener(trail.motionHandler);
+    }
+    trail.cells.clear();
+    trail.context.clearRect(0, 0, trail.width, trail.height);
+    trail.canvas.width = 1;
+    trail.canvas.height = 1;
+    this._pixelTrail = null;
+  }
+
+  pixelTrailTime() {
+    return window.performance && typeof window.performance.now === "function" ? window.performance.now() : Date.now();
+  }
+
+  addPixelTrailCell(column, row, strength, now) {
+    const trail = this._pixelTrail;
+    if (!trail) return;
+    const x = column * trail.pixelSize;
+    const y = row * trail.pixelSize;
+    if (x < 0 || y < 0 || x >= trail.width || y >= trail.height) return;
+    const key = column + ":" + row;
+    if (trail.cells.has(key)) trail.cells.delete(key);
+    trail.cells.set(key, {
+      column,
+      row,
+      born: now,
+      strength: Math.min(Math.max(strength, 0.18), 1),
+      blue: Math.abs(column * 17 + row * 29) % 7 === 0
+    });
+    while (trail.cells.size > trail.maxCells) {
+      const oldest = trail.cells.keys().next().value;
+      trail.cells.delete(oldest);
+    }
+  }
+
+  queuePixelTrail(event, stage, burst) {
+    let trail = this._pixelTrail;
+    const currentCanvas = document.getElementById("hero-pixel-trail");
+    if (!trail || trail.canvas !== currentCanvas) {
+      this.setupPixelTrail();
+      trail = this._pixelTrail;
+    }
+    if (!trail || !trail.enabled || !Number.isFinite(event.clientX) || !Number.isFinite(event.clientY)) return;
+    if (event.pointerType === "touch" && !burst && event.buttons === 0 && event.pressure === 0) return;
+    const rect = stage.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    if (x < 0 || y < 0 || x > rect.width || y > rect.height) return;
+    const now = this.pixelTrailTime();
+    const previous = trail.lastPoint && now - trail.lastPoint.time < 140 ? trail.lastPoint : { x, y, time: now };
+    const distance = Math.hypot(x - previous.x, y - previous.y);
+    const steps = Math.min(14, Math.max(1, Math.ceil(distance / (trail.pixelSize * 0.48))));
+    const strength = Math.min(1, 0.62 + distance / (trail.pixelSize * 5));
+    for (let index = 0; index <= steps; index += 1) {
+      const progress = steps ? index / steps : 1;
+      const sampleX = previous.x + (x - previous.x) * progress;
+      const sampleY = previous.y + (y - previous.y) * progress;
+      const column = Math.floor(sampleX / trail.pixelSize);
+      const row = Math.floor(sampleY / trail.pixelSize);
+      this.addPixelTrailCell(column, row, strength, now);
+      if (Math.abs(column * 31 + row * 13) % 9 === 0) {
+        const direction = (column + row) % 2 === 0 ? 1 : -1;
+        this.addPixelTrailCell(column + direction, row, strength * 0.34, now);
+      }
+    }
+    if (burst) {
+      const column = Math.floor(x / trail.pixelSize);
+      const row = Math.floor(y / trail.pixelSize);
+      this.addPixelTrailCell(column - 1, row, 0.42, now);
+      this.addPixelTrailCell(column + 1, row, 0.42, now);
+      this.addPixelTrailCell(column, row - 1, 0.36, now);
+      this.addPixelTrailCell(column, row + 1, 0.36, now);
+    }
+    trail.lastPoint = { x, y, time: now };
+    if (!trail.frame) trail.frame = window.requestAnimationFrame((timestamp) => this.renderPixelTrail(timestamp));
+  }
+
+  renderPixelTrail(timestamp) {
+    const trail = this._pixelTrail;
+    if (!trail || !trail.enabled) return;
+    trail.frame = 0;
+    trail.context.clearRect(0, 0, trail.width, trail.height);
+    let hasVisibleCells = false;
+    trail.cells.forEach((cell, key) => {
+      const progress = Math.min(Math.max((timestamp - cell.born) / trail.fadeDuration, 0), 1);
+      if (progress >= 1) {
+        trail.cells.delete(key);
+        return;
+      }
+      hasVisibleCells = true;
+      const fade = (1 - progress) * (1 - progress);
+      const alpha = (cell.blue ? 0.17 : 0.21) * cell.strength * fade;
+      const gap = trail.pixelSize <= 14 ? 1.2 : 1.8;
+      trail.context.fillStyle = cell.blue
+        ? "rgba(74,88,120," + alpha.toFixed(4) + ")"
+        : "rgba(26,26,28," + alpha.toFixed(4) + ")";
+      trail.context.fillRect(
+        cell.column * trail.pixelSize + gap / 2,
+        cell.row * trail.pixelSize + gap / 2,
+        trail.pixelSize - gap,
+        trail.pixelSize - gap
+      );
+    });
+    if (hasVisibleCells) trail.frame = window.requestAnimationFrame((nextTimestamp) => this.renderPixelTrail(nextTimestamp));
+  }
+
+  setupScrollMotion() {
+    const elements = Array.from(document.querySelectorAll(".motion-reveal, .motion-rule"));
+    document.querySelectorAll(".motion-section").forEach((section) => {
+      Array.from(section.querySelectorAll(".motion-reveal")).forEach((element, index) => {
+        element.style.setProperty("--reveal-delay", Math.min(index * 55, 240) + "ms");
+      });
+    });
+    document.documentElement.classList.add("motion-ready");
+    const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced || !("IntersectionObserver" in window)) {
+      elements.forEach((element) => element.classList.add("is-visible"));
+      return;
+    }
+    this._motionObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    elements.forEach((element) => this._motionObserver.observe(element));
+  }
+
+  updateActiveSection() {
+    const ids = ["experience", "projects", "articles", "contact"];
+    const marker = Math.min(window.innerHeight * 0.34, 220);
+    let active = "";
+    ids.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section && section.getBoundingClientRect().top <= marker) active = id;
+    });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 24) active = "contact";
+    if (active === this.state.activeSection) return;
+    this.setState({ activeSection: active });
+    if (window.innerWidth <= 680 && active) {
+      const nav = document.querySelector(".nav-links");
+      const link = document.querySelector(`[data-nav-target="${active}"]`);
+      if (nav && link) {
+        const left = link.offsetLeft - (nav.clientWidth - link.offsetWidth) / 2;
+        nav.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
+      }
+    }
+  }
+
+  handleHeroPointerMove(event) {
+    const stage = event.currentTarget;
+    if (event.pointerType !== "touch") {
+      const rect = stage.getBoundingClientRect();
+      const x = Math.min(Math.max((event.clientX - rect.left) / rect.width, 0), 1);
+      const y = Math.min(Math.max((event.clientY - rect.top) / rect.height, 0), 1);
+      stage.style.setProperty("--hero-x", ((x - 0.5) * 18).toFixed(2) + "px");
+      stage.style.setProperty("--hero-y", ((y - 0.5) * 12).toFixed(2) + "px");
+      stage.style.setProperty("--hero-tilt-x", ((0.5 - y) * 1.2).toFixed(2) + "deg");
+      stage.style.setProperty("--hero-tilt-y", ((x - 0.5) * 1.4).toFixed(2) + "deg");
+    }
+    this.queuePixelTrail(event, stage, false);
+  }
+
+  handleHeroPointerDown(event) {
+    this.queuePixelTrail(event, event.currentTarget, true);
+  }
+
+  resetHeroPointer(event) {
+    const stage = event.currentTarget;
+    stage.style.setProperty("--hero-x", "0px");
+    stage.style.setProperty("--hero-y", "0px");
+    stage.style.setProperty("--hero-tilt-x", "0deg");
+    stage.style.setProperty("--hero-tilt-y", "0deg");
+    if (this._pixelTrail) this._pixelTrail.lastPoint = null;
+  }
+
+  toggleLocale() {
+    this.setState((state) => {
+      const locale = state.locale === "zh" ? "en" : "zh";
+      const greeting = locale === "zh"
+        ? "嗨，我是若磐的 AI 分身。可以问我他的经历、项目或文章观点。"
+        : "Hi, I'm Zhangruopan's AI companion. Ask me about his experience, projects, or published ideas.";
+      const messages = state.messages.length === 1 && state.messages[0].role === "agent"
+        ? [{ role: "agent", content: greeting }]
+        : state.messages;
+      return { locale, messages };
+    });
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => this.updateActiveSection());
+    });
+  }
+
+  openIntroVideo() {
+    this._videoTrigger = document.activeElement;
+    this._bodyOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    this.setState({ videoOpen: true });
+    window.requestAnimationFrame(() => {
+      const player = document.getElementById("intro-video-player");
+      if (player && !player.getAttribute("src")) {
+        player.setAttribute("src", player.getAttribute("data-src") || "");
+        player.load();
+      }
+      if (player) player.play().catch(() => { /* controls remain available */ });
+      document.getElementById("intro-video-close")?.focus();
+    });
+  }
+
+  closeIntroVideo() {
+    const player = document.getElementById("intro-video-player");
+    if (player) player.pause();
+    document.body.style.overflow = this._bodyOverflow ?? "";
+    this.setState({ videoOpen: false });
+    const trigger = this._videoTrigger;
+    window.requestAnimationFrame(() => trigger?.focus?.());
+  }
+
+  openCopyDialog(item) {
+    window.clearTimeout(this._copyTimer);
+    this._copyTrigger = document.activeElement;
+    this.setState({ copyItem: item, copyDone: false });
+    window.requestAnimationFrame(() => document.getElementById("copy-confirm-button")?.focus());
+  }
+
+  closeCopyDialog() {
+    window.clearTimeout(this._copyTimer);
+    this.setState({ copyItem: null, copyDone: false });
+    const trigger = this._copyTrigger;
+    window.requestAnimationFrame(() => trigger?.focus?.());
+  }
+
+  async confirmCopy() {
+    const value = this.state.copyItem?.value;
+    if (!value) return;
+    try {
+      await navigator.clipboard.writeText(value);
+    } catch (error) {
+      const textarea = document.createElement("textarea");
+      textarea.value = value;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+    }
+    this.setState({ copyDone: true });
+    this._copyTimer = window.setTimeout(() => this.closeCopyDialog(), 850);
+  }
+
+  agentReply(question) {
+    const q = (question || "").toLowerCase();
+    const has = (...keys) => keys.some((k) => q.includes(k.toLowerCase()));
+    if (has("履历", "经历", "career", "工作")) {
+      return this.t(
+        "根据网站中的「职业履历」，张若磐的经历是：\n· 2024.09 — 2026.07｜长沙佳标电子科技有限公司 · AI 产品经理\n· 2021.08 — 2024.08｜维特联合（北京）科技发展公司 · 产品经理 → AI 产品经理\n· 2020.11 — 2021.05｜京东科技 · 产品助理（实习）",
+        "Career:\n· 2024.09 — 2026.07 | Changsha Jiabiao Electronics · AI Product Manager\n· 2021.08 — 2024.08 | Weite United (Beijing) Technology · Product Manager → AI Product Manager\n· 2020.11 — 2021.05 | JD Technology · Product Assistant Intern\n\nSee the Career section."
+      );
+    }
+    if (has("demo")) {
+      return this.t(
+        "本站目前没有公开独立可操作的产品 Demo；可以在「AI 项目案例」中查看已落地项目的方法、过程与量化结果。",
+        "No standalone interactive demo is currently public. See AI Projects for methods, delivery details, and measured outcomes from shipped work."
+      );
+    }
+    if (has("文章", "article", "思考", "知乎", "公众号")) {
+      return this.t(
+        "文章（知乎 @空熵 / 公众号）：\n· 为什么我更建议优先选择便宜 AI，而不是默认使用最强模型？\n· 我们越依赖的 AI 工具，越有可能被控制\n· 小微入局，微信生态任务调度新变革\n· AI 用几小时攻破了国家机密系统，然后被关掉了\n· 你以为 AI 在帮你思考，但你正在丧失思考的能力\n· 你不是懂了，你只是看过\n…共 12 篇，详见「AI 思考」栏目，点击标题可直达原文。",
+        "Articles (Zhihu @Kongshang / WeChat):\n· Why I recommend cheaper AI over defaulting to the strongest model\n· The more we depend on an AI tool, the easier we are to control\n· AI cracked a state secret system in hours — then got shut down\n· You think AI helps you think — you are losing the ability to think\n…12 in total. See the AI Thoughts section; titles link to the originals."
+      );
+    }
+    if (has("一分钟", "one minute")) {
+      return this.t(
+        "结合他的职业履历与四个 AI 项目案例来看：张若磐有近 5 年产品经验、近 3 年 AI 产品经验，覆盖跨境电商与物流供应链。客服 Agent 的 AI Eligible 问题自动解决率约 75%、整体自动化率约 50%；Listing Copilot 将单 SKU 内容准备时间由约 90 分钟降至约 23 分钟；物流单据的核心字段准确率达到 90%+，录入及复核由约 30 分钟降至约 13 分钟。",
+        "One-minute intro: Nearly five years in product and nearly three in AI product work across cross-border e-commerce and logistics. His support Agent reached ~75% auto-resolution on AI Eligible issues and ~50% overall automation; the Listing Copilot cut per-SKU content preparation from ~90 to ~23 minutes; and the logistics document platform reached 90%+ field accuracy while reducing entry plus review from ~30 to ~13 minutes."
+      );
+    }
+    if (has("面试", "interview")) {
+      return this.t(
+        "从跨境电商客服 Agent、Listing Copilot 与多模态单据项目看，他值得面试的原因是：\n· 能判断 AI Eligible 边界，并在自动处理、Copilot 与强制转人工之间设计可控流程\n· 用真实样本、任务成功率、自动化率、P95 延迟与调用成本驱动迭代\n· 有从 OCR 切换至端到端多模态的真实路线决策记录，并将方案复用至 3 家企业客户",
+        "Why interview him:\n· Defines AI Eligible boundaries and designs controlled flows across automation, Copilot assistance, and mandatory human handoff\n· Drives iteration with real samples, task success, automation, P95 latency, and call cost\n· Has a documented OCR-to-multimodal route decision and standardized the resulting solution for three enterprise clients"
+      );
+    }
+    if (has("成功", "successful")) {
+      return this.t(
+        "若按任务规模与指标完整度看，跨境电商 AI 客服与售后 Agent 是代表性很强的案例：首期覆盖 9 名客服、日均 350–400 条咨询，基于 1,000+ 条真实工单建立评测集，并设计 RAG + Agent + Tool Calling 与失败转人工链路。AI Eligible 问题自动解决率约 75%，整体自动化率约 50%，AI 首答 P95 约 4.8 秒。",
+        "Judged by workload and metric coverage, the Cross-border E-commerce Support Agent is a strong representative case. It initially served nine agents handling 350–400 daily inquiries, used an evaluation set of 1,000+ real tickets, and combined RAG, Agent, Tool Calling, and human fallback. AI Eligible auto-resolution reached ~75%, overall automation ~50%, and P95 first response ~4.8 seconds."
+      );
+    }
+    if (has("失败", "fail")) {
+      return this.t(
+        "网站公开资料中没有提供失败项目案例。为避免猜测，建议面试时直接向本人询问。",
+        "The public site does not include a failed-project case. To avoid speculation, please ask him directly in an interview."
+      );
+    }
+    if (has("单证", "ocr", "多模态", "字段准确率", "document")) {
+      return this.t(
+        "结合「物流履约智能受理平台」来看：传统 OCR + 规则模板在复杂版式、手写体与印章遮挡场景中的字段准确率长期约 60%–70%。切换端到端多模态后，在 10 家客户、150 份真实单据评测集上，20–30 个核心字段准确率达到 90%+（按单字段统计）；通过 AI 抽取、风险分级、标红复核与 API 写入，单票录入及复核由约 30 分钟降至约 13 分钟。",
+        "In the Intelligent Logistics Intake project, traditional OCR plus rule templates stayed around 60%–70% field accuracy on complex layouts, handwriting, and stamp occlusion. After switching to end-to-end multimodal processing, 20–30 core fields reached 90%+ accuracy across 150 real documents from 10 clients; AI extraction, risk tiers, highlighted review, and API write-back reduced entry plus review from ~30 to ~13 minutes."
+      );
+    }
+    if (has("项目", "project", "案例")) {
+      return this.t(
+        "根据网站中的「AI 项目案例」，目前公开了四个完整项目：\n· 跨境电商 AI 客服与售后 Agent（AI Eligible 解决率约 75%）\n· Amazon Listing 内容生产 Copilot（一次审核通过率约 78%）\n· 物流履约智能受理平台（单据字段准确率 90%+）\n· 企业智能服务平台可信知识问答（标准问题自动解决率约 60%）",
+        "Projects:\n· Cross-border E-commerce Support Agent (~75% AI Eligible resolution)\n· Amazon Listing Content Copilot (~78% first-pass approval)\n· Intelligent Logistics Intake Platform (90%+ document field accuracy)\n· Trusted Enterprise Knowledge Q&A (~60% auto-resolution for standard questions)\n\nSee the Projects section."
+      );
+    }
+    if (has("优势", "strength", "擅长")) {
+      return this.t(
+        "结合跨境电商与物流供应链项目来看，他的突出优势有三点：判断 AI 场景与技术路线、用真实评测集和分层 Bad Case 归因控制质量，以及把权限、版本、人工兜底、工具调用、UAT 和灰度上线纳入企业交付。代表方案已复用至 3 家外部客户，并沉淀为可复用的 Schema、风险策略与 Workflow。",
+        "Across cross-border e-commerce and logistics, his main strengths are AI use-case and technical-route judgment, quality control through real evaluation sets and layered bad-case attribution, and enterprise delivery covering permissions, versions, human fallback, tool calls, UAT, and staged rollout. A representative solution was reused for three external clients and standardized as reusable schemas, risk strategies, and workflows."
+      );
+    }
+    if (has("agent")) {
+      return this.t(
+        "结合他负责的「跨境电商 AI 客服与售后 Agent」来看，他会先定义 AI Eligible 边界，把场景分为自动处理、Copilot 辅助和强制转人工；再串联意图识别、问题分类、知识检索、回答生成与工具调用，并用 Schema、风险分级、人工兜底和 1,000+ 条真实工单评测集持续迭代。",
+        "His support Agent work starts by defining AI Eligible boundaries across automation, Copilot assistance, and mandatory human handoff. It then connects intent detection, issue classification, retrieval, generation, and tool calls, with schemas, risk tiers, fallback rules, and an evaluation set of 1,000+ real tickets."
+      );
+    }
+    if (has("rag")) {
+      return this.t(
+        "结合他负责的「企业智能服务平台 — 可信知识问答」来看，他并不把 RAG 只当作“检索＋生成”：项目基于约 1,000 页业务文档及 550 条历史咨询，定义 Chunk / Metadata、客户 / 角色 / 产品版本三级权限、知识更新和证据不足转人工机制，并按 Retrieval / Ranking / Generation / Knowledge 分层定位 Bad Case。首期标准问题自动解决率约 60%，重复咨询量下降约 50%。",
+        "His Trusted Enterprise Knowledge Q&A work treats RAG as more than retrieval plus generation. Built on ~1,000 pages of business documents and 550 historical inquiries, it defines Chunk/Metadata strategy, three-level client/role/product-version permissions, knowledge updates, insufficient-evidence handoff, and layered bad-case analysis across Retrieval, Ranking, Generation, and Knowledge. Initial standard-question auto-resolution reached ~60%, while repeat inquiries fell ~50%."
+      );
+    }
+    if (has("离开", "leave", "离职")) {
+      return this.t(
+        "网站公开资料中没有说明离职原因。为避免猜测，请直接向本人确认。",
+        "The public site does not state why he left. Please ask him directly rather than relying on speculation."
+      );
+    }
+    if (has("研究", "research", "最近")) {
+      return this.t(
+        "结合他的 RAG 项目与近期文章来看，他持续关注企业级 RAG、任务型 Agent、模型选择与 AI 产品的成本—效果权衡；网站没有公开更具体的当前研究计划。",
+        "The site shows ongoing attention to enterprise RAG, task-oriented Agents, model selection, and cost–quality tradeoffs. It does not publish a more specific current research plan."
+      );
+    }
+    if (has("联系", "contact", "邮箱", "email")) {
+      return this.t(
+        "联系方式：\n· Email：postmaster@zhangruopan.com\n· 微信与电话：见页面底部「联系我」",
+        "Contact:\n· Email: postmaster@zhangruopan.com\n· WeChat and phone: see Contact at the bottom of the page"
+      );
+    }
+    return this.t(
+      "我可以罗列本站的客观信息：职业履历、AI 项目案例、文章列表和联系方式。点下方标签或直接输入关键词。",
+      "I can list the site's factual information: career, AI projects, articles, and contact. Tap a tag below or type a keyword."
+    );
+  }
+
+  async sendMessage(text) {
+    const trimmed = (text || "").trim();
+    if (!trimmed || this.state.chatLoading) return;
+    const history = this.state.messages.map((message) => ({
+      role: message.role === "agent" ? "assistant" : "user",
+      content: message.content
+    }));
+    this.setState((s) => ({
+      messages: [...s.messages, { role: "user", content: trimmed }],
+      chatInput: "",
+      chatLoading: true
+    }), () => this.scrollChatToBottom());
+    this.setPetAction("think");
+
+    let replyId = null;
+    try {
+      if (window.location.protocol === "file:") throw new Error("Local file mode");
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: trimmed, history })
+      });
+      if (!response.ok) {
+        const detail = await response.json().catch(() => ({}));
+        throw new Error(detail.error || "API request failed");
+      }
+
+      replyId = `reply-${Date.now()}`;
+      this.setState((s) => ({
+        messages: [...s.messages, { id: replyId, role: "agent", content: "", question: trimmed }]
+      }), () => this.scrollChatToBottom());
+      this.setPetAction("talk");
+
+      if (response.body) {
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          const delta = decoder.decode(value, { stream: true });
+          if (!delta) continue;
+          this.setState((s) => ({
+            messages: s.messages.map((message) => message.id === replyId
+              ? { ...message, content: message.content + delta }
+              : message)
+          }), () => this.scrollChatToBottom());
+        }
+      } else {
+        const answer = await response.text();
+        this.setState((s) => ({
+          messages: s.messages.map((message) => message.id === replyId ? { ...message, content: answer } : message)
+        }), () => this.scrollChatToBottom());
+      }
+      this.setPetAction("celebrate", 1600);
+    } catch (error) {
+      const offlineReply = this.agentReply(trimmed);
+      this.setState((s) => ({
+        messages: replyId
+          ? s.messages.map((message) => message.id === replyId && !message.content
+            ? { ...message, content: offlineReply, question: trimmed }
+            : message)
+          : [...s.messages, { role: "agent", content: offlineReply, question: trimmed }]
+      }), () => this.scrollChatToBottom());
+      this.setPetAction("wave", 1400);
+    } finally {
+      this.setState({ chatLoading: false }, () => this.scrollChatToBottom());
+    }
+  }
+
+  handlePetDown(e) {
+    e.preventDefault();
+    if (typeof e.button === "number" && e.button !== 0) return;
+    const startX = e.clientX, startY = e.clientY;
+    const pointerId = e.pointerId;
+    const dragTarget = e.currentTarget;
+    const originRaw = this.state.petPos || this.defaultPos();
+    const origin = this.clampPos(originRaw.x, originRaw.y);
+    let lastPos = origin;
+    let moved = false;
+    try { dragTarget.setPointerCapture(pointerId); } catch (err) { /* capture is an enhancement */ }
+    const onMove = (ev) => {
+      if (typeof pointerId === "number" && ev.pointerId !== pointerId) return;
+      const dx = ev.clientX - startX, dy = ev.clientY - startY;
+      if (!moved && Math.hypot(dx, dy) > 6) {
+        moved = true;
+        this.setState({ dragging: true, petAction: "drag" });
+      }
+      if (moved) {
+        lastPos = this.clampPos(origin.x + dx, origin.y + dy);
+        this.setState({ petPos: lastPos });
+      }
+    };
+    const cleanup = () => {
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+      window.removeEventListener("pointercancel", onCancel);
+      window.removeEventListener("blur", onCancel);
+      try { dragTarget.releasePointerCapture(pointerId); } catch (err) { /* already released */ }
+    };
+    const onUp = (ev) => {
+      if (typeof pointerId === "number" && ev.pointerId !== pointerId) return;
+      cleanup();
+      if (moved) {
+        this.setState({ dragging: false, petAction: "celebrate" });
+        this.setPetAction("celebrate", 900);
+        try { window.localStorage.setItem("zrp-pet-pos", JSON.stringify(lastPos)); } catch (err) { /* ignore */ }
+      } else {
+        if (this.state.chatOpen) {
+          this.closeChat();
+        } else {
+          this._openChat();
+        }
+      }
+    };
+    const onCancel = () => {
+      cleanup();
+      this.setState({ dragging: false, petAction: "idle" });
+    };
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup", onUp);
+    window.addEventListener("pointercancel", onCancel);
+    window.addEventListener("blur", onCancel);
+  }
+
+  _openChat() {
+    const greeting = this.t(
+      "嗨，我是若磐的 AI 分身。可以问我他的经历、项目或文章观点。",
+      "Hi, I'm Zhangruopan's AI companion. Ask me about his experience, projects, or published ideas."
+    );
+    this.setPetAction("wave", 1600);
+    this.setState((s) => ({
+      chatOpen: true,
+      messages: s.messages.length ? s.messages : [{ role: "agent", content: greeting }]
+    }), () => this.scrollChatToBottom());
+    window.requestAnimationFrame(() => document.getElementById("agent-chat-input")?.focus());
+  }
+
+  closeChat() {
+    this.setState({ chatOpen: false });
+    window.requestAnimationFrame(() => document.getElementById("agent-pet-button")?.focus());
+  }
+
+  openChatReference(target) {
+    const section = target.startsWith("project-") ? "projects" : target;
+    this.setState({ chatOpen: false, activeSection: section }, () => {
+      window.requestAnimationFrame(() => {
+        const element = document.getElementById(target);
+        if (!element) return;
+        if (element.tagName === "DETAILS") element.open = true;
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+        try { window.history.replaceState(null, "", `#${target}`); } catch (error) { /* file preview fallback */ }
+        window.setTimeout(() => element.querySelector("summary, h2")?.focus?.({ preventScroll: true }), 420);
+      });
+    });
+  }
+
+  chatReferences(question, answer) {
+    const text = `${question || ""} ${answer || ""}`.toLowerCase();
+    const refs = [];
+    const add = (target, zh, en) => {
+      if (refs.some((item) => item.target === target)) return;
+      refs.push({ target, label: this.t(zh, en) });
+    };
+
+    if (/客服|售后|agent|aht|eligible|自动化/.test(text)) add("project-support", "查看依据 · 客服 Agent", "Source · Support Agent");
+    if (/listing|内容生产|sku|运营|审核/.test(text)) add("project-listing", "查看依据 · Listing Copilot", "Source · Listing Copilot");
+    if (/rag|知识库|检索|多租户/.test(text)) add("project-rag", "查看依据 · RAG 项目", "Source · RAG project");
+    if (/单证|单据|ocr|多模态|字段准确率|识别/.test(text)) add("project-docs", "查看依据 · 单证项目", "Source · Document AI project");
+    if (/履历|经历|career|工作/.test(text)) add("experience", "查看职业履历", "View career");
+    if (/文章|观点|知乎|公众号|article|研究/.test(text)) add("articles", "查看相关文章", "View related writing");
+    if (/联系|邮箱|email|contact/.test(text)) add("contact", "查看联系方式", "View contact");
+    if (!refs.length && /项目|案例|project|agent|优势|面试/.test(text)) add("projects", "查看项目案例", "View projects");
+
+    return refs.slice(0, 3).map((item) => ({
+      label: item.label,
+      onClick: () => this.openChatReference(item.target)
+    }));
+  }
+
+  minimizePet() {
+    this.setState({ petMinimized: true, chatOpen: false });
+  }
+
+  restorePet() {
+    this.setState({ petMinimized: false });
+    window.requestAnimationFrame(() => document.getElementById("agent-pet-button")?.focus());
+  }
+
+  panelPosition() {
+    const petPos = this.state.petPos || (typeof window !== "undefined" ? this.defaultPos() : { x: 0, y: 0 });
+    const panelW = Math.min(440, window.innerWidth - 24);
+    const panelH = Math.min(this.state.messages.length <= 1 ? 420 : 580, window.innerHeight - 24);
+    const petW = 100, petH = 130, gap = 12, pad = 12;
+    const vw = window.innerWidth, vh = window.innerHeight;
+    let left = petPos.x + petW - panelW;
+    left = Math.min(Math.max(left, pad), Math.max(vw - panelW - pad, pad));
+    let top = petPos.y - panelH - gap;
+    if (top < pad) top = Math.min(petPos.y + petH + gap, vh - panelH - pad);
+    if (top < pad) top = pad;
+    return { left, top };
+  }
+
+  renderVals() {
+    const { locale, petMinimized, chatOpen, chatInput, chatLoading, messages, petPos, petAction, copyItem, copyDone, videoOpen, activeSection } = this.state;
+    const t = (zh, en) => (locale === "zh" ? zh : en);
+    const panelPos = this.panelPosition();
+    const accent = this.props.accent ?? "#1a1a1c";
+    const contactItems = [
+      { label: t("微信", "WeChat"), value: "quartZ0520" },
+      { label: t("电话", "Phone"), value: "15975386509" },
+      { label: t("邮箱", "Email"), value: "postmaster@zhangruopan.com" }
+    ].map((item) => ({
+      ...item,
+      ariaLabel: t(`复制${item.label}：${item.value}`, `Copy ${item.label}: ${item.value}`),
+      onClick: () => this.openCopyDialog(item)
+    }));
+    const heroMetrics = [
+      { value: t("近5年", "Nearly 5 yrs"), label: t("产品经验", "Product experience") },
+      { value: t("近3年", "Nearly 3 yrs"), label: t("AI 产品经验", "AI product experience") },
+      { value: "75%", label: t("AI Eligible 解决率", "AI Eligible resolution") },
+      { value: "90%+", label: t("单证字段准确率", "Document field accuracy") }
+    ];
+
+    const experiences = [
+      {
+        period: "2024.09 — 2026.07",
+        title: t("长沙佳标电子科技有限公司 · AI 产品经理", "Changsha Jiabiao Electronics · AI Product Manager"),
+        body: t(
+          "面向 Amazon 等海外渠道的跨境电商业务，负责客服售后、Listing 内容生产等内部 AI 应用的场景评估、方案设计、评测验收与上线迭代。",
+          "Owned use-case evaluation, solution design, acceptance testing, and release iteration for internal AI applications in customer support and Amazon Listing content production."
+        ),
+        responsibilities: [
+          t("定义客服问题分类与 AI Eligible 边界，划分 AI 自动处理、Copilot 辅助与强制转人工场景，并设计 RAG + Agent + Tool Calling 链路。", "Defined support issue categories and AI Eligible boundaries across automation, Copilot assistance, and mandatory handoff, then designed a RAG + Agent + Tool Calling flow."),
+          t("基于 1,000+ 条真实工单建立评测集，按意图识别 / 检索 / 生成 / 工具调用等链路归因 Bad Case，跟踪自动解决率、整体自动化率、P95 延迟与调用成本。", "Built an evaluation set from 1,000+ real tickets, attributed bad cases across intent recognition, retrieval, generation, and tool calls, and tracked auto-resolution, overall automation, P95 latency, and call cost."),
+          t("设计 LLM + RAG + Workflow 的 Listing 内容链路，通过结构化 Prompt / Schema、商品事实约束与审核规则控制规格幻觉和多语言一致性。", "Designed an LLM + RAG + Workflow pipeline for Listing content, using structured prompts, schemas, product-fact constraints, and review rules to control specification hallucinations and multilingual consistency.")
+        ],
+        results: [
+          t("AI Eligible 问题自动解决率约 75%，整体自动化率约 50%；AI 首答 P95 约 4.8 秒。", "Reached ~75% auto-resolution on AI Eligible issues and ~50% overall automation, with ~4.8-second P95 first-response latency."),
+          t("首期 6 周、140+ 次 Listing 任务中，单 SKU 核心内容准备时间由约 90 分钟降至约 23 分钟，一次审核通过率约 78%。", "Across 140+ Listing tasks in the first six weeks, core per-SKU preparation fell from ~90 to ~23 minutes and first-pass approval reached ~78%."),
+          t("客服 Agent 与 Listing Copilot 的意图、知识、事实约束层和模板均按可复用方式沉淀，支持新增机型、SKU 与站点。", "Standardized intents, knowledge, fact constraints, and templates across the support Agent and Listing Copilot for reuse with new models, SKUs, and marketplaces.")
+        ]
+      },
+      {
+        period: "2021.08 — 2024.08",
+        title: t("维特联合（北京）科技发展公司 · 产品经理 → AI 产品经理", "Weite United (Beijing) Technology · Product Manager → AI Product Manager"),
+        body: t(
+          "面向码头、堆场、供应链与仓储客户提供物流数字化产品和项目交付；2023.08 起转向 AI 产品方向，先后推进企业知识问答与多模态单据等 AI 项目。",
+          "Delivered logistics digital products for terminal, yard, supply-chain, and warehouse clients; moved into AI product work in 2023.08 and advanced enterprise knowledge Q&A and multimodal document projects."
+        ),
+        responsibilities: [
+          t("负责单据项目的需求分析、技术路线、产品方案、评测标准、研发推进、UAT 与客户交付；组织 10 家客户、150 份真实单据建立评测集。", "Led document-project requirements, technical route, solution design, evaluation, engineering delivery, UAT, and client rollout; built an evaluation set from 150 real documents across 10 clients."),
+          t("负责 RAG 产品方案、评测体系、灰度策略与迭代，基于约 1,000 页业务文档及 550 条历史咨询构建企业知识库。", "Owned the RAG product solution, evaluation system, staged rollout, and iteration for a knowledge base built from ~1,000 pages of business documents and 550 historical inquiries."),
+          t("将库存、货位、任务、巡检及权限等高频需求沉淀为公共产品能力，支撑物流供应链多客户数字化交付。", "Standardized inventory, location, task, inspection, and permission needs into shared capabilities for multi-client logistics delivery.")
+        ],
+        results: [
+          t("切换多模态方案后，20–30 个核心字段准确率由约 60%–70% 提升至 90%+，单票录入及复核时间由约 30 分钟降至约 13 分钟。", "After the multimodal switch, accuracy across 20–30 core fields rose from ~60%–70% to 90%+, while entry plus review fell from ~30 to ~13 minutes per shipment."),
+          t("方案复用至 3 家企业客户，字段 Schema、异常策略、复核机制与写入 Workflow 可直接复用。", "Reused the solution for three enterprise clients, with field schemas, exception strategies, review mechanisms, and write-back workflows directly reusable."),
+          t("可信知识问答首期标准问题自动解决率约 60%，重复咨询量下降约 50%。", "Trusted knowledge Q&A reached ~60% initial auto-resolution for standard questions and reduced repeat inquiries by ~50%.")
+        ]
+      },
+      {
+        period: "2020.11 — 2021.05",
+        title: t("京东科技 · 产品助理（实习）", "JD Technology · Product Assistant Intern"),
+        body: t(
+          "参与企业服务产品的需求分析、产品设计及项目协同。",
+          "Participated in requirements analysis, product design, and project coordination for enterprise-service products."
+        ),
+        responsibilities: [
+          t("协助完成业务需求梳理、原型设计与研发跟进。", "Assisted with business-requirement analysis, prototyping, and engineering follow-up.")
+        ],
+        results: [
+          t("在成熟 ToB 产品体系中建立需求分析、产品文档及跨团队协作的基础方法。", "Built foundational methods for requirements analysis, product documentation, and cross-team collaboration in a mature B2B product system.")
+        ]
+      }
+    ];
+
+    const projectMetrics = [
+      { metric: "75%", metricLabel: t("AI Eligible 解决率", "AI Eligible resolution"), accent: "#8fc2ff" },
+      { metric: "78%", metricLabel: t("一次审核通过率", "First-pass approval"), accent: "#7fe3dc" },
+      { metric: "90%+", metricLabel: t("字段准确率", "Field accuracy"), accent: "#c4b5f5" },
+      { metric: "60%", metricLabel: t("自动解决率", "Auto-resolution"), accent: "#a3e3c2" }
+    ];
+    const projectItems = [
+      {
+        anchor: "project-support",
+        period: "2025.04 — 2026.06",
+        role: t("AI 产品经理", "AI Product Manager"),
+        title: t("跨境电商 AI 客服与售后 Agent", "Cross-border E-commerce Support Agent"),
+        summary: t(
+          "面向产品使用、设备连接、驱动安装、打印异常、物流查询及退换货等高频咨询，定义 AI Eligible 边界并搭建 RAG + Agent + Tool Calling 链路。首期覆盖 9 名客服、日均 350–400 条咨询。",
+          "Defined AI Eligible boundaries and built a RAG + Agent + Tool Calling flow for frequent product-use, device, driver, printing, logistics, and returns inquiries, initially serving nine agents and 350–400 daily inquiries."
+        ),
+        work: [
+          t("划分 AI 自动处理、Copilot 辅助与强制转人工三类场景，负责 Schema、置信度 / 风险分级与兜底规则。", "Separated use cases into AI automation, Copilot assistance, and mandatory human handoff, with schemas, confidence/risk tiers, and fallback rules."),
+          t("定义意图识别 → SKU / 问题类型判断 → 知识检索 → 回答生成 → 售后工具调用 → 失败转人工的完整链路。", "Defined the full flow from intent detection and SKU/issue classification through retrieval, answer generation, support tool calls, and human fallback."),
+          t("基于 1,000+ 条真实工单建立评测集，按意图识别 / 检索 / 生成 / 工具调用等链路归因 Bad Case，跟踪自动解决率、整体自动化率、P95 延迟与调用成本。", "Built an evaluation set from 1,000+ real tickets, attributed bad cases across intent recognition, retrieval, generation, and tool calls, and tracked auto-resolution, overall automation, P95 latency, and call cost.")
+        ],
+        impact: [
+          t("AI Eligible 问题自动解决率约 75%，整体自动化率约 50%。", "Auto-resolution on AI Eligible issues reached ~75%, with ~50% overall automation."),
+          t("Eligible 口径聚焦知识与工具能力可覆盖、无需人工主观决策且风险可控的问题。", "The Eligible scope covers issues supported by available knowledge and tools that require no subjective human decision and carry controllable risk."),
+          t("AI 首答 P95 约 4.8 秒，单次调用成本约 0.2–0.4 元；新增机型与站点可直接复用。", "P95 first-response latency was ~4.8 seconds at ~¥0.2–0.4 per call, with direct reuse for new models and marketplaces.")
+        ]
+      },
+      {
+        anchor: "project-listing",
+        period: "2024.10 — 2025.06",
+        role: t("AI 产品经理", "AI Product Manager"),
+        title: t("Amazon Listing 内容生产 Copilot", "Amazon Listing Content Copilot"),
+        summary: t(
+          "面向 SKU、站点与多语言市场增长带来的重复内容工作，搭建 LLM + RAG + Workflow 链路，聚焦生产效率、事实一致性与可控成本；首期覆盖 6 名运营、80+ 个重点 SKU。",
+          "Built an LLM + RAG + Workflow pipeline for repetitive content work across growing SKUs, marketplaces, and languages, focusing on efficiency, factual consistency, and controlled cost; initially covering six operators and 80+ priority SKUs."
+        ),
+        work: [
+          t("负责需求拆解、产品方案、指标设计与上线迭代，明确 AI 生成、人工审核与异常回退边界。", "Owned requirement decomposition, product design, metrics, and release iteration, with explicit boundaries for AI generation, human review, and exception fallback."),
+          t("通过结构化 Prompt / Schema、商品事实约束与审核规则降低规格幻觉和多语言不一致风险。", "Used structured prompts, schemas, product-fact constraints, and review rules to reduce specification hallucinations and multilingual inconsistency."),
+          t("以一次审核通过率、人工修改幅度、生成耗时与调用成本定位 Bad Case，而非以「文案主观好坏」验收。", "Used first-pass approval, edit magnitude, generation time, and call cost to identify bad cases instead of judging copy subjectively.")
+        ],
+        impact: [
+          t("首期 6 周、140+ 次 Listing 新建 / 深度优化任务中，单 SKU 核心内容准备时间由约 90 分钟降至约 23 分钟。", "Across 140+ new or deeply optimized Listing tasks in the first six weeks, core per-SKU content preparation fell from ~90 to ~23 minutes."),
+          t("首期任务一次审核通过率约 78%，无需结构性重写即可进入发布审核。", "Initial first-pass approval reached ~78%, allowing tasks to enter publication review without structural rewrites."),
+          t("完整 Workflow 调用成本约 0.8–1.3 元，P95 生成耗时约 31 秒；新增 SKU / 站点边际接入成本接近于零。", "Full-workflow cost was ~¥0.8–1.3 with ~31-second P95 generation time; marginal onboarding cost for new SKUs and marketplaces was near zero.")
+        ]
+      },
+      {
+        anchor: "project-docs",
+        period: "2024.01 — 2024.08",
+        role: t("AI 产品经理", "AI Product Manager"),
+        title: t("物流履约智能受理平台 — 多模态单据理解与自动录入", "Intelligent Logistics Intake — Multimodal Document Understanding"),
+        summary: t(
+          "面向来源与格式复杂的物流托书、提单等资料，横向评估传统 OCR、OCR + 规则 + LLM 与端到端多模态路线，取消新客户模板配置，将交付形态从「一客一版」转为标准化复用。",
+          "For complex logistics booking forms and bills of lading, compared traditional OCR, OCR + rules + LLM, and end-to-end multimodal routes, eliminating per-client template setup and moving delivery from one-off versions to standardized reuse."
+        ),
+        work: [
+          t("负责需求分析、技术路线选择、产品方案、评测标准、研发推进、UAT 验收与客户交付复盘。", "Led requirements, technical-route selection, product design, evaluation standards, engineering delivery, UAT, and client retrospectives."),
+          t("组织 10 家客户、150 份真实单据建立评测集，统一字段 Schema / JSON 输出。", "Built an evaluation set from 150 real documents across 10 clients and standardized field schemas and JSON output."),
+          t("设计原文复核、规则校验、风险分级、失败转人工与 API 写入链路，人工仅需确认标红字段。", "Designed source review, rule validation, risk tiers, failure handoff, and API write-back, so humans only confirm highlighted fields."),
+          t("基于准确率上限、新客户接入边际成本与兜底可控性切换至端到端多模态，停止继续堆叠规则模板。", "Switched to end-to-end multimodal processing based on the accuracy ceiling, marginal client-onboarding cost, and fallback controllability, rather than adding more rule templates.")
+        ],
+        impact: [
+          t("切换多模态方案后，在 10 家客户、150 份真实单据评测集上，20–30 个核心字段准确率达到 90%+（按单字段统计）。", "After the multimodal switch, 20–30 core fields reached 90%+ accuracy across 150 real documents from 10 clients, measured per field."),
+          t("在 AI 抽取 + 风险分级 + 标红复核 + API 写入的新流程下，单票录入及复核时间由约 30 分钟降至约 13 分钟。", "With AI extraction, risk tiers, highlighted review, and API write-back, entry plus review fell from ~30 to ~13 minutes per shipment."),
+          t("方案复用至 3 家企业客户，字段 Schema、异常策略、复核机制与写入 Workflow 可直接复用。", "The solution was reused for three enterprise clients, with field schemas, exception strategies, review mechanisms, and write-back workflows directly reusable.")
+        ]
+      },
+      {
+        anchor: "project-rag",
+        period: "2023.10 — 2024.03",
+        role: t("AI 产品经理", "AI Product Manager"),
+        title: t("企业智能服务平台 — 可信知识问答", "Enterprise AI Service — Trusted Knowledge Q&A"),
+        summary: t(
+          "基于约 1,000 页业务文档及 550 条历史咨询构建企业知识库，通过权限、版本、证据与 Bad Case 回归机制，将一次性交付升级为可持续维护的 AI 服务能力。",
+          "Built an enterprise knowledge base from ~1,000 pages of business documents and 550 historical inquiries, using permissions, versions, evidence controls, and bad-case regression to turn a one-off delivery into a maintainable AI service."
+        ),
+        work: [
+          t("负责 RAG 产品方案、评测体系、灰度策略与迭代。", "Owned the RAG product solution, evaluation system, staged rollout, and iteration."),
+          t("定义 Chunk / Metadata 策略与客户 / 角色 / 产品版本三级权限。", "Defined Chunk/Metadata strategy and three-level permissions across client, role, and product version."),
+          t("建立知识更新与「证据不足转人工」机制，控制无依据回答风险。", "Established knowledge-update and insufficient-evidence handoff mechanisms to control unsupported answers."),
+          t("将 Bad Case 拆分至 Retrieval / Ranking / Generation / Knowledge 层定位根因，并纳入回归测试。", "Attributed bad cases across Retrieval, Ranking, Generation, and Knowledge layers and added them to regression testing.")
+        ],
+        impact: [
+          t("以 550 条历史咨询为评测基线，首期标准问题自动解决率约 60%。", "Using 550 historical inquiries as the evaluation baseline, initial standard-question auto-resolution reached ~60%."),
+          t("重复咨询量下降约 50%。", "Reduced repeat inquiries by ~50%."),
+          t("权限分库、版本管理与 Bad Case 回归机制，使知识库成为可持续维护的 AI 服务能力。", "Permission-based knowledge separation, version management, and bad-case regression made the knowledge base a maintainable AI service.")
+        ]
+      }
+    ].map((project, index) => ({
+      ...project,
+      ...projectMetrics[index],
+      indexLabel: String(index + 1).padStart(2, "0")
+    }));
+    const zh = t("知乎", "Zhihu");
+    const wx = t("公众号", "WeChat");
+    const articleItems = [
+      { title: "为什么我更建议优先选择便宜 AI，而不是默认使用最强模型？", platform: zh, date: "2026.07", externalUrl: "https://zhuanlan.zhihu.com/p/2055421767922013042" },
+      { title: "我们越依赖的 AI 工具，越有可能被控制", platform: zh, date: "2026.07", externalUrl: "https://zhuanlan.zhihu.com/p/2055061379158111398" },
+      { title: "小微入局，微信生态任务调度新变革", platform: zh, date: "2026.06", externalUrl: "https://zhuanlan.zhihu.com/p/2054709830208824133" },
+      { title: "AI 用几小时攻破了国家机密系统，然后被关掉了", platform: zh, date: "2026.06", externalUrl: "https://zhuanlan.zhihu.com/p/2054365536688067456" },
+      { title: "能帮你找漏洞的 AI，也能帮别人利用漏洞", platform: wx, date: "2026.06", externalUrl: "https://mp.weixin.qq.com/s/KKPCjPkNdAtQtKyJ-9TViA" },
+      { title: "你以为 AI 在帮你思考，但你正在丧失思考的能力", platform: zh, date: "2026.05", externalUrl: "https://zhuanlan.zhihu.com/p/2053924204584744600" },
+      { title: "你以为 AI 在帮你思考，但你正在丧失思考的能力", platform: wx, date: "2026.05", externalUrl: "https://mp.weixin.qq.com/s/enRiJt55LZ_aZSd_ZMA6FQ" },
+      { title: "AI 的「注意力」也会涣散？一个心理学实验揭开了大模型的结构性短板", platform: zh, date: "2026.05", externalUrl: "https://zhuanlan.zhihu.com/p/2053508509988345838" },
+      { title: "AI 不是因为你想要才变强的——「从聊天到做事」背后真正的推手", platform: zh, date: "2026.05", externalUrl: "https://zhuanlan.zhihu.com/p/2053237578904630132" },
+      { title: "所有人都在说 AI 能「做事」了，但几乎所有人都搞反了原因", platform: wx, date: "2026.05", externalUrl: "https://mp.weixin.qq.com/s/3tabWQ2Q_Z7fkKETw-AQNw" },
+      { title: "AI 最大的风险，可能不是它太聪明，而是我们越来越不愿意自己思考", platform: wx, date: "2026.04", externalUrl: "https://mp.weixin.qq.com/s/mTv5gq6J6S4va7CuBOpMhg" },
+      { title: "你不是懂了，你只是看过", platform: zh, date: "2026.04", externalUrl: "https://zhuanlan.zhihu.com/p/2051838714469414842" }
+    ].map((article, index) => ({
+      ...article,
+      indexLabel: String(index + 1).padStart(2, "0")
+    }));
+
+    const styledMessages = messages.map((m) => {
+      const actions = m.role === "agent" && m.question ? this.chatReferences(m.question, m.content) : [];
+      return {
+        content: m.content,
+        justify: m.role === "user" ? "flex-end" : "flex-start",
+        className: "chat-message " + (m.role === "user" ? "chat-message-user" : "chat-message-agent"),
+        radius: m.role === "user" ? "16px 16px 4px 16px" : "16px 16px 16px 4px",
+        // The user's own words carry the sapphire light; the agent replies on a
+        // quiet raised surface. The `accent` prop's near-black default would be
+        // invisible against the dark panel, so the bubble no longer uses it.
+        bg: m.role === "user" ? "#8fc2ff" : "rgba(244,241,234,0.06)",
+        color: m.role === "user" ? "#0c0c0f" : "rgba(244,241,234,0.82)",
+        shadow: m.role === "user" ? "0 6px 18px rgba(40,73,124,0.45)" : "none",
+        actions,
+        actionsVisible: actions.length > 0,
+        referencesLabel: t("相关资料", "Related sources")
+      };
+    });
+
+    const suggestionTexts = [
+      t("一分钟了解他", "One-minute intro"),
+      t("为什么值得面试？", "Why interview him?"),
+      t("介绍一个最成功的项目", "His most successful project"),
+      t("AI 产品经理最大的优势是什么？", "His biggest strength as an AI PM?"),
+      t("职业履历", "Career")
+    ];
+
+    return {
+      tNavExperience: t("职业履历", "Career"),
+      tNavProjects: t("AI 项目案例", "AI Projects"),
+      tNavArticles: t("AI 思考", "AI Thoughts"),
+      tNavContact: t("联系我", "Contact"),
+      tSkipToContent: t("跳到主要内容", "Skip to main content"),
+      tPrimaryNav: t("主要导航", "Primary navigation"),
+      navExperienceClass: "nav-section-link" + (activeSection === "experience" ? " is-active" : ""),
+      navProjectsClass: "nav-section-link" + (activeSection === "projects" ? " is-active" : ""),
+      navArticlesClass: "nav-section-link" + (activeSection === "articles" ? " is-active" : ""),
+      navContactClass: "nav-section-link" + (activeSection === "contact" ? " is-active" : ""),
+      navExperienceCurrent: activeSection === "experience" ? "location" : undefined,
+      navProjectsCurrent: activeSection === "projects" ? "location" : undefined,
+      navArticlesCurrent: activeSection === "articles" ? "location" : undefined,
+      navContactCurrent: activeSection === "contact" ? "location" : undefined,
+      onNavExperience: () => this.setState({ activeSection: "experience" }),
+      onNavProjects: () => this.setState({ activeSection: "projects" }),
+      onNavArticles: () => this.setState({ activeSection: "articles" }),
+      onNavContact: () => this.setState({ activeSection: "contact" }),
+      tContactEyebrow: t("保持联系", "Stay in touch"),
+      tContactTitle: t("联系我", "Contact me"),
+      tContactIntro: t("如果你对我的项目、文章或合作机会感兴趣，欢迎通过下面任一方式联系。", "For projects, writing, or collaboration opportunities, reach me through any channel below."),
+      tContactHint: t("点击联系方式即可复制", "Tap a contact to copy"),
+      tCopyQuestion: t("是否复制？", "Copy this contact?"),
+      tCancel: t("取消", "Cancel"),
+      tResponsibilities: t("职责与协作", "Responsibilities & collaboration"),
+      tKeyResults: t("关键成果", "Key results"),
+      tProjectWork: t("方法与推进", "Approach & execution"),
+      tProjectImpact: t("结果与影响", "Outcomes & impact"),
+      tOpenCase: t("展开项目方法与结果", "Open approach & outcomes"),
+      tLangLabel: locale === "zh" ? "中文" : "English",
+      tZhihu: t("知乎", "Zhihu"),
+      hasHeroVideo: !!(this.props.heroVideoUrl && this.props.heroVideoUrl.trim()),
+      noHeroVideo: !(this.props.heroVideoUrl && this.props.heroVideoUrl.trim()),
+      heroVideoUrl: this.props.heroVideoUrl ?? "",
+      tHeroEyebrow: t("一名以器载道的 AI 产品经理", "An AI product manager — craft as a vessel for principle"),
+      tHeroIntro: t("谨慎看待技术，理性判断价值，持续提升自己。我相信 AI 的意义不在于替代判断，而在于放大真正清晰的问题。", "Approach technology with caution, judge value rationally, and keep improving. I believe AI's purpose is not to replace judgment, but to amplify truly clear questions."),
+      tExploreProjects: t("查看代表项目", "Explore selected work"),
+      tHeroMetricsLabel: t("代表性量化成果", "Selected measurable outcomes"),
+      tVideoButton: t("观看 15 秒介绍", "Watch the 15-second intro"),
+      tVideoButtonAria: t("播放张若磐的 15 秒个人介绍视频", "Play Zhangruopan's 15-second introduction video"),
+      tVideoEyebrow: t("个人短片", "Portrait film"),
+      tVideoTitle: t("关于我，以及我如何看待 AI", "About me and how I approach AI"),
+      tVideoClose: t("关闭视频", "Close video"),
+      tVideoHint: t("按 Esc 或点击画面外区域关闭", "Press Esc or click outside the film to close"),
+      videoOpen,
+      openIntroVideo: () => this.openIntroVideo(),
+      closeIntroVideo: () => this.closeIntroVideo(),
+
+      heroMetrics,
+      experiences,
+      projectItems,
+      articleItems,
+      contactItems,
+      copyDialogVisible: !!copyItem,
+      copyDialogLabel: copyItem?.label ?? "",
+      copyDialogValue: copyItem?.value ?? "",
+      copyButtonLabel: copyDone ? t("已复制", "Copied") : t("复制", "Copy"),
+      closeCopyDialog: () => this.closeCopyDialog(),
+      confirmCopy: () => this.confirmCopy(),
+
+      tAgentTitle: t("问我任何问题", "Ask me anything"),
+      tAgentKicker: t("在线 · 最新简历", "Online · Latest resume"),
+      tAgentSubtitle: t("所有回答均以 2026.07 版简历与站内项目为依据", "Answers use the July 2026 resume and on-site projects"),
+      tStarters: t("可以从这些问题开始", "Try one of these"),
+      tThinking: t("思考中…", "Thinking…"),
+      tChatPlaceholder: t("询问项目、经历、文章…", "Ask about projects, experience, articles…"),
+      tChatInputAria: t("输入要询问的问题", "Enter a question"),
+      tSendMessage: t("发送消息", "Send message"),
+      tOpenAgent: t("打开作品集 Agent", "Open portfolio Agent"),
+      tCloseAgent: t("关闭 Agent 对话", "Close agent chat"),
+      tMinimizeAgent: t("最小化 Agent", "Minimize Agent"),
+      tRestoreAgent: t("恢复 Agent", "Restore Agent"),
+
+      petVisible: !petMinimized && !chatOpen && (this.props.showPet ?? true),
+      petMinimized: petMinimized && (this.props.showPet ?? true),
+      petLeft: petPos ? petPos.x + "px" : "calc(100vw - 116px)",
+      petTop: petPos ? petPos.y + "px" : "calc(100vh - 146px)",
+      petCursor: this.state.dragging ? "grabbing" : "grab",
+      petGlow: this.currentPetGlow(),
+      bubbleVisible: !chatOpen && !this.state.dragging,
+      tBubble: t("想了解若磐？问我一条。", "Curious about Zhangruopan? Ask me."),
+      // Float and shadow share one period so the shadow tightens exactly as the
+      // pet rises. The wiggle runs on a deliberately non-multiple period, so the
+      // two never lock into a visible repeating pattern.
+      petAnim: this.state.dragging
+        ? "pet-drag-swing 0.9s ease-in-out infinite"
+        : "pet-bob 3.6s ease-in-out infinite, pet-wiggle 8.5s ease-in-out infinite",
+      shadowAnim: this.state.dragging ? "none" : "pet-shadow 3.6s ease-in-out infinite",
+      panelLeft: panelPos.left + "px",
+      panelTop: panelPos.top + "px",
+      onPetDown: (e) => this.handlePetDown(e),
+      onPetActivate: () => this._openChat(),
+      onPetKeyDown: (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          this._openChat();
+        }
+      },
+      onHeroPointerDown: (e) => this.handleHeroPointerDown(e),
+      onHeroPointerMove: (e) => this.handleHeroPointerMove(e),
+      resetHeroPointer: (e) => this.resetHeroPointer(e),
+      stopPress: (e) => e.stopPropagation(),
+      chatOpen,
+      chatPanelClass: "chat-panel" + (messages.length <= 1 ? " chat-panel-welcome" : ""),
+      chatInput,
+      chatLoading,
+      messages: styledMessages,
+      showSuggestions: messages.length <= 1,
+      suggestions: suggestionTexts.map((label) => ({
+        label,
+        onClick: () => this.sendMessage(label)
+      })),
+
+      toggleLocale: () => this.toggleLocale(),
+      openChat: () => this._openChat(),
+      closeChat: () => this.closeChat(),
+      minimizePet: () => this.minimizePet(),
+      restorePet: () => this.restorePet(),
+      onChatInput: (e) => this.setState({ chatInput: e.target.value }),
+      onChatSubmit: (e) => {
+        e.preventDefault();
+        this.sendMessage(this.state.chatInput);
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
