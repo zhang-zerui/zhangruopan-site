@@ -74,6 +74,22 @@ html[lang^="en"] #rp-site .v-en {display:inline}
 .rp-intro em {font-style:italic}
 #rp-site .rp-ink {text-decoration:underline dotted;text-decoration-thickness:1px;text-underline-offset:.15em}
 #rp-site .rp-ink:hover {color:var(--rp-purple)}
+.rp-intro-copy {position:relative;text-align:left}
+#rp-site .rp-intro-copy .rp-ink {
+  display:inline;margin:0;font:inherit;letter-spacing:inherit;vertical-align:baseline;cursor:help;
+}
+.rp-intro-copy .rp-role-note {
+  position:absolute;z-index:5;width:max-content;max-width:min(23rem,100%);margin:0;
+  padding:.7rem 1rem;border:1px solid var(--rp-edge);border-radius:9px;
+  background:var(--rp-paper);color:var(--rp-fg);box-shadow:0 5px 16px #211a1217;
+  font:400 1rem/1.6 var(--rp-serif);text-align:start;overflow-wrap:break-word;
+}
+.rp-intro-copy .rp-role-note::before {content:"";position:absolute;inset-inline:0;bottom:100%;height:8px}
+.rp-intro-copy .rp-role-note[data-above]::before {bottom:auto;top:100%}
+@media(prefers-reduced-motion:no-preference) {
+  .rp-intro-copy .rp-role-note:not([hidden]) {animation:rp-intro-note-in 140ms ease-out}
+  @keyframes rp-intro-note-in {from {opacity:0} to {opacity:1}}
+}
 .rp-storefront {position:relative;isolation:isolate;margin-top:32px;aspect-ratio:2/1;border-radius:32px}
 #rp-site .rp-enter {display:block;position:relative;overflow:hidden;width:100%;height:100%;border-radius:inherit;cursor:pointer}
 .rp-enter img {display:block;width:100%;height:100%;object-fit:cover;object-position:50% 56%}

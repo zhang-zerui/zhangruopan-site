@@ -53,6 +53,82 @@
   themeButton.addEventListener('click', () => setTheme(root.dataset.theme !== 'dark', true));
   darkMode.addEventListener('change', () => { if (!storage.read('ruopan-portfolio-theme')) setTheme(darkMode.matches, false); });
 
+  const introCopy = one('.rp-intro-copy');
+  let roleTrigger = null;
+  let roleNote = null;
+  let rolePinned = false;
+  let leaveTimer;
+
+  function closeRoleNote() {
+    clearTimeout(leaveTimer);
+    if (!roleNote) return;
+    roleNote.hidden = true;
+    roleTrigger.setAttribute('aria-expanded', 'false');
+    roleTrigger = null;
+    roleNote = null;
+    rolePinned = false;
+  }
+
+  function positionRoleNote() {
+    if (!roleNote) return;
+    const anchor = roleTrigger.getBoundingClientRect();
+    const bounds = introCopy.getBoundingClientRect();
+    const gap = 7;
+    const centered = anchor.left - bounds.left + (anchor.width - roleNote.offsetWidth) / 2;
+    const left = Math.max(0, Math.min(centered, bounds.width - roleNote.offsetWidth));
+    const fitsAbove = anchor.top - roleNote.offsetHeight - gap >= nav.offsetHeight;
+    const useAbove = fitsAbove && anchor.bottom + gap + roleNote.offsetHeight > window.innerHeight;
+    const top = useAbove ? anchor.top - roleNote.offsetHeight - gap : anchor.bottom + gap;
+    roleNote.toggleAttribute('data-above', useAbove);
+    roleNote.style.left = Math.round(left) + 'px';
+    roleNote.style.top = Math.round(top - bounds.top) + 'px';
+  }
+
+  function showRoleNote(trigger) {
+    clearTimeout(leaveTimer);
+    if (roleTrigger === trigger) return;
+    closeRoleNote();
+    roleTrigger = trigger;
+    roleNote = byId(trigger.getAttribute('aria-controls'));
+    roleNote.hidden = false;
+    trigger.setAttribute('aria-expanded', 'true');
+    positionRoleNote();
+  }
+
+  function leaveRoleNote(event) {
+    if (event.pointerType === 'touch' || rolePinned || roleTrigger?.matches(':focus-visible')) return;
+    clearTimeout(leaveTimer);
+    leaveTimer = setTimeout(closeRoleNote, 180);
+  }
+
+  for (const trigger of introCopy.querySelectorAll('button[aria-controls]')) {
+    const note = byId(trigger.getAttribute('aria-controls'));
+    trigger.addEventListener('pointerenter', event => {
+      if (event.pointerType !== 'touch') showRoleNote(trigger);
+    });
+    trigger.addEventListener('pointerleave', leaveRoleNote);
+    trigger.addEventListener('focus', () => showRoleNote(trigger));
+    trigger.addEventListener('blur', event => {
+      if (event.relatedTarget || !rolePinned) closeRoleNote();
+    });
+    trigger.addEventListener('click', () => {
+      if (roleTrigger === trigger && rolePinned) return closeRoleNote();
+      showRoleNote(trigger);
+      rolePinned = true;
+    });
+    note.addEventListener('pointerenter', () => clearTimeout(leaveTimer));
+    note.addEventListener('pointerleave', leaveRoleNote);
+  }
+  document.addEventListener('pointerdown', event => {
+    if (roleNote && !roleNote.contains(event.target) && !roleTrigger.contains(event.target)) closeRoleNote();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeRoleNote();
+  });
+  window.addEventListener('hashchange', closeRoleNote);
+  window.addEventListener('resize', positionRoleNote);
+  new ResizeObserver(positionRoleNote).observe(introCopy);
+
   const storefront = one('.rp-storefront');
   const shopArt = byId('rp-shop-art');
   const seasons = {
