@@ -4,21 +4,166 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>张若磐｜AI 产品经理</title>
-<meta name="description" content="张若磐的个人作品集：AI 产品经历、项目案例、文章与联系方式。">
+<meta name="description" content="张若磐的跨境电商与供应链 AI 作品集，含广告库存决策、打印机售后和多模态单据复核的脱敏设计。">
 <meta name="theme-color" content="#0c0c0f">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:title" content="张若磐｜AI 产品经理">
-<meta property="og:description" content="AI 产品经历、项目案例、文章与联系方式。">
+<meta property="og:description" content="跨境电商、供应链与企业级 Agent 的项目经历和脱敏设计。">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="张若磐｜AI 产品经理">
-<meta name="twitter:description" content="AI 产品经历、项目案例、文章与联系方式。">
+<meta name="twitter:description" content="跨境电商、供应链与企业级 Agent 的项目经历和脱敏设计。">
 <link rel="icon" href="media/favicon.svg" type="image/svg+xml">
+<style>
+html[data-standalone] x-dc {display:none!important}
+body {margin:0;background:#0d1014} html {scroll-behavior:smooth}
+.v-en {display:none}
+html[lang^="en"] .v-zh {display:none}
+html[lang^="en"] .v-en {display:inline}
+.casebook {color:#e9edf0;font-family:Manrope,Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;margin:15px 0 38px;line-height:1.6}
+.casebook *,.portable * {box-sizing:border-box}
+.case-jump {display:flex;flex-wrap:wrap;gap:9px;margin:0 0 32px}
+.case-jump a {font-size:.92rem;line-height:1.3;border:1px solid #40454e;padding:9px 16px;border-radius:30px;color:#e7eaf0;text-decoration:none}
+.case-jump a:hover,.case-jump a:focus-visible {border-color:#a6cafd;color:#a6cafd}
+.study {--case:#abd3ff;display:grid;grid-template-columns:minmax(200px,.75fr) minmax(0,1.62fr);gap:clamp(22px,4vw,60px);padding:clamp(26px,3.4vw,48px) 0;scroll-margin-top:92px;border-top:1px solid #3b424b}
+.study.support {--case:#b6ded4}
+.study.documents {--case:#ccb9f1}
+.case-rail {min-width:0}
+.case-company,.figure-note,.source-slip>span {font-size:.875rem;line-height:1.55}
+.case-rail .case-company {margin:0 0 10px;color:var(--case);font-weight:600}
+.case-rail h3 {font-size:clamp(1.65rem,2.6vw,2.25rem);letter-spacing:-.035em;line-height:1.22;margin:0 0 16px;color:#f3f2f0}
+.case-description {font-size:1rem;color:#c0c6cc;margin:0;max-width:34em}
+.case-results {margin:25px 0 0;display:grid;gap:18px}
+.result-item {display:flex;flex-direction:column;align-items:flex-start}
+.result-item>strong {line-height:1.15;font-family:Manrope,Inter,-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:clamp(1.45rem,2.25vw,2.05rem);color:var(--case);letter-spacing:-.04em}
+.result-item>span {font-size:.885rem;color:#c0c6cc;margin-top:4px}
+.study-body {min-width:0}
+.case-figure {margin:0;border:1px solid #38404b;background:#15191f;border-radius:16px;padding:clamp(17px,2.6vw,32px)}
+.case-figure figcaption {font-size:1.16rem;line-height:1.45;letter-spacing:-.022em;font-weight:680;margin:0 0 20px;color:#f6f6f5}
+.case-figure h4 {font-size:.95rem;color:#e1d9ed;margin:22px 0 8px}
+.figure-note {margin:11px 4px 0;color:#a6adb7}
+.flow-state {max-width:92%;margin:0 auto;text-align:center;border:1px solid #4b5866;padding:11px 12px;border-radius:8px;background:#212a35;color:#eef4fa;font-size:1rem;font-weight:650}
+.flow-state small {display:block;font-weight:400;color:#c8d3df;font-size:.875rem;margin-top:2px}
+.flow-state.gate {border-color:#6785a5;background:#1b293a}
+.flow-stem {width:1px;height:22px;background:#728396;margin:0 auto}
+.flow-stem.short {height:16px}
+.flow-fork {display:grid;grid-template-columns:1fr 1fr;gap:14px;position:relative;padding-top:14px}
+.flow-fork::before {content:"";position:absolute;top:0;left:calc(25% - 3.5px);right:calc(25% - 3.5px);height:13px;border:1px solid #728396;border-bottom:none;border-radius:4px 4px 0 0}
+.flow-branch {min-width:0;border:1px solid #40566a;border-radius:8px;padding:13px 14px;background:#1a232c}
+.flow-branch>span,.flow-branch>strong {display:block}
+.flow-branch>span {font-size:.855rem;font-weight:600}
+.flow-branch>strong {font-size:1rem;line-height:1.4;margin:5px 0}
+.flow-branch>p {font-size:.9rem;line-height:1.6;margin:0;color:#c6cdd4}
+.flow-branch.hold {background:#292521;border-color:#675544}
+.flow-branch.hold>span {color:#f4c69a}
+.flow-branch.pass {background:#1a2828;border-color:#426561}
+.flow-branch.pass>span {color:#a6dfd2}
+.design-table {width:100%;border-collapse:collapse;table-layout:fixed;text-align:left;border-bottom:1px solid #434850;font-size:.965rem;line-height:1.55;color:#e3e6ea}
+.design-table thead {color:#d4dbe2;background:#22282f;font-size:.885rem}
+.design-table th,.design-table td {padding:10px 9px;vertical-align:top;text-align:start;border-top:1px solid #3a4049;overflow-wrap:anywhere}
+.design-table thead th {font-weight:600}
+.design-table tbody th {font-weight:620;color:var(--case)}
+.design-table th:first-child {width:21%}
+.schema-table th:first-child {width:37%}
+.schema-table th:nth-child(2) {width:25%}
+.schema-table code,.schema-table samp {font:500 .88rem/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;color:#f0e7ff}
+.compare-table th:first-child {width:25%}
+.source-slip {background:#e9e7e1;color:#232728;padding:13px 17px;margin:0 0 12px;border-radius:5px;border-left:4px solid #ae98d1}
+.source-slip>span {display:block;color:#555364}
+.source-slip>div {display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-top:3px}
+.source-slip small,.source-slip strong {font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.source-slip small {font-size:.85rem}
+.source-slip strong {font-size:1.22rem;font-weight:700}
+.source-slip mark {background:#ead091;color:#202226}
+.more-label {font-size:1.3rem;color:#eee;margin:36px 0 12px}
+.resume-download {font-size:1rem;white-space:nowrap;text-decoration:underline;text-underline-offset:4px;color:#d9e6f4}
+.resume-download:hover {color:#fff}
+.portable {font:16px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC",Inter,"Microsoft YaHei",sans-serif;background:#0d1014;color:#eef1f2;min-height:100vh}
+.portable a {color:inherit;text-decoration:none}
+.portable :is(a,button,summary):focus-visible,.casebook a:focus-visible {outline:2px solid #b5cffa;outline-offset:4px}
+.portable .wrap {width:min(1152px,calc(100% - 72px));margin:0 auto}
+.portable .topbar {display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid #343b43;gap:16px;flex-wrap:wrap}
+.portable .wordmark {font-size:1.05rem;font-weight:700;letter-spacing:-.025em}
+.portable .toplinks {display:flex;align-items:center;gap:22px;flex-wrap:wrap;font-size:.93rem}
+.portable .toplinks button {cursor:pointer;padding:5px 12px;border:1px solid #515b69;border-radius:4px;background:transparent;color:#eff3f4;font:inherit}
+.portable .toplinks a:hover,.portable .library-list a:hover {color:#aed1f4;text-decoration:underline}
+.portable-hero {padding:52px 0 43px;border-bottom:1px solid #404750}
+.portable-hero .discipline {font-size:1rem;color:#b1cfea;font-weight:580;margin:0 0 11px}
+.portable-hero h1 {line-height:1.1;letter-spacing:-.06em;font-size:clamp(3rem,6.25vw,5.55rem);margin:0}
+.portable-hero .role {font-size:clamp(1.08rem,2.4vw,1.55rem);font-weight:490;letter-spacing:0;display:inline-block;margin-inline-start:20px;color:#c8d2db}
+.portable-hero .lead {max-width:48em;margin:18px 0;font-size:1.05rem;color:#c8cdd4}
+.portable-hero .hero-linkset {display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.portable .primary-link {display:inline-block;background:#e3ebf1;color:#17212b;border-radius:6px;font-weight:620;padding:8px 16px;line-height:1.5}
+.portable a.resume-download {text-decoration:underline}
+.portable .stats {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin:30px 0 0}
+.portable .stats>div {border-inline-start:1px solid #465160;padding-inline-start:12px}
+.portable .stats strong,.portable .stats span.stat-label {display:block}
+.portable .stats strong {font-size:clamp(1.15rem,2vw,1.5rem);color:#e9eef3}
+.portable .stat-label {font-size:.89rem;color:#b9c4cc}
+.portable .chapter {padding:44px 0 16px;scroll-margin-top:16px}
+.portable h2 {font-size:clamp(1.75rem,3.3vw,2.65rem);line-height:1.3;letter-spacing:-.04em;margin:0 0 18px}
+.portable .other-grid {display:grid;gap:12px}
+.portable details {border:1px solid #353e48;background:#161b21;border-radius:9px;padding:0 21px}
+.portable summary {padding:16px 0;cursor:pointer;font-weight:640;color:#edf1f3}
+.portable summary small {font-size:.88rem;font-weight:500;color:#aab8c8;margin-inline-end:16px}
+.portable details p {margin:0 0 12px;color:#c4cbd2;max-width:62em}
+.portable details ul {margin:0 0 17px;color:#c4cbd2;padding-left:1.2em}
+.portable .library-list {padding:0;list-style:none;margin:0}
+.portable .library-list li {border-top:1px solid #343c45;padding:10px 0}
+.portable .library-list small {font-size:.86rem;color:#b1bdc8;display:inline-block;min-width:7.1em;margin-right:7px}
+.portable .contacts {display:flex;gap:12px 25px;flex-wrap:wrap;margin:10px 0 35px}
+.portable .contacts a {text-decoration:underline;text-underline-offset:3px}
+.portable footer {border-top:1px solid #38424b;color:#bbc3cb;padding:18px 0 25px;font-size:.88rem}
+@media(max-width:850px){
+ .study {grid-template-columns:1fr;gap:17px}
+ .case-results {display:flex;align-items:flex-start;gap:18px 30px;flex-wrap:wrap;margin-top:16px}
+ .case-description {max-width:48em}
+}
+@media(max-width:620px){
+ .case-jump {margin-bottom:16px;gap:7px}
+ .case-jump a {padding:8px 12px}
+ .portable .wrap {width:calc(100% - 32px)}
+ .portable .topbar {align-items:flex-start;padding:12px 0;gap:8px}
+ .portable .toplinks {gap:8px 12px}
+ .portable-hero {padding:32px 0}
+ .portable-hero .role {margin-inline-start:12px}
+ .portable .stats {grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+ .portable .chapter {padding-top:32px}
+ .study {padding:24px 0}
+ .case-figure {padding:14px 11px;border-radius:10px}
+ .flow-state {max-width:100%}
+ .flow-fork {gap:8px}
+ .flow-branch {padding:9px 8px}
+ .flow-fork::before {left:calc(25% - 2px);right:calc(25% - 2px)}
+ .design-table th,.design-table td {padding:8px 5px}
+ .design-table {font-size:.91rem}
+ .schema-table code,.schema-table samp {font-size:.80rem}
+ .portable summary small {display:block;margin:0 0 3px}
+}
+@media(max-width:420px){
+ .support-table,.support-table tbody,.support-table tr,.support-table tbody th,.support-table td{display:block;width:100%}
+ .support-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ .support-table tbody tr{border-top:1px solid #434850;padding:7px 0}
+ .support-table tbody th,.support-table td{border:0;padding:3px 2px}
+ .support-table tbody th:first-child{width:100%}
+ .support-table td:last-child{color:#b9cbc6}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+@media print {
+ .case-figure,.flow-branch,.source-slip,.flow-state {break-inside:avoid}
+ .case-jump,.portable .topbar,.hero-linkset {display:none}
+}
+</style>
+
 <script src="./resources.js"></script>
 <script src="./support.js"></script>
 </head>
 <body>
+<noscript><style>x-dc,#portable-locale {display:none!important}</style>
+<div class="portable" id="portable-home"><div class="wrap"><header class="topbar"><a class="wordmark" href="#top">Zhangruopan</a><nav class="toplinks" aria-label="Portfolio"><a href="#projects"><span class="v-zh" lang="zh-CN">项目</span><span class="v-en" lang="en">Projects</span></a><a href="#experience"><span class="v-zh" lang="zh-CN">履历</span><span class="v-en" lang="en">Experience</span></a><a href="#articles"><span class="v-zh" lang="zh-CN">文章</span><span class="v-en" lang="en">Writing</span></a><a href="#contact"><span class="v-zh" lang="zh-CN">联系</span><span class="v-en" lang="en">Contact</span></a><button type="button" id="portable-locale" aria-label="Language / 语言">English</button></nav></header><main id="top"><header class="portable-hero"><p class="discipline"><span class="v-zh" lang="zh-CN">跨境电商 / 供应链 / 企业级 Agent</span><span class="v-en" lang="en">Cross-border commerce / Supply chain / Enterprise agents</span></p><h1><span class="v-zh" lang="zh-CN">张若磐</span><span class="v-en" lang="en">Zhangruopan</span><span class="role"><span class="v-zh" lang="zh-CN">AI 产品经理</span><span class="v-en" lang="en">AI Product Manager</span></span></h1><p class="lead"><span class="v-zh" lang="zh-CN">我做跨境电商和供应链的 AI 产品。运营要决定能不能加预算，客服要找到对应机型的手册，录单员要知道哪个字段值得再看一眼。这三件事，是我做过的三个项目。</span><span class="v-en" lang="en">I build AI products for commerce and logistics. An operator deciding whether to raise spend, a support agent finding the right printer manual, and a clerk checking a suspect field each need a different kind of product.</span></p><div class="hero-linkset"><a class="primary-link" href="#projects"><span class="v-zh" lang="zh-CN">查看项目设计</span><span class="v-en" lang="en">View project designs</span></a><a class="resume-download" download="张若磐_AI产品经理.pdf" href="./zhangruopan-cv.pdf"><span class="v-zh" lang="zh-CN">下载简历 PDF</span><span class="v-en" lang="en">Download résumé PDF</span></a></div><div class="stats"><div><strong><span class="v-zh" lang="zh-CN">5 年</span><span class="v-en" lang="en">5 yrs</span></strong><span class="stat-label"><span class="v-zh" lang="zh-CN">产品经验</span><span class="v-en" lang="en">In product</span></span></div><div><strong><span class="v-zh" lang="zh-CN">3 年</span><span class="v-en" lang="en">3 yrs</span></strong><span class="stat-label"><span class="v-zh" lang="zh-CN">专注 AI 产品</span><span class="v-en" lang="en">In AI product</span></span></div><div><strong><span class="v-zh" lang="zh-CN">5 分钟内</span><span class="v-en" lang="en">≤5 min</span></strong><span class="stat-label"><span class="v-zh" lang="zh-CN">跨表复盘准备</span><span class="v-en" lang="en">To prepare a campaign review</span></span></div><div><strong><span class="v-zh" lang="zh-CN">3 家</span><span class="v-en" lang="en">3 clients</span></strong><span class="stat-label"><span class="v-zh" lang="zh-CN">单据方案商业化复用</span><span class="v-en" lang="en">Adopted the document product</span></span></div></div></header><section class="chapter" id="projects"><h2><span class="v-zh" lang="zh-CN">AI 项目案例</span><span class="v-en" lang="en">AI product work</span></h2><div class="casebook"><nav class="case-jump" aria-label="Project index"><a href="#project-ads"><span class="v-zh" lang="zh-CN">广告与库存</span><span class="v-en" lang="en">Ad spend &amp; stock</span></a><a href="#project-support"><span class="v-zh" lang="zh-CN">售后归因</span><span class="v-en" lang="en">Support failures</span></a><a href="#project-docs"><span class="v-zh" lang="zh-CN">单据复核</span><span class="v-en" lang="en">Document review</span></a></nav><article class="study ads" id="project-ads"><div class="case-rail"><p class="case-company"><span class="v-zh" lang="zh-CN">深圳智汇 · TikTok Shop</span><span class="v-en" lang="en">Shenzhen Zhihui · TikTok Shop</span></p><h3><span class="v-zh" lang="zh-CN">广告与库存联合决策</span><span class="v-en" lang="en">Ad spend and available stock</span></h3><p class="case-description"><span class="v-zh" lang="zh-CN">同款商品在不同站点的可售量不同。运营需要先看两期投放回报，再决定这款商品能否进入加预算评估。</span><span class="v-en" lang="en">Available stock varies by site for the same SKU. Operators review two periods of ad returns before deciding whether to consider a budget increase.</span></p><div class="case-results"><div class="result-item"><strong><span class="v-zh" lang="zh-CN">约 30 → 5 分钟内</span><span class="v-en" lang="en">~30 → ≤5 min</span></strong><span><span class="v-zh" lang="zh-CN">每次跨表复盘准备</span><span class="v-en" lang="en">Time to prepare a cross-report review</span></span></div><div class="result-item"><strong>98%+</strong><span><span class="v-zh" lang="zh-CN">核心指标与报表核验一致率</span><span class="v-en" lang="en">Core metrics matching the underlying reports</span></span></div></div></div><div class="study-body"><figure class="case-figure"><figcaption><span class="v-zh" lang="zh-CN">加预算建议如何被暂缓</span><span class="v-en" lang="en">When a budget recommendation is held</span></figcaption><div class="flow-state"><span class="v-zh" lang="zh-CN">比较两期商品 GMV Max 回报</span><span class="v-en" lang="en">Compare two periods of product GMV Max</span><small><span class="v-zh" lang="zh-CN">每期 ROI = 汇总归因收入 ÷ 汇总广告花费</span><span class="v-en" lang="en">Period ROI = total attributed revenue ÷ total ad spend</span></small></div><div class="flow-stem" aria-hidden="true"></div><div class="flow-state gate"><span class="v-zh" lang="zh-CN">按站点 × SKU 核对可售库存</span><span class="v-en" lang="en">Verify available inventory for this site × SKU</span><small><span class="v-zh" lang="zh-CN">可售量与在库量分开核对</span><span class="v-en" lang="en">Check sellable stock separately from on-hand stock</span></small></div><div class="flow-stem short" aria-hidden="true"></div><div class="flow-fork"><div class="flow-branch hold"><span><span class="v-zh" lang="zh-CN">库存未核准</span><span class="v-en" lang="en">Inventory unverified</span></span><strong><span class="v-zh" lang="zh-CN">暂缓加预算建议</span><span class="v-en" lang="en">Hold the recommendation</span></strong><p><span class="v-zh" lang="zh-CN">回到对应站点和 SKU 核对可售量，核准后重新评估。</span><span class="v-en" lang="en">Return to the site and SKU stock record. Reassess once it is verified.</span></p></div><div class="flow-branch pass"><span><span class="v-zh" lang="zh-CN">库存已核准</span><span class="v-en" lang="en">Inventory verified</span></span><strong><span class="v-zh" lang="zh-CN">进入预算评估</span><span class="v-en" lang="en">Proceed to budget review</span></strong><p><span class="v-zh" lang="zh-CN">结合两期回报和已核准的可售量，由运营决定是否加预算。</span><span class="v-en" lang="en">The operator weighs period returns and verified stock before deciding whether to raise spend.</span></p></div></div></figure><p class="figure-note"><span class="v-zh" lang="zh-CN">此图对应已上线的 TikTok Shop 流程。Shopee 的工作范围为按站点复盘 ROAS 的需求及口径梳理。</span><span class="v-en" lang="en">This diagram shows the shipped TikTok Shop workflow. The Shopee work covered requirements and definitions for site-level ROAS reviews.</span></p></div></article><article class="study support" id="project-support"><div class="case-rail"><p class="case-company"><span class="v-zh" lang="zh-CN">长沙佳标 · Shopee / Amazon</span><span class="v-en" lang="en">Changsha Jiabiao · Shopee / Amazon</span></p><h3><span class="v-zh" lang="zh-CN">打印机售后客服 Agent</span><span class="v-en" lang="en">Printer after-sales support</span></h3><p class="case-description"><span class="v-zh" lang="zh-CN">给 9 名客服做打印机售后。驱动安装先问机型，物流查单走固定 SQL 或已有接口，复杂退换货交回人工。</span><span class="v-en" lang="en">I built after-sales workflows for nine agents. Driver questions start with the printer model, order lookups use fixed SQL or an existing API, and staff handle complex returns.</span></p><div class="case-results"><div class="result-item"><strong>72% → 90%+</strong><span><span class="v-zh" lang="zh-CN">意图分流准确率，首版约 72%</span><span class="v-en" lang="en">Intent-routing accuracy, from about 72%</span></span></div><div class="result-item"><strong>50%+</strong><span><span class="v-zh" lang="zh-CN">高频标准咨询自动解决率</span><span class="v-en" lang="en">Frequent standard inquiries resolved automatically</span></span></div></div></div><div class="study-body"><figure class="case-figure"><figcaption><span class="v-zh" lang="zh-CN">同一句错答，排查四个环节</span><span class="v-en" lang="en">Four places to look when an answer goes wrong</span></figcaption><table class="design-table support-table"><thead><tr><th scope="col"><span class="v-zh" lang="zh-CN">失败环节</span><span class="v-en" lang="en">Stage</span></th><th scope="col"><span class="v-zh" lang="zh-CN">工单现象 · 示意</span><span class="v-en" lang="en">Illustrative symptom</span></th><th scope="col"><span class="v-zh" lang="zh-CN">处理与复测</span><span class="v-en" lang="en">Fix and retest</span></th></tr></thead><tbody><tr><th scope="row"><span class="v-zh" lang="zh-CN">分错类</span><span class="v-en" lang="en">Routing</span></th><td><span class="v-zh" lang="zh-CN">买家问包裹到哪了，却收到驱动安装步骤。</span><span class="v-en" lang="en">A shipment question is routed to driver installation.</span></td><td><span class="v-zh" lang="zh-CN">修订路由样例，复测后应进入查单流程。</span><span class="v-en" lang="en">Update the routing examples and retest for order lookup.</span></td></tr><tr><th scope="row"><span class="v-zh" lang="zh-CN">资料漏检</span><span class="v-en" lang="en">Retrieval</span></th><td><span class="v-zh" lang="zh-CN">已知机型，检索结果里却没有该机型的手册。</span><span class="v-en" lang="en">The model is known, but its manual is missing from retrieval.</span></td><td><span class="v-zh" lang="zh-CN">核对机型标签和手册收录，用原问题再查。</span><span class="v-en" lang="en">Check model tags and manual coverage, then rerun the question.</span></td></tr><tr><th scope="row"><span class="v-zh" lang="zh-CN">答错</span><span class="v-en" lang="en">Generation</span></th><td><span class="v-zh" lang="zh-CN">找到了正确的手册，回复却漏掉安装步骤。</span><span class="v-en" lang="en">The right manual was found, but the reply skips an installation step.</span></td><td><span class="v-zh" lang="zh-CN">对照原文修订回答，再核对步骤和顺序。</span><span class="v-en" lang="en">Correct the answer against the manual and verify the steps in order.</span></td></tr><tr><th scope="row"><span class="v-zh" lang="zh-CN">工具调用失败</span><span class="v-en" lang="en">Tool call</span></th><td><span class="v-zh" lang="zh-CN">查询物流时，订单接口未返回结果。</span><span class="v-en" lang="en">The order service returns no shipment result.</span></td><td><span class="v-zh" lang="zh-CN">转人工查单，避免回复未经确认的物流进度。</span><span class="v-en" lang="en">Hand off the lookup to a person before reporting shipment status.</span></td></tr></tbody></table></figure><p class="figure-note"><span class="v-zh" lang="zh-CN">评测使用 1,000+ 条真实历史工单。上表为重构示例。整体工单自动化闭环约 38%，分母包含需要人工处理的咨询。</span><span class="v-en" lang="en">Evaluation used 1,000+ real historical tickets. The examples are reconstructed. End-to-end automation was about 38% across all tickets, including those requiring staff.</span></p></div></article><article class="study documents" id="project-docs"><div class="case-rail"><p class="case-company"><span class="v-zh" lang="zh-CN">维特联合 · 物流供应链</span><span class="v-en" lang="en">Weite United · Logistics</span></p><h3><span class="v-zh" lang="zh-CN">多模态单据录入</span><span class="v-en" lang="en">Multimodal document intake</span></h3><p class="case-description"><span class="v-zh" lang="zh-CN">一票业务要复核 20–30 个字段。提单号少一个字母，也可能被当成另一个编号。存疑字段由录单员对照原文确认，再经 API 写入。</span><span class="v-en" lang="en">A shipment requires checking 20–30 fields. Dropping one letter can change a bill of lading number. Clerks verify uncertain fields before API write-back.</span></p><div class="case-results"><div class="result-item"><strong><span class="v-zh" lang="zh-CN">约 30 → 13 分钟</span><span class="v-en" lang="en">~30 → 13 min</span></strong><span><span class="v-zh" lang="zh-CN">单票录入与复核，耗时下降约 57%</span><span class="v-en" lang="en">Entry and review per shipment, about 57% less time</span></span></div><div class="result-item"><strong>90%+</strong><span><span class="v-zh" lang="zh-CN">核心字段单字段准确率</span><span class="v-en" lang="en">Accuracy measured per core field</span></span></div><div class="result-item"><strong><span class="v-zh" lang="zh-CN">3 家</span><span class="v-en" lang="en">3 clients</span></strong><span><span class="v-zh" lang="zh-CN">外部企业客户商业化复用</span><span class="v-en" lang="en">External commercial adopters</span></span></div></div></div><div class="study-body"><figure class="case-figure"><figcaption><span class="v-zh" lang="zh-CN">提单号如何从识别值变成入库值</span><span class="v-en" lang="en">From an extracted bill number to a verified value</span></figcaption><div class="source-slip"><span><span class="v-zh" lang="zh-CN">提单原文 · 虚构样张</span><span class="v-en" lang="en">Bill of lading · illustrative excerpt</span></span><div><small>B/L No.</small><strong>DEMO-<mark>A</mark>107</strong></div></div><h4><span class="v-zh" lang="zh-CN">字段 Schema 示意</span><span class="v-en" lang="en">Illustrative field schema</span></h4><table class="design-table schema-table"><thead><tr><th scope="col"><span class="v-zh" lang="zh-CN">示意字段名</span><span class="v-en" lang="en">Example field</span></th><th scope="col"><span class="v-zh" lang="zh-CN">类型</span><span class="v-en" lang="en">Type</span></th><th scope="col"><span class="v-zh" lang="zh-CN">同一字段的示例值</span><span class="v-en" lang="en">Example value</span></th></tr></thead><tbody><tr><th scope="row"><code>candidate_value</code></th><td><span class="v-zh" lang="zh-CN">可空字符串</span><span class="v-en" lang="en">Nullable text</span></td><td><samp>DEMO-107</samp></td></tr><tr><th scope="row"><code>source_ref</code></th><td><span class="v-zh" lang="zh-CN">文本</span><span class="v-en" lang="en">Text</span></td><td><span class="v-zh" lang="zh-CN">提单 · 第 1 页</span><span class="v-en" lang="en">Bill of lading · page 1</span></td></tr><tr><th scope="row"><code>review_status</code></th><td><span class="v-zh" lang="zh-CN">枚举</span><span class="v-en" lang="en">Enum</span></td><td><span class="v-zh" lang="zh-CN">待复核 → 已确认</span><span class="v-en" lang="en">Pending → confirmed</span></td></tr><tr><th scope="row"><code>confirmed_value</code></th><td><span class="v-zh" lang="zh-CN">可空字符串</span><span class="v-en" lang="en">Nullable text</span></td><td><span class="v-zh" lang="zh-CN">空 → DEMO-A107</span><span class="v-en" lang="en">Null → DEMO-A107</span></td></tr></tbody></table><h4><span class="v-zh" lang="zh-CN">OCR 选型对比</span><span class="v-en" lang="en">OCR and multimodal trade-offs</span></h4><table class="design-table compare-table"><thead><tr><th scope="col"><span class="v-zh" lang="zh-CN">方案</span><span class="v-en" lang="en">Approach</span></th><th scope="col"><span class="v-zh" lang="zh-CN">处理方式与复核成本</span><span class="v-en" lang="en">Extraction and review implications</span></th></tr></thead><tbody><tr><th scope="row"><span class="v-zh" lang="zh-CN">传统 OCR</span><span class="v-en" lang="en">Traditional OCR</span></th><td><span class="v-zh" lang="zh-CN">读取页面文字，再按客户版式定位字段。版式或盖章位置变化时，要复核识别与映射。</span><span class="v-en" lang="en">Read text, then map it using the customer&#x27;s layout. Layout shifts and stamps require checking both recognition and mapping.</span></td></tr><tr><th scope="row"><span class="v-zh" lang="zh-CN">多模态识别</span><span class="v-en" lang="en">Multimodal extraction</span></th><td><span class="v-zh" lang="zh-CN">按统一字段结构抽取，不同版式共用复核流程。遇到缺字或错栏，核对原文后再写入。</span><span class="v-en" lang="en">Extract against a common schema and reuse the review flow across layouts. Check missing characters or misplaced values before write-back.</span></td></tr></tbody></table></figure><p class="figure-note"><span class="v-zh" lang="zh-CN">评测样本为 10 家客户的 150 份单据。图中字段名和编号用于说明复核流程，未使用客户原件或生产接口字段名。</span><span class="v-en" lang="en">Evaluation used 150 documents from ten clients. Field names and the sample number illustrate the review process. No original customer document or production API field name is shown.</span></p></div></article></div><h3 class="more-label"><span class="v-zh" lang="zh-CN">其他项目</span><span class="v-en" lang="en">Other projects</span></h3><div class="other-grid"><details id="project-notifications"><summary><span class="v-zh" lang="zh-CN">ERP 对话式规则引擎与通知中心</span><span class="v-en" lang="en">Conversational ERP rules and notifications</span></summary><p><span class="v-zh" lang="zh-CN">业务人员说出提醒条件和接收人，确认模板后创建规则。定时任务负责扫描和发送。</span><span class="v-en" lang="en">Staff describe the trigger and recipients, confirm the template and create a rule. A scheduled job scans records and sends the message.</span></p><ul><li><span class="v-zh" lang="zh-CN">新品审批附单号和 ERP 入口。采购仅催未付款，物流同时覆盖未付款与部分付款。</span><span class="v-en" lang="en">New-product approvals include the record ID and ERP link. Procurement reminders cover unpaid items. Logistics also includes partially paid items.</span></li><li><span class="v-zh" lang="zh-CN">规则配置和调整由 1–2 天缩短至 10 分钟内，关键节点提醒准确触达率 99%+。</span><span class="v-en" lang="en">Rule creation and changes fell from 1–2 days to within ten minutes. Accurate delivery at key steps reached 99%+.</span></li></ul></details><details id="project-platform"><summary><span class="v-zh" lang="zh-CN">企业 AI 中台与 MCP 权限治理</span><span class="v-en" lang="en">Enterprise AI platform and MCP permissions</span></summary><p><span class="v-zh" lang="zh-CN">运营直接问数，开发人员配置 Agent 与工作流，知识维护人员可以从错答回到原问题。</span><span class="v-en" lang="en">Operators query data, developers configure agents and workflows, and knowledge maintainers revisit the exact question that failed.</span></p><ul><li><span class="v-zh" lang="zh-CN">支持回看线上问答、修订知识、原问题复测。工具按用户授权、收回并记录分发过程，另设计商品图的需求、生成和结果查看流程。</span><span class="v-en" lang="en">Linked answer review, knowledge edits and regression on the original question. Added per-user tool grants, revocation, distribution logs and a product-image request workflow.</span></li><li><span class="v-zh" lang="zh-CN">定位错答和验证修复的周期由天级缩短至小时级，维护效率提升 50%+。</span><span class="v-en" lang="en">Finding an answer failure and verifying its fix went from days to hours, with a 50%+ improvement in maintenance efficiency.</span></li></ul></details><details id="project-rag"><summary><span class="v-zh" lang="zh-CN">企业级多租户知识问答 RAG</span><span class="v-en" lang="en">Multi-tenant enterprise knowledge Q&amp;A</span></summary><p><span class="v-zh" lang="zh-CN">同一个操作问题，答案可能随客户、角色和软件版本而变。先限定检索范围，再生成回答。</span><span class="v-en" lang="en">The right procedure depends on the client, user role and software version. Retrieval is scoped before an answer is generated.</span></p><ul><li><span class="v-zh" lang="zh-CN">约 1,000 页业务文档按三类元数据过滤。遇到依据不足的提问转人工。</span><span class="v-en" lang="en">About 1,000 pages of documentation are filtered by three metadata attributes. Staff take over when evidence is insufficient.</span></li><li><span class="v-zh" lang="zh-CN">从检索、排序、知识内容与回答生成四处定位问题。修订后用原问题回归测试。</span><span class="v-en" lang="en">Failures are traced to retrieval, ranking, knowledge content or generation. After a fix, the original question is tested again.</span></li></ul></details></div></section><section class="chapter" id="experience"><h2><span class="v-zh" lang="zh-CN">职业履历</span><span class="v-en" lang="en">Experience</span></h2><div class="other-grid"><details><summary><small>2025.09 — 2026.10</small><span class="v-zh" lang="zh-CN">深圳智汇科技创新有限公司 · AI 产品经理</span><span class="v-en" lang="en">Shenzhen Zhihui · AI Product Manager</span></summary><p><span class="v-zh" lang="zh-CN">负责跨境业务 AI，交付广告与库存决策 Agent、ERP 对话式通知中心和企业 AI 中台。</span><span class="v-en" lang="en">Led AI for cross-border operations, delivering an advertising and inventory agent, conversational ERP notifications and an internal AI platform.</span></p><ul><li><span class="v-zh" lang="zh-CN">统一 TikTok Shop GMV Max 两期 ROI 的计算方式，按站点和 SKU 核验可售库存。另行梳理 Shopee 按站点复盘 ROAS 的需求。</span><span class="v-en" lang="en">Standardized two-period ROI for TikTok Shop GMV Max and checked available stock by site and SKU. Defined site-level ROAS review requirements for Shopee.</span></li><li><span class="v-zh" lang="zh-CN">由模型起草提醒规则，经用户确认后交给定时任务执行。拆分业务问数和开发配置，支持知识修订后复测原问题，以及 MCP 工具按用户授权、收回和查询记录。</span><span class="v-en" lang="en">Designed user-confirmed notification rules and scheduled delivery, separate business and developer views, question-level regression testing and per-user MCP access controls.</span></li><li><span class="v-zh" lang="zh-CN">运营复盘准备由约 30 分钟缩短至 5 分钟内，核心指标与报表核验一致率 98%+，日常复盘采纳率 70%+。</span><span class="v-en" lang="en">Review preparation fell from about 30 minutes to within five. Core metrics matched reports in 98%+ of checks and adoption in daily reviews reached 70%+.</span></li><li><span class="v-zh" lang="zh-CN">上线 13 类通知规则，配置周期从 1–2 天缩短至 10 分钟内，关键节点提醒准确触达率 99%+。线上错答定位与修复验证从天级缩短到小时级，内部 MCP 工具全部纳入用户级授权和分发审计。</span><span class="v-en" lang="en">Shipped 13 notification rule types. Setup fell from 1–2 days to within ten minutes, with 99%+ accurate delivery at key steps. Answer diagnosis and fix verification fell from days to hours. All internal MCP tools came under per-user grants and distribution audits.</span></li></ul></details><details><summary><small>2024.09 — 2025.08</small><span class="v-zh" lang="zh-CN">长沙佳标电子科技有限公司 · AI 产品经理</span><span class="v-en" lang="en">Changsha Jiabiao Electronics · AI Product Manager</span></summary><p><span class="v-zh" lang="zh-CN">为东南亚 Shopee、Amazon 等海外渠道的 9 名客服交付打印机售后 Agent。</span><span class="v-en" lang="en">Led the printer after-sales agent for a nine-person team serving Southeast Asian Shopee stores, Amazon and other overseas channels.</span></p><ul><li><span class="v-zh" lang="zh-CN">在 Dify 搭建按机型追问、查手册和查单的工作流。已入库且适合直查的数据使用固定 SQL，其他数据通过既有 HTTP 接口查询。</span><span class="v-en" lang="en">Built model-specific troubleshooting and order lookup in Dify. Suitable stored data used fixed SQL templates. Other data came from existing HTTP services.</span></li><li><span class="v-zh" lang="zh-CN">需要判断的退换货或查单失败由客服接手。指导同事使用 Cursor，协助试用 Claude 和 Codex，对接自研 ERP 需求。</span><span class="v-en" lang="en">Staff handled discretionary returns and failed lookups. Coached colleagues on Cursor, helped trial Claude and Codex, and coordinated in-house ERP requirements.</span></li><li><span class="v-zh" lang="zh-CN">以 1,000+ 条真实历史工单评测。意图分流准确率从约 72% 提升至 90%+。高频标准咨询自动解决率 50%+，整体工单自动化闭环约 38%。</span><span class="v-en" lang="en">Evaluated with 1,000+ real tickets. Intent routing rose from about 72% to 90%+. The agent resolved 50%+ of frequent standard inquiries and about 38% of all tickets end to end.</span></li><li><span class="v-zh" lang="zh-CN">回复草稿采纳率 70%+，常规首次响应在 10 秒内，单客平均处理时长缩短约 25%。新机型放量期间，团队保持 9 人。</span><span class="v-en" lang="en">Draft adoption reached 70%+, standard first responses took under ten seconds and average handling time fell about 25%. Staffing stayed at nine as new models scaled.</span></li></ul></details><details><summary><small>2021.08 — 2024.08</small><span class="v-zh" lang="zh-CN">维特联合（北京）科技发展公司 · 产品经理 → AI 产品经理</span><span class="v-en" lang="en">Weite United (Beijing) Technology · Product Manager → AI Product Manager</span></summary><p><span class="v-zh" lang="zh-CN">交付码头、堆场和仓储等供应链产品，2023 年 8 月转任 AI 产品经理，负责企业知识问答和多模态单据录入。</span><span class="v-en" lang="en">Delivered logistics products for terminals, container yards and warehouses. Moved into AI product management in August 2023, leading enterprise Q&amp;A and multimodal document intake.</span></p><ul><li><span class="v-zh" lang="zh-CN">负责单据产品方案、评测、研发推进与客户验收。对照原文复核存疑字段，再通过 API 写入业务系统。</span><span class="v-en" lang="en">Owned document product design, evaluation, engineering delivery and client acceptance. Clerks verified uncertain fields against the source before API write-back.</span></li><li><span class="v-zh" lang="zh-CN">基于约 1,000 页文档和 550 条历史咨询设计多租户 RAG，按客户、角色和软件版本过滤，依据不足时转人工。</span><span class="v-en" lang="en">Designed multi-tenant RAG using about 1,000 pages and 550 historical inquiries. Retrieval was scoped by client, role and software version, with human escalation when evidence was insufficient.</span></li><li><span class="v-zh" lang="zh-CN">使用 10 家客户的 150 份单据逐字段核对，20–30 个核心字段单字段准确率 90%+。每票录入复核由约 30 分钟降至约 13 分钟，商业化复用于 3 家外部企业。</span><span class="v-en" lang="en">With 150 documents from ten clients, accuracy reached 90%+ per field across 20–30 core fields. Entry and review fell from about 30 to 13 minutes per shipment. Three external enterprise clients adopted the solution commercially.</span></li><li><span class="v-zh" lang="zh-CN">复用货位、任务、巡检和权限设计，典型堆场项目的货物定位时间从约 30 分钟缩短到约 5 分钟。</span><span class="v-en" lang="en">Reused location, task, inspection and permission designs. Time to locate goods in a representative yard fell from about 30 minutes to about five.</span></li></ul></details><details><summary><small>2020.11 — 2021.05</small><span class="v-zh" lang="zh-CN">京东科技 · 产品助理（实习）</span><span class="v-en" lang="en">JD Technology · Product Assistant Intern</span></summary><p><span class="v-zh" lang="zh-CN">参与企业服务产品的需求分析、业务流程梳理、需求文档与原型设计，协助跨团队推进项目。</span><span class="v-en" lang="en">Contributed to requirements analysis, process mapping, product documentation and prototyping for enterprise services, and helped coordinate delivery across teams.</span></p><ul><li><span class="v-zh" lang="zh-CN">梳理流程、撰写需求文档与制作原型。</span><span class="v-en" lang="en">Mapped workflows, documented requirements and prepared prototypes.</span></li><li><span class="v-zh" lang="zh-CN">协助跨团队推进企业服务产品需求。</span><span class="v-en" lang="en">Supported cross-team delivery of enterprise product requirements.</span></li></ul></details></div></section><section class="chapter" id="articles"><h2><span class="v-zh" lang="zh-CN">AI 思考</span><span class="v-en" lang="en">Writing</span></h2><ul class="library-list"><li><small>2026.07 · <span class="v-zh" lang="zh-CN">知乎</span><span class="v-en" lang="en">Zhihu</span></small><a rel="noopener noreferrer" target="_blank" href="https://zhuanlan.zhihu.com/p/2055421767922013042">为什么我更建议优先选择便宜 AI，而不是默认使用最强模型？</a></li><li><small>2026.07 · <span class="v-zh" lang="zh-CN">知乎</span><span class="v-en" lang="en">Zhihu</span></small><a rel="noopener noreferrer" target="_blank" href="https://zhuanlan.zhihu.com/p/2055061379158111398">我们越依赖的 AI 工具，越有可能被控制</a></li><li><small>2026.06 · <span class="v-zh" lang="zh-CN">知乎</span><span class="v-en" lang="en">Zhihu</span></small><a rel="noopener noreferrer" target="_blank" href="https://zhuanlan.zhihu.com/p/2054709830208824133">小微入局，微信生态任务调度新变革</a></li><li><small>2026.06 · <span class="v-zh" lang="zh-CN">知乎</span><span class="v-en" lang="en">Zhihu</span></small><a rel="noopener noreferrer" target="_blank" href="https://zhuanlan.zhihu.com/p/2054365536688067456">AI 用几小时攻破了国家机密系统，然后被关掉了</a></li><li><small>2026.06 · <span class="v-zh" lang="zh-CN">公众号</span><span class="v-en" lang="en">WeChat</span></small><a rel="noopener noreferrer" target="_blank" href="https://mp.weixin.qq.com/s/KKPCjPkNdAtQtKyJ-9TViA">能帮你找漏洞的 AI，也能帮别人利用漏洞</a></li><li><small>2026.05 · <span class="v-zh" lang="zh-CN">知乎</span><span class="v-en" lang="en">Zhihu</span></small><a rel="noopener noreferrer" target="_blank" href="https://zhuanlan.zhihu.com/p/2053924204584744600">你以为 AI 在帮你思考，但你正在丧失思考的能力</a></li><li><small>2026.05 · <span class="v-zh" lang="zh-CN">公众号</span><span class="v-en" lang="en">WeChat</span></small><a rel="noopener noreferrer" target="_blank" href="https://mp.weixin.qq.com/s/enRiJt55LZ_aZSd_ZMA6FQ">你以为 AI 在帮你思考，但你正在丧失思考的能力</a></li><li><small>2026.05 · <span class="v-zh" lang="zh-CN">知乎</span><span class="v-en" lang="en">Zhihu</span></small><a rel="noopener noreferrer" target="_blank" href="https://zhuanlan.zhihu.com/p/2053508509988345838">AI 的「注意力」也会涣散？一个心理学实验揭开了大模型的结构性短板</a></li><li><small>2026.05 · <span class="v-zh" lang="zh-CN">知乎</span><span class="v-en" lang="en">Zhihu</span></small><a rel="noopener noreferrer" target="_blank" href="https://zhuanlan.zhihu.com/p/2053237578904630132">AI 不是因为你想要才变强的——「从聊天到做事」背后真正的推手</a></li><li><small>2026.05 · <span class="v-zh" lang="zh-CN">公众号</span><span class="v-en" lang="en">WeChat</span></small><a rel="noopener noreferrer" target="_blank" href="https://mp.weixin.qq.com/s/3tabWQ2Q_Z7fkKETw-AQNw">所有人都在说 AI 能「做事」了，但几乎所有人都搞反了原因</a></li><li><small>2026.04 · <span class="v-zh" lang="zh-CN">公众号</span><span class="v-en" lang="en">WeChat</span></small><a rel="noopener noreferrer" target="_blank" href="https://mp.weixin.qq.com/s/mTv5gq6J6S4va7CuBOpMhg">AI 最大的风险，可能不是它太聪明，而是我们越来越不愿意自己思考</a></li><li><small>2026.04 · <span class="v-zh" lang="zh-CN">知乎</span><span class="v-en" lang="en">Zhihu</span></small><a rel="noopener noreferrer" target="_blank" href="https://zhuanlan.zhihu.com/p/2051838714469414842">你不是懂了，你只是看过</a></li></ul></section><section class="chapter" id="contact"><h2><span class="v-zh" lang="zh-CN">联系我</span><span class="v-en" lang="en">Contact</span></h2><div class="contacts"><a href="mailto:postmaster@zhangruopan.com">postmaster@zhangruopan.com</a><a href="tel:15975386509">15975386509</a><span><span class="v-zh" lang="zh-CN">微信</span><span class="v-en" lang="en">WeChat</span> · quartZ0520</span></div></section></main><footer>© 2026 Zhangruopan</footer></div></div>
+
+</noscript>
 <x-dc>
 <helmet>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
@@ -527,8 +672,8 @@
   <nav class="top-nav" aria-label="{{ tPrimaryNav }}" style="display:flex; align-items:center; justify-content:space-between; gap:24px">
     <a class="brand-lockup" href="#"><span class="brand-mark" aria-hidden="true">Z</span><span>Zhangruopan</span></a>
     <div class="nav-links" style="display:flex; align-items:center; gap:32px; font-size:14px">
-      <a class="{{ navExperienceClass }}" data-nav-target="experience" href="#experience" aria-current="{{ navExperienceCurrent }}" onClick="{{ onNavExperience }}">{{ tNavExperience }}</a>
       <a class="{{ navProjectsClass }}" data-nav-target="projects" href="#projects" aria-current="{{ navProjectsCurrent }}" onClick="{{ onNavProjects }}">{{ tNavProjects }}</a>
+      <a class="{{ navExperienceClass }}" data-nav-target="experience" href="#experience" aria-current="{{ navExperienceCurrent }}" onClick="{{ onNavExperience }}">{{ tNavExperience }}</a>
       <a class="{{ navArticlesClass }}" data-nav-target="articles" href="#articles" aria-current="{{ navArticlesCurrent }}" onClick="{{ onNavArticles }}">{{ tNavArticles }}</a>
       <a class="{{ navContactClass }}" data-nav-target="contact" href="#contact" aria-current="{{ navContactCurrent }}" onClick="{{ onNavContact }}">{{ tNavContact }}</a>
       <button class="locale-button" type="button" onClick="{{ toggleLocale }}" style="border:1px solid; cursor:pointer; border-radius:9999px; padding:8px 15px; font-size:12px; font-weight:600; transition:background 150ms">{{ tLangLabel }}</button>
@@ -563,6 +708,7 @@
         <p class="hero-intro hero-copy">{{ tHeroIntro }}</p>
         <div class="hero-actions">
           <a class="primary-action" href="#projects">{{ tExploreProjects }} <span aria-hidden="true">↘</span></a>
+          <a class="resume-download" download="张若磐_AI产品经理.pdf" href="./zhangruopan-cv.pdf"><span class="v-zh" lang="zh-CN">下载简历 PDF</span><span class="v-en" lang="en">Download résumé PDF</span></a>
           <button type="button" class="secondary-action" onClick="{{ openIntroVideo }}" aria-label="{{ tVideoButtonAria }}"><span aria-hidden="true">▶</span>{{ tVideoButton }}</button>
         </div>
       </div>
@@ -594,9 +740,43 @@
   </sc-if>
 
   <!-- ============ 工作经历 ============ -->
+  <section id="projects" class="portfolio-section motion-section">
+    <div class="section-head motion-reveal">
+      <span class="section-index">01 / Selected work</span>
+      <h2 class="section-title">{{ tNavProjects }}</h2>
+    </div>
+    <div class="casebook"><nav class="case-jump" aria-label="Project index"><a href="#project-ads"><span class="v-zh" lang="zh-CN">广告与库存</span><span class="v-en" lang="en">Ad spend &amp; stock</span></a><a href="#project-support"><span class="v-zh" lang="zh-CN">售后归因</span><span class="v-en" lang="en">Support failures</span></a><a href="#project-docs"><span class="v-zh" lang="zh-CN">单据复核</span><span class="v-en" lang="en">Document review</span></a></nav><article class="study ads" id="project-ads"><div class="case-rail"><p class="case-company"><span class="v-zh" lang="zh-CN">深圳智汇 · TikTok Shop</span><span class="v-en" lang="en">Shenzhen Zhihui · TikTok Shop</span></p><h3><span class="v-zh" lang="zh-CN">广告与库存联合决策</span><span class="v-en" lang="en">Ad spend and available stock</span></h3><p class="case-description"><span class="v-zh" lang="zh-CN">同款商品在不同站点的可售量不同。运营需要先看两期投放回报，再决定这款商品能否进入加预算评估。</span><span class="v-en" lang="en">Available stock varies by site for the same SKU. Operators review two periods of ad returns before deciding whether to consider a budget increase.</span></p><div class="case-results"><div class="result-item"><strong><span class="v-zh" lang="zh-CN">约 30 → 5 分钟内</span><span class="v-en" lang="en">~30 → ≤5 min</span></strong><span><span class="v-zh" lang="zh-CN">每次跨表复盘准备</span><span class="v-en" lang="en">Time to prepare a cross-report review</span></span></div><div class="result-item"><strong>98%+</strong><span><span class="v-zh" lang="zh-CN">核心指标与报表核验一致率</span><span class="v-en" lang="en">Core metrics matching the underlying reports</span></span></div></div></div><div class="study-body"><figure class="case-figure"><figcaption><span class="v-zh" lang="zh-CN">加预算建议如何被暂缓</span><span class="v-en" lang="en">When a budget recommendation is held</span></figcaption><div class="flow-state"><span class="v-zh" lang="zh-CN">比较两期商品 GMV Max 回报</span><span class="v-en" lang="en">Compare two periods of product GMV Max</span><small><span class="v-zh" lang="zh-CN">每期 ROI = 汇总归因收入 ÷ 汇总广告花费</span><span class="v-en" lang="en">Period ROI = total attributed revenue ÷ total ad spend</span></small></div><div class="flow-stem" aria-hidden="true"></div><div class="flow-state gate"><span class="v-zh" lang="zh-CN">按站点 × SKU 核对可售库存</span><span class="v-en" lang="en">Verify available inventory for this site × SKU</span><small><span class="v-zh" lang="zh-CN">可售量与在库量分开核对</span><span class="v-en" lang="en">Check sellable stock separately from on-hand stock</span></small></div><div class="flow-stem short" aria-hidden="true"></div><div class="flow-fork"><div class="flow-branch hold"><span><span class="v-zh" lang="zh-CN">库存未核准</span><span class="v-en" lang="en">Inventory unverified</span></span><strong><span class="v-zh" lang="zh-CN">暂缓加预算建议</span><span class="v-en" lang="en">Hold the recommendation</span></strong><p><span class="v-zh" lang="zh-CN">回到对应站点和 SKU 核对可售量，核准后重新评估。</span><span class="v-en" lang="en">Return to the site and SKU stock record. Reassess once it is verified.</span></p></div><div class="flow-branch pass"><span><span class="v-zh" lang="zh-CN">库存已核准</span><span class="v-en" lang="en">Inventory verified</span></span><strong><span class="v-zh" lang="zh-CN">进入预算评估</span><span class="v-en" lang="en">Proceed to budget review</span></strong><p><span class="v-zh" lang="zh-CN">结合两期回报和已核准的可售量，由运营决定是否加预算。</span><span class="v-en" lang="en">The operator weighs period returns and verified stock before deciding whether to raise spend.</span></p></div></div></figure><p class="figure-note"><span class="v-zh" lang="zh-CN">此图对应已上线的 TikTok Shop 流程。Shopee 的工作范围为按站点复盘 ROAS 的需求及口径梳理。</span><span class="v-en" lang="en">This diagram shows the shipped TikTok Shop workflow. The Shopee work covered requirements and definitions for site-level ROAS reviews.</span></p></div></article><article class="study support" id="project-support"><div class="case-rail"><p class="case-company"><span class="v-zh" lang="zh-CN">长沙佳标 · Shopee / Amazon</span><span class="v-en" lang="en">Changsha Jiabiao · Shopee / Amazon</span></p><h3><span class="v-zh" lang="zh-CN">打印机售后客服 Agent</span><span class="v-en" lang="en">Printer after-sales support</span></h3><p class="case-description"><span class="v-zh" lang="zh-CN">给 9 名客服做打印机售后。驱动安装先问机型，物流查单走固定 SQL 或已有接口，复杂退换货交回人工。</span><span class="v-en" lang="en">I built after-sales workflows for nine agents. Driver questions start with the printer model, order lookups use fixed SQL or an existing API, and staff handle complex returns.</span></p><div class="case-results"><div class="result-item"><strong>72% → 90%+</strong><span><span class="v-zh" lang="zh-CN">意图分流准确率，首版约 72%</span><span class="v-en" lang="en">Intent-routing accuracy, from about 72%</span></span></div><div class="result-item"><strong>50%+</strong><span><span class="v-zh" lang="zh-CN">高频标准咨询自动解决率</span><span class="v-en" lang="en">Frequent standard inquiries resolved automatically</span></span></div></div></div><div class="study-body"><figure class="case-figure"><figcaption><span class="v-zh" lang="zh-CN">同一句错答，排查四个环节</span><span class="v-en" lang="en">Four places to look when an answer goes wrong</span></figcaption><table class="design-table support-table"><thead><tr><th scope="col"><span class="v-zh" lang="zh-CN">失败环节</span><span class="v-en" lang="en">Stage</span></th><th scope="col"><span class="v-zh" lang="zh-CN">工单现象 · 示意</span><span class="v-en" lang="en">Illustrative symptom</span></th><th scope="col"><span class="v-zh" lang="zh-CN">处理与复测</span><span class="v-en" lang="en">Fix and retest</span></th></tr></thead><tbody><tr><th scope="row"><span class="v-zh" lang="zh-CN">分错类</span><span class="v-en" lang="en">Routing</span></th><td><span class="v-zh" lang="zh-CN">买家问包裹到哪了，却收到驱动安装步骤。</span><span class="v-en" lang="en">A shipment question is routed to driver installation.</span></td><td><span class="v-zh" lang="zh-CN">修订路由样例，复测后应进入查单流程。</span><span class="v-en" lang="en">Update the routing examples and retest for order lookup.</span></td></tr><tr><th scope="row"><span class="v-zh" lang="zh-CN">资料漏检</span><span class="v-en" lang="en">Retrieval</span></th><td><span class="v-zh" lang="zh-CN">已知机型，检索结果里却没有该机型的手册。</span><span class="v-en" lang="en">The model is known, but its manual is missing from retrieval.</span></td><td><span class="v-zh" lang="zh-CN">核对机型标签和手册收录，用原问题再查。</span><span class="v-en" lang="en">Check model tags and manual coverage, then rerun the question.</span></td></tr><tr><th scope="row"><span class="v-zh" lang="zh-CN">答错</span><span class="v-en" lang="en">Generation</span></th><td><span class="v-zh" lang="zh-CN">找到了正确的手册，回复却漏掉安装步骤。</span><span class="v-en" lang="en">The right manual was found, but the reply skips an installation step.</span></td><td><span class="v-zh" lang="zh-CN">对照原文修订回答，再核对步骤和顺序。</span><span class="v-en" lang="en">Correct the answer against the manual and verify the steps in order.</span></td></tr><tr><th scope="row"><span class="v-zh" lang="zh-CN">工具调用失败</span><span class="v-en" lang="en">Tool call</span></th><td><span class="v-zh" lang="zh-CN">查询物流时，订单接口未返回结果。</span><span class="v-en" lang="en">The order service returns no shipment result.</span></td><td><span class="v-zh" lang="zh-CN">转人工查单，避免回复未经确认的物流进度。</span><span class="v-en" lang="en">Hand off the lookup to a person before reporting shipment status.</span></td></tr></tbody></table></figure><p class="figure-note"><span class="v-zh" lang="zh-CN">评测使用 1,000+ 条真实历史工单。上表为重构示例。整体工单自动化闭环约 38%，分母包含需要人工处理的咨询。</span><span class="v-en" lang="en">Evaluation used 1,000+ real historical tickets. The examples are reconstructed. End-to-end automation was about 38% across all tickets, including those requiring staff.</span></p></div></article><article class="study documents" id="project-docs"><div class="case-rail"><p class="case-company"><span class="v-zh" lang="zh-CN">维特联合 · 物流供应链</span><span class="v-en" lang="en">Weite United · Logistics</span></p><h3><span class="v-zh" lang="zh-CN">多模态单据录入</span><span class="v-en" lang="en">Multimodal document intake</span></h3><p class="case-description"><span class="v-zh" lang="zh-CN">一票业务要复核 20–30 个字段。提单号少一个字母，也可能被当成另一个编号。存疑字段由录单员对照原文确认，再经 API 写入。</span><span class="v-en" lang="en">A shipment requires checking 20–30 fields. Dropping one letter can change a bill of lading number. Clerks verify uncertain fields before API write-back.</span></p><div class="case-results"><div class="result-item"><strong><span class="v-zh" lang="zh-CN">约 30 → 13 分钟</span><span class="v-en" lang="en">~30 → 13 min</span></strong><span><span class="v-zh" lang="zh-CN">单票录入与复核，耗时下降约 57%</span><span class="v-en" lang="en">Entry and review per shipment, about 57% less time</span></span></div><div class="result-item"><strong>90%+</strong><span><span class="v-zh" lang="zh-CN">核心字段单字段准确率</span><span class="v-en" lang="en">Accuracy measured per core field</span></span></div><div class="result-item"><strong><span class="v-zh" lang="zh-CN">3 家</span><span class="v-en" lang="en">3 clients</span></strong><span><span class="v-zh" lang="zh-CN">外部企业客户商业化复用</span><span class="v-en" lang="en">External commercial adopters</span></span></div></div></div><div class="study-body"><figure class="case-figure"><figcaption><span class="v-zh" lang="zh-CN">提单号如何从识别值变成入库值</span><span class="v-en" lang="en">From an extracted bill number to a verified value</span></figcaption><div class="source-slip"><span><span class="v-zh" lang="zh-CN">提单原文 · 虚构样张</span><span class="v-en" lang="en">Bill of lading · illustrative excerpt</span></span><div><small>B/L No.</small><strong>DEMO-<mark>A</mark>107</strong></div></div><h4><span class="v-zh" lang="zh-CN">字段 Schema 示意</span><span class="v-en" lang="en">Illustrative field schema</span></h4><table class="design-table schema-table"><thead><tr><th scope="col"><span class="v-zh" lang="zh-CN">示意字段名</span><span class="v-en" lang="en">Example field</span></th><th scope="col"><span class="v-zh" lang="zh-CN">类型</span><span class="v-en" lang="en">Type</span></th><th scope="col"><span class="v-zh" lang="zh-CN">同一字段的示例值</span><span class="v-en" lang="en">Example value</span></th></tr></thead><tbody><tr><th scope="row"><code>candidate_value</code></th><td><span class="v-zh" lang="zh-CN">可空字符串</span><span class="v-en" lang="en">Nullable text</span></td><td><samp>DEMO-107</samp></td></tr><tr><th scope="row"><code>source_ref</code></th><td><span class="v-zh" lang="zh-CN">文本</span><span class="v-en" lang="en">Text</span></td><td><span class="v-zh" lang="zh-CN">提单 · 第 1 页</span><span class="v-en" lang="en">Bill of lading · page 1</span></td></tr><tr><th scope="row"><code>review_status</code></th><td><span class="v-zh" lang="zh-CN">枚举</span><span class="v-en" lang="en">Enum</span></td><td><span class="v-zh" lang="zh-CN">待复核 → 已确认</span><span class="v-en" lang="en">Pending → confirmed</span></td></tr><tr><th scope="row"><code>confirmed_value</code></th><td><span class="v-zh" lang="zh-CN">可空字符串</span><span class="v-en" lang="en">Nullable text</span></td><td><span class="v-zh" lang="zh-CN">空 → DEMO-A107</span><span class="v-en" lang="en">Null → DEMO-A107</span></td></tr></tbody></table><h4><span class="v-zh" lang="zh-CN">OCR 选型对比</span><span class="v-en" lang="en">OCR and multimodal trade-offs</span></h4><table class="design-table compare-table"><thead><tr><th scope="col"><span class="v-zh" lang="zh-CN">方案</span><span class="v-en" lang="en">Approach</span></th><th scope="col"><span class="v-zh" lang="zh-CN">处理方式与复核成本</span><span class="v-en" lang="en">Extraction and review implications</span></th></tr></thead><tbody><tr><th scope="row"><span class="v-zh" lang="zh-CN">传统 OCR</span><span class="v-en" lang="en">Traditional OCR</span></th><td><span class="v-zh" lang="zh-CN">读取页面文字，再按客户版式定位字段。版式或盖章位置变化时，要复核识别与映射。</span><span class="v-en" lang="en">Read text, then map it using the customer&#x27;s layout. Layout shifts and stamps require checking both recognition and mapping.</span></td></tr><tr><th scope="row"><span class="v-zh" lang="zh-CN">多模态识别</span><span class="v-en" lang="en">Multimodal extraction</span></th><td><span class="v-zh" lang="zh-CN">按统一字段结构抽取，不同版式共用复核流程。遇到缺字或错栏，核对原文后再写入。</span><span class="v-en" lang="en">Extract against a common schema and reuse the review flow across layouts. Check missing characters or misplaced values before write-back.</span></td></tr></tbody></table></figure><p class="figure-note"><span class="v-zh" lang="zh-CN">评测样本为 10 家客户的 150 份单据。图中字段名和编号用于说明复核流程，未使用客户原件或生产接口字段名。</span><span class="v-en" lang="en">Evaluation used 150 documents from ten clients. Field names and the sample number illustrate the review process. No original customer document or production API field name is shown.</span></p></div></article></div><h3 class="more-label"><span class="v-zh" lang="zh-CN">其他项目</span><span class="v-en" lang="en">Other projects</span></h3><div class="project-grid">
+      <sc-for list="{{ projectItems }}" as="project" hint-placeholder-count="4">
+        <details id="{{ project.anchor }}" class="project-card motion-reveal treasure-surface" style="--card-accent:{{ project.accent }}; scroll-margin-top:96px">
+          <summary class="project-summary">
+            <div class="project-topline">
+              <span>{{ project.indexLabel }} · {{ project.period }}</span>
+              <span class="project-role">{{ project.role }}</span>
+            </div>
+            <div class="project-metric"><strong>{{ project.metric }}</strong><span>{{ project.metricLabel }}</span></div>
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-summary-copy">{{ project.summary }}</p>
+            <div class="project-open"><span>{{ tOpenCase }}</span><span class="resume-toggle" aria-hidden="true"></span></div>
+          </summary>
+          <span class="treasure-light" aria-hidden="true"></span><span class="treasure-trace" aria-hidden="true"></span>
+          <div class="resume-detail">
+            <div class="resume-detail-block">
+              <p class="resume-detail-label">{{ tProjectWork }}</p>
+              <ul><sc-for list="{{ project.work }}" as="item"><li>{{ item }}</li></sc-for></ul>
+            </div>
+            <div class="resume-detail-block">
+              <p class="resume-detail-label">{{ tProjectImpact }}</p>
+              <ul><sc-for list="{{ project.impact }}" as="item"><li>{{ item }}</li></sc-for></ul>
+            </div>
+          </div>
+        </details>
+      </sc-for>
+    </div>
+  </section>
+
   <section id="experience" class="portfolio-section motion-section">
     <div class="section-head motion-reveal">
-      <span class="section-index">01 / Experience</span>
+      <span class="section-index">02 / Experience</span>
       <h2 class="section-title">{{ tNavExperience }}</h2>
     </div>
     <div class="experience-stack">
@@ -626,42 +806,6 @@
     </div>
   </section>
 
-  <!-- ============ 项目经历 ============ -->
-  <section id="projects" class="portfolio-section motion-section">
-    <div class="section-head motion-reveal">
-      <span class="section-index">02 / Selected work</span>
-      <h2 class="section-title">{{ tNavProjects }}</h2>
-    </div>
-    <div class="project-grid">
-      <sc-for list="{{ projectItems }}" as="project" hint-placeholder-count="4">
-        <details id="{{ project.anchor }}" class="project-card motion-reveal treasure-surface" style="--card-accent:{{ project.accent }}; scroll-margin-top:96px">
-          <summary class="project-summary">
-            <div class="project-topline">
-              <span>{{ project.indexLabel }} · {{ project.period }}</span>
-              <span class="project-role">{{ project.role }}</span>
-            </div>
-            <div class="project-metric"><strong>{{ project.metric }}</strong><span>{{ project.metricLabel }}</span></div>
-            <h3 class="project-title">{{ project.title }}</h3>
-            <p class="project-summary-copy">{{ project.summary }}</p>
-            <div class="project-open"><span>{{ tOpenCase }}</span><span class="resume-toggle" aria-hidden="true"></span></div>
-          </summary>
-          <span class="treasure-light" aria-hidden="true"></span><span class="treasure-trace" aria-hidden="true"></span>
-          <div class="resume-detail">
-            <div class="resume-detail-block">
-              <p class="resume-detail-label">{{ tProjectWork }}</p>
-              <ul><sc-for list="{{ project.work }}" as="item"><li>{{ item }}</li></sc-for></ul>
-            </div>
-            <div class="resume-detail-block">
-              <p class="resume-detail-label">{{ tProjectImpact }}</p>
-              <ul><sc-for list="{{ project.impact }}" as="item"><li>{{ item }}</li></sc-for></ul>
-            </div>
-          </div>
-        </details>
-      </sc-for>
-    </div>
-  </section>
-
-  <!-- ============ 文章作品集 ============ -->
   <section id="articles" class="portfolio-section motion-section">
     <div class="section-head motion-reveal">
       <span class="section-index">03 / Writing</span>
@@ -964,8 +1108,8 @@ class Component extends DCLogic {
     const isZh = locale === "zh";
     const title = isZh ? "张若磐｜AI 产品经理" : "Zhangruopan | AI Product Manager";
     const description = isZh
-      ? "张若磐的个人作品集：AI 产品经历、项目案例、文章与联系方式。"
-      : "Zhangruopan's portfolio: AI product experience, project cases, writing, and contact details.";
+      ? "张若磐的跨境电商与供应链 AI 作品集，含广告库存决策、打印机售后和多模态单据复核的脱敏设计。"
+      : "Zhangruopan’s AI product portfolio, with anonymized designs for commerce decisions, printer support and logistics document review.";
     document.documentElement.lang = isZh ? "zh-CN" : "en";
     document.title = title;
     const setContent = (selector, value) => {
@@ -1281,7 +1425,7 @@ class Component extends DCLogic {
   }
 
   updateActiveSection() {
-    const ids = ["experience", "projects", "articles", "contact"];
+    const ids = ["projects", "experience", "articles", "contact"];
     const marker = Math.min(window.innerHeight * 0.34, 220);
     let active = "";
     ids.forEach((id) => {
@@ -1406,10 +1550,22 @@ class Component extends DCLogic {
   agentReply(question) {
     const q = (question || "").toLowerCase();
     const has = (...keys) => keys.some((k) => q.includes(k.toLowerCase()));
+    if (has("广告","加预算","GMV Max","可售库存","ad spend","stock","budget")) {
+      return this.t("TikTok Shop 商品 GMV Max 按两期分别汇总归因收入和花费，再计算 ROI。准备给出加预算建议前，按站点和 SKU 核对可售库存。数据未核准就暂缓建议。复盘准备从约 30 分钟缩短至 5 分钟内。Shopee 的范围是按站点复盘 ROAS 的需求梳理。","For TikTok Shop GMV Max, each period's ROI uses summed attributed revenue divided by summed spend. A budget review checks available stock by site and SKU first. Unverified inventory holds the recommendation. Preparation fell from about 30 minutes to within five. Shopee work covered site-level ROAS requirements.");
+    }
+    if (has("通知","NL2Rule","notification")) {
+      return this.t("上线 13 类通知规则，配置周期从 1–2 天缩短至 10 分钟内，关键节点提醒准确触达率 99%+。线上错答定位与修复验证从天级缩短到小时级，内部 MCP 工具全部纳入用户级授权和分发审计。","Shipped 13 notification rule types. Setup fell from 1–2 days to within ten minutes, with 99%+ accurate delivery at key steps. Answer diagnosis and fix verification fell from days to hours. All internal MCP tools came under per-user grants and distribution audits.");
+    }
+    if (has("MCP","权限治理","LLMOps")) {
+      return this.t("支持回看线上问答、修订知识、原问题复测。工具按用户授权、收回并记录分发过程，另设计商品图的需求、生成和结果查看流程。","Linked answer review, knowledge edits and regression on the original question. Added per-user tool grants, revocation, distribution logs and a product-image request workflow.");
+    }
+    if (has("佳标", "jiabiao", "dify", "打印机", "售后", "客服", "shopee", "amazon", "printer support", "support")) {
+      return this.t("长沙佳标的 9 名客服服务 Shopee、Amazon 等渠道。1,000+ 条历史工单用于评测，意图分流准确率从约 72% 提升到 90%+。高频标准咨询自动解决率 50%+，全部工单自动化闭环约 38%。复杂退换货和查单失败由客服接手。","At Jiabiao, nine agents served Shopee, Amazon and other channels. On 1,000+ historical tickets, routing rose from about 72% to 90%+. The agent resolved 50%+ of frequent standard inquiries and about 38% of all tickets. Complex returns and failed lookups went to staff.");
+    }
     if (has("履历", "经历", "career", "工作")) {
       return this.t(
-        "根据网站中的「职业履历」，张若磐的经历是：\n· 2024.09 — 2026.07｜长沙佳标电子科技有限公司 · AI 产品经理\n· 2021.08 — 2024.08｜维特联合（北京）科技发展公司 · 产品经理 → AI 产品经理\n· 2020.11 — 2021.05｜京东科技 · 产品助理（实习）",
-        "Career:\n· 2024.09 — 2026.07 | Changsha Jiabiao Electronics · AI Product Manager\n· 2021.08 — 2024.08 | Weite United (Beijing) Technology · Product Manager → AI Product Manager\n· 2020.11 — 2021.05 | JD Technology · Product Assistant Intern\n\nSee the Career section."
+        "根据网站中的「职业履历」，张若磐的经历是：\n· 2025.09 — 2026.10｜深圳智汇科技创新有限公司 · AI 产品经理\n· 2024.09 — 2025.08｜长沙佳标电子科技有限公司 · AI 产品经理\n· 2021.08 — 2024.08｜维特联合（北京）科技发展公司 · 产品经理 → AI 产品经理\n· 2020.11 — 2021.05｜京东科技 · 产品助理（实习）",
+        "Career:\n· 2025.09 — 2026.10 | Shenzhen Zhihui · AI Product Manager\n· 2024.09 — 2025.08 | Changsha Jiabiao Electronics · AI Product Manager\n· 2021.08 — 2024.08 | Weite United (Beijing) Technology · Product Manager → AI Product Manager\n· 2020.11 — 2021.05 | JD Technology · Product Assistant Intern\n\nSee the Career section."
       );
     }
     if (has("demo")) {
@@ -1425,21 +1581,18 @@ class Component extends DCLogic {
       );
     }
     if (has("一分钟", "one minute")) {
-      return this.t(
-        "结合他的职业履历与四个 AI 项目案例来看：张若磐有近 5 年产品经验、近 3 年 AI 产品经验，覆盖跨境电商与物流供应链。客服 Agent 的 AI Eligible 问题自动解决率约 75%、整体自动化率约 50%；Listing Copilot 将单 SKU 内容准备时间由约 90 分钟降至约 23 分钟；物流单据的核心字段准确率达到 90%+，录入及复核由约 30 分钟降至约 13 分钟。",
-        "One-minute intro: Nearly five years in product and nearly three in AI product work across cross-border e-commerce and logistics. His support Agent reached ~75% auto-resolution on AI Eligible issues and ~50% overall automation; the Listing Copilot cut per-SKU content preparation from ~90 to ~23 minutes; and the logistics document platform reached 90%+ field accuracy while reducing entry plus review from ~30 to ~13 minutes."
-      );
+      return this.t("张若磐有 5 年产品经验，3 年专注 AI。跨境运营的投放与库存复盘准备从约 30 分钟减至 5 分钟内。打印机客服的高频标准咨询自动解决率达 50%+。物流单据每票录入和复核从约 30 分钟降到约 13 分钟，方案商用复用于 3 家外部企业。","Zhangruopan has five years in product, including three in AI. Campaign review preparation fell from about 30 minutes to within five, 50%+ of frequent standard printer inquiries were resolved automatically, and document entry plus review fell from about 30 to 13 minutes per shipment for a product adopted by three external enterprises.");
     }
     if (has("面试", "interview")) {
       return this.t(
-        "从跨境电商客服 Agent、Listing Copilot 与多模态单据项目看，他值得面试的原因是：\n· 能判断 AI Eligible 边界，并在自动处理、Copilot 与强制转人工之间设计可控流程\n· 用真实样本、任务成功率、自动化率、P95 延迟与调用成本驱动迭代\n· 有从 OCR 切换至端到端多模态的真实路线决策记录，并将方案复用至 3 家企业客户",
+        "从打印机售后客服与多模态单据项目看，他值得面试的原因是：\n· 能判断 AI Eligible 边界，并在自动处理、Copilot 与强制转人工之间设计可控流程\n· 用真实样本、任务成功率、自动化率、P95 延迟与调用成本驱动迭代\n· 有从 OCR 切换至端到端多模态的真实路线决策记录，并将方案复用至 3 家企业客户",
         "Why interview him:\n· Defines AI Eligible boundaries and designs controlled flows across automation, Copilot assistance, and mandatory human handoff\n· Drives iteration with real samples, task success, automation, P95 latency, and call cost\n· Has a documented OCR-to-multimodal route decision and standardized the resulting solution for three enterprise clients"
       );
     }
     if (has("成功", "successful")) {
       return this.t(
-        "若按任务规模与指标完整度看，跨境电商 AI 客服与售后 Agent 是代表性很强的案例：首期覆盖 9 名客服、日均 350–400 条咨询，基于 1,000+ 条真实工单建立评测集，并设计 RAG + Agent + Tool Calling 与失败转人工链路。AI Eligible 问题自动解决率约 75%，整体自动化率约 50%，AI 首答 P95 约 4.8 秒。",
-        "Judged by workload and metric coverage, the Cross-border E-commerce Support Agent is a strong representative case. It initially served nine agents handling 350–400 daily inquiries, used an evaluation set of 1,000+ real tickets, and combined RAG, Agent, Tool Calling, and human fallback. AI Eligible auto-resolution reached ~75%, overall automation ~50%, and P95 first response ~4.8 seconds."
+        "在佳标，他为 9 名打印机售后客服搭建 Dify 工作流。装驱动按机型查手册，物流进度查订单，需要判断的退换货转人工。他比较了 SQL 与 HTTP 接口，用 1,000+ 条真实工单检查分流、知识检索、回答和工具调用。",
+        "At Jiabiao, he built a Dify workflow for nine printer support agents. Driver questions use model-specific manuals, shipment questions use order data, and returns requiring judgment go to staff. He compared SQL and HTTP access and tested routing, retrieval, answers and tool calls with over 1,000 real tickets."
       );
     }
     if (has("失败", "fail")) {
@@ -1449,16 +1602,10 @@ class Component extends DCLogic {
       );
     }
     if (has("单证", "ocr", "多模态", "字段准确率", "document")) {
-      return this.t(
-        "结合「物流履约智能受理平台」来看：传统 OCR + 规则模板在复杂版式、手写体与印章遮挡场景中的字段准确率长期约 60%–70%。切换端到端多模态后，在 10 家客户、150 份真实单据评测集上，20–30 个核心字段准确率达到 90%+（按单字段统计）；通过 AI 抽取、风险分级、标红复核与 API 写入，单票录入及复核由约 30 分钟降至约 13 分钟。",
-        "In the Intelligent Logistics Intake project, traditional OCR plus rule templates stayed around 60%–70% field accuracy on complex layouts, handwriting, and stamp occlusion. After switching to end-to-end multimodal processing, 20–30 core fields reached 90%+ accuracy across 150 real documents from 10 clients; AI extraction, risk tiers, highlighted review, and API write-back reduced entry plus review from ~30 to ~13 minutes."
-      );
+      return this.t("维特项目对 10 家客户的 150 份单据逐字段核对，20–30 个核心字段的单字段准确率达到 90%+。存疑字段先核原文，再经 API 写入。每票录入复核从约 30 分钟降到约 13 分钟，商业化复用于 3 家外部企业客户。","Across 150 documents from ten clients, 20–30 core fields reached 90%+ accuracy per field. Staff checked uncertain fields at the source before API write-back. Entry and review fell from about 30 to 13 minutes per shipment. Three external enterprises adopted the product commercially.");
     }
     if (has("项目", "project", "案例")) {
-      return this.t(
-        "根据网站中的「AI 项目案例」，目前公开了四个完整项目：\n· 跨境电商 AI 客服与售后 Agent（AI Eligible 解决率约 75%）\n· Amazon Listing 内容生产 Copilot（一次审核通过率约 78%）\n· 物流履约智能受理平台（单据字段准确率 90%+）\n· 企业智能服务平台可信知识问答（标准问题自动解决率约 60%）",
-        "Projects:\n· Cross-border E-commerce Support Agent (~75% AI Eligible resolution)\n· Amazon Listing Content Copilot (~78% first-pass approval)\n· Intelligent Logistics Intake Platform (90%+ document field accuracy)\n· Trusted Enterprise Knowledge Q&A (~60% auto-resolution for standard questions)\n\nSee the Projects section."
-      );
+      return this.t("首页有三份脱敏设计：广告加预算前的库存核验、售后错答的四类归因、物流单据的字段复核与 OCR 选型。另收录 ERP 通知、AI 中台与 MCP 权限、多租户 RAG。","The home page features three anonymized designs: an inventory gate for ad spend, four-stage support error analysis, and document verification with an OCR comparison. It also covers ERP notifications, the internal AI platform and MCP permissions, and multi-tenant RAG.");
     }
     if (has("优势", "strength", "擅长")) {
       return this.t(
@@ -1666,8 +1813,10 @@ class Component extends DCLogic {
       refs.push({ target, label: this.t(zh, en) });
     };
 
-    if (/客服|售后|agent|aht|eligible|自动化/.test(text)) add("project-support", "查看依据 · 客服 Agent", "Source · Support Agent");
-    if (/listing|内容生产|sku|运营|审核/.test(text)) add("project-listing", "查看依据 · Listing Copilot", "Source · Listing Copilot");
+    if (/广告|加预算|可售库存|gmv max|ad spend|stock|budget/.test(text)) add("project-ads","查看广告与库存设计","View the budget gate");
+    if (/通知|nl2rule|notification/.test(text)) add("project-notifications","查看 ERP 通知","View ERP notifications");
+    if (/mcp|llmops|权限治理/.test(text)) add("project-platform","查看 AI 中台","View the AI platform");
+    if (/佳标|jiabiao|dify|客服|售后|printer support|aht|eligible|自动化/.test(text)) add("project-support", "查看依据 · 客服 Agent", "Source · Support Agent");
     if (/rag|知识库|检索|多租户/.test(text)) add("project-rag", "查看依据 · RAG 项目", "Source · RAG project");
     if (/单证|单据|ocr|多模态|字段准确率|识别/.test(text)) add("project-docs", "查看依据 · 单证项目", "Source · Document AI project");
     if (/履历|经历|career|工作/.test(text)) add("experience", "查看职业履历", "View career");
@@ -1718,159 +1867,16 @@ class Component extends DCLogic {
       ariaLabel: t(`复制${item.label}：${item.value}`, `Copy ${item.label}: ${item.value}`),
       onClick: () => this.openCopyDialog(item)
     }));
-    const heroMetrics = [
-      { value: t("近5年", "Nearly 5 yrs"), label: t("产品经验", "Product experience") },
-      { value: t("近3年", "Nearly 3 yrs"), label: t("AI 产品经验", "AI product experience") },
-      { value: "75%", label: t("AI Eligible 解决率", "AI Eligible resolution") },
-      { value: "90%+", label: t("单证字段准确率", "Document field accuracy") }
-    ];
-
-    const experiences = [
-      {
-        period: "2024.09 — 2026.07",
-        title: t("长沙佳标电子科技有限公司 · AI 产品经理", "Changsha Jiabiao Electronics · AI Product Manager"),
-        body: t(
-          "面向 Amazon 等海外渠道的跨境电商业务，负责客服售后、Listing 内容生产等内部 AI 应用的场景评估、方案设计、评测验收与上线迭代。",
-          "Owned use-case evaluation, solution design, acceptance testing, and release iteration for internal AI applications in customer support and Amazon Listing content production."
-        ),
-        responsibilities: [
-          t("定义客服问题分类与 AI Eligible 边界，划分 AI 自动处理、Copilot 辅助与强制转人工场景，并设计 RAG + Agent + Tool Calling 链路。", "Defined support issue categories and AI Eligible boundaries across automation, Copilot assistance, and mandatory handoff, then designed a RAG + Agent + Tool Calling flow."),
-          t("基于 1,000+ 条真实工单建立评测集，按意图识别 / 检索 / 生成 / 工具调用等链路归因 Bad Case，跟踪自动解决率、整体自动化率、P95 延迟与调用成本。", "Built an evaluation set from 1,000+ real tickets, attributed bad cases across intent recognition, retrieval, generation, and tool calls, and tracked auto-resolution, overall automation, P95 latency, and call cost."),
-          t("设计 LLM + RAG + Workflow 的 Listing 内容链路，通过结构化 Prompt / Schema、商品事实约束与审核规则控制规格幻觉和多语言一致性。", "Designed an LLM + RAG + Workflow pipeline for Listing content, using structured prompts, schemas, product-fact constraints, and review rules to control specification hallucinations and multilingual consistency.")
-        ],
-        results: [
-          t("AI Eligible 问题自动解决率约 75%，整体自动化率约 50%；AI 首答 P95 约 4.8 秒。", "Reached ~75% auto-resolution on AI Eligible issues and ~50% overall automation, with ~4.8-second P95 first-response latency."),
-          t("首期 6 周、140+ 次 Listing 任务中，单 SKU 核心内容准备时间由约 90 分钟降至约 23 分钟，一次审核通过率约 78%。", "Across 140+ Listing tasks in the first six weeks, core per-SKU preparation fell from ~90 to ~23 minutes and first-pass approval reached ~78%."),
-          t("客服 Agent 与 Listing Copilot 的意图、知识、事实约束层和模板均按可复用方式沉淀，支持新增机型、SKU 与站点。", "Standardized intents, knowledge, fact constraints, and templates across the support Agent and Listing Copilot for reuse with new models, SKUs, and marketplaces.")
-        ]
-      },
-      {
-        period: "2021.08 — 2024.08",
-        title: t("维特联合（北京）科技发展公司 · 产品经理 → AI 产品经理", "Weite United (Beijing) Technology · Product Manager → AI Product Manager"),
-        body: t(
-          "面向码头、堆场、供应链与仓储客户提供物流数字化产品和项目交付；2023.08 起转向 AI 产品方向，先后推进企业知识问答与多模态单据等 AI 项目。",
-          "Delivered logistics digital products for terminal, yard, supply-chain, and warehouse clients; moved into AI product work in 2023.08 and advanced enterprise knowledge Q&A and multimodal document projects."
-        ),
-        responsibilities: [
-          t("负责单据项目的需求分析、技术路线、产品方案、评测标准、研发推进、UAT 与客户交付；组织 10 家客户、150 份真实单据建立评测集。", "Led document-project requirements, technical route, solution design, evaluation, engineering delivery, UAT, and client rollout; built an evaluation set from 150 real documents across 10 clients."),
-          t("负责 RAG 产品方案、评测体系、灰度策略与迭代，基于约 1,000 页业务文档及 550 条历史咨询构建企业知识库。", "Owned the RAG product solution, evaluation system, staged rollout, and iteration for a knowledge base built from ~1,000 pages of business documents and 550 historical inquiries."),
-          t("将库存、货位、任务、巡检及权限等高频需求沉淀为公共产品能力，支撑物流供应链多客户数字化交付。", "Standardized inventory, location, task, inspection, and permission needs into shared capabilities for multi-client logistics delivery.")
-        ],
-        results: [
-          t("切换多模态方案后，20–30 个核心字段准确率由约 60%–70% 提升至 90%+，单票录入及复核时间由约 30 分钟降至约 13 分钟。", "After the multimodal switch, accuracy across 20–30 core fields rose from ~60%–70% to 90%+, while entry plus review fell from ~30 to ~13 minutes per shipment."),
-          t("方案复用至 3 家企业客户，字段 Schema、异常策略、复核机制与写入 Workflow 可直接复用。", "Reused the solution for three enterprise clients, with field schemas, exception strategies, review mechanisms, and write-back workflows directly reusable."),
-          t("可信知识问答首期标准问题自动解决率约 60%，重复咨询量下降约 50%。", "Trusted knowledge Q&A reached ~60% initial auto-resolution for standard questions and reduced repeat inquiries by ~50%.")
-        ]
-      },
-      {
-        period: "2020.11 — 2021.05",
-        title: t("京东科技 · 产品助理（实习）", "JD Technology · Product Assistant Intern"),
-        body: t(
-          "参与企业服务产品的需求分析、产品设计及项目协同。",
-          "Participated in requirements analysis, product design, and project coordination for enterprise-service products."
-        ),
-        responsibilities: [
-          t("协助完成业务需求梳理、原型设计与研发跟进。", "Assisted with business-requirement analysis, prototyping, and engineering follow-up.")
-        ],
-        results: [
-          t("在成熟 ToB 产品体系中建立需求分析、产品文档及跨团队协作的基础方法。", "Built foundational methods for requirements analysis, product documentation, and cross-team collaboration in a mature B2B product system.")
-        ]
-      }
-    ];
-
-    const projectMetrics = [
-      { metric: "75%", metricLabel: t("AI Eligible 解决率", "AI Eligible resolution"), accent: "#8fc2ff" },
-      { metric: "78%", metricLabel: t("一次审核通过率", "First-pass approval"), accent: "#7fe3dc" },
-      { metric: "90%+", metricLabel: t("字段准确率", "Field accuracy"), accent: "#c4b5f5" },
-      { metric: "60%", metricLabel: t("自动解决率", "Auto-resolution"), accent: "#a3e3c2" }
-    ];
-    const projectItems = [
-      {
-        anchor: "project-support",
-        period: "2025.04 — 2026.06",
-        role: t("AI 产品经理", "AI Product Manager"),
-        title: t("跨境电商 AI 客服与售后 Agent", "Cross-border E-commerce Support Agent"),
-        summary: t(
-          "面向产品使用、设备连接、驱动安装、打印异常、物流查询及退换货等高频咨询，定义 AI Eligible 边界并搭建 RAG + Agent + Tool Calling 链路。首期覆盖 9 名客服、日均 350–400 条咨询。",
-          "Defined AI Eligible boundaries and built a RAG + Agent + Tool Calling flow for frequent product-use, device, driver, printing, logistics, and returns inquiries, initially serving nine agents and 350–400 daily inquiries."
-        ),
-        work: [
-          t("划分 AI 自动处理、Copilot 辅助与强制转人工三类场景，负责 Schema、置信度 / 风险分级与兜底规则。", "Separated use cases into AI automation, Copilot assistance, and mandatory human handoff, with schemas, confidence/risk tiers, and fallback rules."),
-          t("定义意图识别 → SKU / 问题类型判断 → 知识检索 → 回答生成 → 售后工具调用 → 失败转人工的完整链路。", "Defined the full flow from intent detection and SKU/issue classification through retrieval, answer generation, support tool calls, and human fallback."),
-          t("基于 1,000+ 条真实工单建立评测集，按意图识别 / 检索 / 生成 / 工具调用等链路归因 Bad Case，跟踪自动解决率、整体自动化率、P95 延迟与调用成本。", "Built an evaluation set from 1,000+ real tickets, attributed bad cases across intent recognition, retrieval, generation, and tool calls, and tracked auto-resolution, overall automation, P95 latency, and call cost.")
-        ],
-        impact: [
-          t("AI Eligible 问题自动解决率约 75%，整体自动化率约 50%。", "Auto-resolution on AI Eligible issues reached ~75%, with ~50% overall automation."),
-          t("Eligible 口径聚焦知识与工具能力可覆盖、无需人工主观决策且风险可控的问题。", "The Eligible scope covers issues supported by available knowledge and tools that require no subjective human decision and carry controllable risk."),
-          t("AI 首答 P95 约 4.8 秒，单次调用成本约 0.2–0.4 元；新增机型与站点可直接复用。", "P95 first-response latency was ~4.8 seconds at ~¥0.2–0.4 per call, with direct reuse for new models and marketplaces.")
-        ]
-      },
-      {
-        anchor: "project-listing",
-        period: "2024.10 — 2025.06",
-        role: t("AI 产品经理", "AI Product Manager"),
-        title: t("Amazon Listing 内容生产 Copilot", "Amazon Listing Content Copilot"),
-        summary: t(
-          "面向 SKU、站点与多语言市场增长带来的重复内容工作，搭建 LLM + RAG + Workflow 链路，聚焦生产效率、事实一致性与可控成本；首期覆盖 6 名运营、80+ 个重点 SKU。",
-          "Built an LLM + RAG + Workflow pipeline for repetitive content work across growing SKUs, marketplaces, and languages, focusing on efficiency, factual consistency, and controlled cost; initially covering six operators and 80+ priority SKUs."
-        ),
-        work: [
-          t("负责需求拆解、产品方案、指标设计与上线迭代，明确 AI 生成、人工审核与异常回退边界。", "Owned requirement decomposition, product design, metrics, and release iteration, with explicit boundaries for AI generation, human review, and exception fallback."),
-          t("通过结构化 Prompt / Schema、商品事实约束与审核规则降低规格幻觉和多语言不一致风险。", "Used structured prompts, schemas, product-fact constraints, and review rules to reduce specification hallucinations and multilingual inconsistency."),
-          t("以一次审核通过率、人工修改幅度、生成耗时与调用成本定位 Bad Case，而非以「文案主观好坏」验收。", "Used first-pass approval, edit magnitude, generation time, and call cost to identify bad cases instead of judging copy subjectively.")
-        ],
-        impact: [
-          t("首期 6 周、140+ 次 Listing 新建 / 深度优化任务中，单 SKU 核心内容准备时间由约 90 分钟降至约 23 分钟。", "Across 140+ new or deeply optimized Listing tasks in the first six weeks, core per-SKU content preparation fell from ~90 to ~23 minutes."),
-          t("首期任务一次审核通过率约 78%，无需结构性重写即可进入发布审核。", "Initial first-pass approval reached ~78%, allowing tasks to enter publication review without structural rewrites."),
-          t("完整 Workflow 调用成本约 0.8–1.3 元，P95 生成耗时约 31 秒；新增 SKU / 站点边际接入成本接近于零。", "Full-workflow cost was ~¥0.8–1.3 with ~31-second P95 generation time; marginal onboarding cost for new SKUs and marketplaces was near zero.")
-        ]
-      },
-      {
-        anchor: "project-docs",
-        period: "2024.01 — 2024.08",
-        role: t("AI 产品经理", "AI Product Manager"),
-        title: t("物流履约智能受理平台 — 多模态单据理解与自动录入", "Intelligent Logistics Intake — Multimodal Document Understanding"),
-        summary: t(
-          "面向来源与格式复杂的物流托书、提单等资料，横向评估传统 OCR、OCR + 规则 + LLM 与端到端多模态路线，取消新客户模板配置，将交付形态从「一客一版」转为标准化复用。",
-          "For complex logistics booking forms and bills of lading, compared traditional OCR, OCR + rules + LLM, and end-to-end multimodal routes, eliminating per-client template setup and moving delivery from one-off versions to standardized reuse."
-        ),
-        work: [
-          t("负责需求分析、技术路线选择、产品方案、评测标准、研发推进、UAT 验收与客户交付复盘。", "Led requirements, technical-route selection, product design, evaluation standards, engineering delivery, UAT, and client retrospectives."),
-          t("组织 10 家客户、150 份真实单据建立评测集，统一字段 Schema / JSON 输出。", "Built an evaluation set from 150 real documents across 10 clients and standardized field schemas and JSON output."),
-          t("设计原文复核、规则校验、风险分级、失败转人工与 API 写入链路，人工仅需确认标红字段。", "Designed source review, rule validation, risk tiers, failure handoff, and API write-back, so humans only confirm highlighted fields."),
-          t("基于准确率上限、新客户接入边际成本与兜底可控性切换至端到端多模态，停止继续堆叠规则模板。", "Switched to end-to-end multimodal processing based on the accuracy ceiling, marginal client-onboarding cost, and fallback controllability, rather than adding more rule templates.")
-        ],
-        impact: [
-          t("切换多模态方案后，在 10 家客户、150 份真实单据评测集上，20–30 个核心字段准确率达到 90%+（按单字段统计）。", "After the multimodal switch, 20–30 core fields reached 90%+ accuracy across 150 real documents from 10 clients, measured per field."),
-          t("在 AI 抽取 + 风险分级 + 标红复核 + API 写入的新流程下，单票录入及复核时间由约 30 分钟降至约 13 分钟。", "With AI extraction, risk tiers, highlighted review, and API write-back, entry plus review fell from ~30 to ~13 minutes per shipment."),
-          t("方案复用至 3 家企业客户，字段 Schema、异常策略、复核机制与写入 Workflow 可直接复用。", "The solution was reused for three enterprise clients, with field schemas, exception strategies, review mechanisms, and write-back workflows directly reusable.")
-        ]
-      },
-      {
-        anchor: "project-rag",
-        period: "2023.10 — 2024.03",
-        role: t("AI 产品经理", "AI Product Manager"),
-        title: t("企业智能服务平台 — 可信知识问答", "Enterprise AI Service — Trusted Knowledge Q&A"),
-        summary: t(
-          "基于约 1,000 页业务文档及 550 条历史咨询构建企业知识库，通过权限、版本、证据与 Bad Case 回归机制，将一次性交付升级为可持续维护的 AI 服务能力。",
-          "Built an enterprise knowledge base from ~1,000 pages of business documents and 550 historical inquiries, using permissions, versions, evidence controls, and bad-case regression to turn a one-off delivery into a maintainable AI service."
-        ),
-        work: [
-          t("负责 RAG 产品方案、评测体系、灰度策略与迭代。", "Owned the RAG product solution, evaluation system, staged rollout, and iteration."),
-          t("定义 Chunk / Metadata 策略与客户 / 角色 / 产品版本三级权限。", "Defined Chunk/Metadata strategy and three-level permissions across client, role, and product version."),
-          t("建立知识更新与「证据不足转人工」机制，控制无依据回答风险。", "Established knowledge-update and insufficient-evidence handoff mechanisms to control unsupported answers."),
-          t("将 Bad Case 拆分至 Retrieval / Ranking / Generation / Knowledge 层定位根因，并纳入回归测试。", "Attributed bad cases across Retrieval, Ranking, Generation, and Knowledge layers and added them to regression testing.")
-        ],
-        impact: [
-          t("以 550 条历史咨询为评测基线，首期标准问题自动解决率约 60%。", "Using 550 historical inquiries as the evaluation baseline, initial standard-question auto-resolution reached ~60%."),
-          t("重复咨询量下降约 50%。", "Reduced repeat inquiries by ~50%."),
-          t("权限分库、版本管理与 Bad Case 回归机制，使知识库成为可持续维护的 AI 服务能力。", "Permission-based knowledge separation, version management, and bad-case regression made the knowledge base a maintainable AI service.")
-        ]
-      }
-    ].map((project, index) => ({
-      ...project,
-      ...projectMetrics[index],
-      indexLabel: String(index + 1).padStart(2, "0")
+    const heroMetrics = [[["5 年","5 yrs"],["产品经验","In product"]],[["3 年","3 yrs"],["专注 AI 产品","In AI product"]],[["5 分钟内","≤5 min"],["跨表复盘准备","To prepare a campaign review"]],[["3 家","3 clients"],["单据方案商业化复用","Adopted the document product"]]].map(([v, l]) => ({ value:t(...v), label:t(...l) }));
+    const experiences = [{"period":"2025.09 — 2026.10","title":["深圳智汇科技创新有限公司 · AI 产品经理","Shenzhen Zhihui · AI Product Manager"],"body":["负责跨境业务 AI，交付广告与库存决策 Agent、ERP 对话式通知中心和企业 AI 中台。","Led AI for cross-border operations, delivering an advertising and inventory agent, conversational ERP notifications and an internal AI platform."],"responsibilities":[["统一 TikTok Shop GMV Max 两期 ROI 的计算方式，按站点和 SKU 核验可售库存。另行梳理 Shopee 按站点复盘 ROAS 的需求。","Standardized two-period ROI for TikTok Shop GMV Max and checked available stock by site and SKU. Defined site-level ROAS review requirements for Shopee."],["由模型起草提醒规则，经用户确认后交给定时任务执行。拆分业务问数和开发配置，支持知识修订后复测原问题，以及 MCP 工具按用户授权、收回和查询记录。","Designed user-confirmed notification rules and scheduled delivery, separate business and developer views, question-level regression testing and per-user MCP access controls."]],"results":[["运营复盘准备由约 30 分钟缩短至 5 分钟内，核心指标与报表核验一致率 98%+，日常复盘采纳率 70%+。","Review preparation fell from about 30 minutes to within five. Core metrics matched reports in 98%+ of checks and adoption in daily reviews reached 70%+."],["上线 13 类通知规则，配置周期从 1–2 天缩短至 10 分钟内，关键节点提醒准确触达率 99%+。线上错答定位与修复验证从天级缩短到小时级，内部 MCP 工具全部纳入用户级授权和分发审计。","Shipped 13 notification rule types. Setup fell from 1–2 days to within ten minutes, with 99%+ accurate delivery at key steps. Answer diagnosis and fix verification fell from days to hours. All internal MCP tools came under per-user grants and distribution audits."]]},{"period":"2024.09 — 2025.08","title":["长沙佳标电子科技有限公司 · AI 产品经理","Changsha Jiabiao Electronics · AI Product Manager"],"body":["为东南亚 Shopee、Amazon 等海外渠道的 9 名客服交付打印机售后 Agent。","Led the printer after-sales agent for a nine-person team serving Southeast Asian Shopee stores, Amazon and other overseas channels."],"responsibilities":[["在 Dify 搭建按机型追问、查手册和查单的工作流。已入库且适合直查的数据使用固定 SQL，其他数据通过既有 HTTP 接口查询。","Built model-specific troubleshooting and order lookup in Dify. Suitable stored data used fixed SQL templates. Other data came from existing HTTP services."],["需要判断的退换货或查单失败由客服接手。指导同事使用 Cursor，协助试用 Claude 和 Codex，对接自研 ERP 需求。","Staff handled discretionary returns and failed lookups. Coached colleagues on Cursor, helped trial Claude and Codex, and coordinated in-house ERP requirements."]],"results":[["以 1,000+ 条真实历史工单评测。意图分流准确率从约 72% 提升至 90%+。高频标准咨询自动解决率 50%+，整体工单自动化闭环约 38%。","Evaluated with 1,000+ real tickets. Intent routing rose from about 72% to 90%+. The agent resolved 50%+ of frequent standard inquiries and about 38% of all tickets end to end."],["回复草稿采纳率 70%+，常规首次响应在 10 秒内，单客平均处理时长缩短约 25%。新机型放量期间，团队保持 9 人。","Draft adoption reached 70%+, standard first responses took under ten seconds and average handling time fell about 25%. Staffing stayed at nine as new models scaled."]]},{"period":"2021.08 — 2024.08","title":["维特联合（北京）科技发展公司 · 产品经理 → AI 产品经理","Weite United (Beijing) Technology · Product Manager → AI Product Manager"],"body":["交付码头、堆场和仓储等供应链产品，2023 年 8 月转任 AI 产品经理，负责企业知识问答和多模态单据录入。","Delivered logistics products for terminals, container yards and warehouses. Moved into AI product management in August 2023, leading enterprise Q&A and multimodal document intake."],"responsibilities":[["负责单据产品方案、评测、研发推进与客户验收。对照原文复核存疑字段，再通过 API 写入业务系统。","Owned document product design, evaluation, engineering delivery and client acceptance. Clerks verified uncertain fields against the source before API write-back."],["基于约 1,000 页文档和 550 条历史咨询设计多租户 RAG，按客户、角色和软件版本过滤，依据不足时转人工。","Designed multi-tenant RAG using about 1,000 pages and 550 historical inquiries. Retrieval was scoped by client, role and software version, with human escalation when evidence was insufficient."]],"results":[["使用 10 家客户的 150 份单据逐字段核对，20–30 个核心字段单字段准确率 90%+。每票录入复核由约 30 分钟降至约 13 分钟，商业化复用于 3 家外部企业。","With 150 documents from ten clients, accuracy reached 90%+ per field across 20–30 core fields. Entry and review fell from about 30 to 13 minutes per shipment. Three external enterprise clients adopted the solution commercially."],["复用货位、任务、巡检和权限设计，典型堆场项目的货物定位时间从约 30 分钟缩短到约 5 分钟。","Reused location, task, inspection and permission designs. Time to locate goods in a representative yard fell from about 30 minutes to about five."]]},{"period":"2020.11 — 2021.05","title":["京东科技 · 产品助理（实习）","JD Technology · Product Assistant Intern"],"body":["参与企业服务产品的需求分析、业务流程梳理、需求文档与原型设计，协助跨团队推进项目。","Contributed to requirements analysis, process mapping, product documentation and prototyping for enterprise services, and helped coordinate delivery across teams."],"responsibilities":[["梳理流程、撰写需求文档与制作原型。","Mapped workflows, documented requirements and prepared prototypes."]],"results":[["协助跨团队推进企业服务产品需求。","Supported cross-team delivery of enterprise product requirements."]]}].map(job => ({
+      ...job, title:t(...job.title), body:t(...job.body),
+      responsibilities:job.responsibilities.map(item => t(...item)),
+      results:job.results.map(item => t(...item))
+    }));
+    const projectItems = [{"anchor":"project-notifications","period":"2025.09 — 2026.10","role":["深圳智汇","Shenzhen Zhihui"],"metric":"13","metricLabel":["类核心通知规则","core notification rule types"],"accent":"#8fc2ff","title":["ERP 对话式规则引擎与通知中心","Conversational ERP rules and notifications"],"summary":["业务人员说出提醒条件和接收人，确认模板后创建规则。定时任务负责扫描和发送。","Staff describe the trigger and recipients, confirm the template and create a rule. A scheduled job scans records and sends the message."],"work":[["新品审批附单号和 ERP 入口。采购仅催未付款，物流同时覆盖未付款与部分付款。","New-product approvals include the record ID and ERP link. Procurement reminders cover unpaid items. Logistics also includes partially paid items."]],"impact":[["规则配置和调整由 1–2 天缩短至 10 分钟内，关键节点提醒准确触达率 99%+。","Rule creation and changes fell from 1–2 days to within ten minutes. Accurate delivery at key steps reached 99%+."]]},{"anchor":"project-platform","period":"2025.09 — 2026.10","role":["深圳智汇","Shenzhen Zhihui"],"metric":"100%","metricLabel":["内部 MCP 工具纳入用户级授权","of internal MCP tools under per-user grants"],"accent":"#a3e3c2","title":["企业 AI 中台与 MCP 权限治理","Enterprise AI platform and MCP permissions"],"summary":["运营直接问数，开发人员配置 Agent 与工作流，知识维护人员可以从错答回到原问题。","Operators query data, developers configure agents and workflows, and knowledge maintainers revisit the exact question that failed."],"work":[["支持回看线上问答、修订知识、原问题复测。工具按用户授权、收回并记录分发过程，另设计商品图的需求、生成和结果查看流程。","Linked answer review, knowledge edits and regression on the original question. Added per-user tool grants, revocation, distribution logs and a product-image request workflow."]],"impact":[["定位错答和验证修复的周期由天级缩短至小时级，维护效率提升 50%+。","Finding an answer failure and verifying its fix went from days to hours, with a 50%+ improvement in maintenance efficiency."]]},{"anchor":"project-rag","period":"2023.10 — 2024.03","role":["维特联合","Weite United"],"metric":"550","metricLabel":["条历史咨询","historical inquiries"],"accent":"#c4b5f5","title":["企业级多租户知识问答 RAG","Multi-tenant enterprise knowledge Q&A"],"summary":["同一个操作问题，答案可能随客户、角色和软件版本而变。先限定检索范围，再生成回答。","The right procedure depends on the client, user role and software version. Retrieval is scoped before an answer is generated."],"work":[["约 1,000 页业务文档按三类元数据过滤。遇到依据不足的提问转人工。","About 1,000 pages of documentation are filtered by three metadata attributes. Staff take over when evidence is insufficient."]],"impact":[["从检索、排序、知识内容与回答生成四处定位问题。修订后用原问题回归测试。","Failures are traced to retrieval, ranking, knowledge content or generation. After a fix, the original question is tested again."]]}].map((project,index) => ({
+      ...project, title:t(...project.title), role:t(...project.role), metricLabel:t(...project.metricLabel),
+      summary:t(...project.summary), work:project.work.map(item=>t(...item)),
+      impact:project.impact.map(item=>t(...item)), indexLabel:String(index+1).padStart(2,"0")
     }));
     const zh = t("知乎", "Zhihu");
     const wx = t("公众号", "WeChat");
@@ -1954,8 +1960,8 @@ class Component extends DCLogic {
       hasHeroVideo: !!(this.props.heroVideoUrl && this.props.heroVideoUrl.trim()),
       noHeroVideo: !(this.props.heroVideoUrl && this.props.heroVideoUrl.trim()),
       heroVideoUrl: this.props.heroVideoUrl ?? "",
-      tHeroEyebrow: t("一名以器载道的 AI 产品经理", "An AI product manager — craft as a vessel for principle"),
-      tHeroIntro: t("谨慎看待技术，理性判断价值，持续提升自己。我相信 AI 的意义不在于替代判断，而在于放大真正清晰的问题。", "Approach technology with caution, judge value rationally, and keep improving. I believe AI's purpose is not to replace judgment, but to amplify truly clear questions."),
+      tHeroEyebrow: t("跨境电商 / 供应链 / 企业级 Agent","Cross-border commerce / Supply chain / Enterprise agents"),
+      tHeroIntro: t("我做跨境电商和供应链的 AI 产品。运营要决定能不能加预算，客服要找到对应机型的手册，录单员要知道哪个字段值得再看一眼。这三件事，是我做过的三个项目。","I build AI products for commerce and logistics. An operator deciding whether to raise spend, a support agent finding the right printer manual, and a clerk checking a suspect field each need a different kind of product."),
       tExploreProjects: t("查看代表项目", "Explore selected work"),
       tHeroMetricsLabel: t("代表性量化成果", "Selected measurable outcomes"),
       tVideoButton: t("观看 15 秒介绍", "Watch the 15-second intro"),
@@ -1981,8 +1987,8 @@ class Component extends DCLogic {
       confirmCopy: () => this.confirmCopy(),
 
       tAgentTitle: t("问我任何问题", "Ask me anything"),
-      tAgentKicker: t("在线 · 最新简历", "Online · Latest resume"),
-      tAgentSubtitle: t("所有回答均以 2026.07 版简历与站内项目为依据", "Answers use the July 2026 resume and on-site projects"),
+      tAgentKicker: t("在线 · 个人作品集", "Online · Portfolio"),
+      tAgentSubtitle: t("可查询站内履历与项目", "Explore the experience and projects on this site"),
       tStarters: t("可以从这些问题开始", "Try one of these"),
       tThinking: t("思考中…", "Thinking…"),
       tChatPlaceholder: t("询问项目、经历、文章…", "Ask about projects, experience, articles…"),
@@ -2047,5 +2053,6 @@ class Component extends DCLogic {
   }
 }
 </script>
+
 </body>
 </html>
