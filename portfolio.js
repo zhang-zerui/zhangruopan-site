@@ -26,6 +26,8 @@
   function setMobileMenu(open) {
     nav.dataset.mobileOpen = String(open);
     menuButton.setAttribute('aria-expanded', String(open));
+    one('main').inert = open;
+    one('.rp-footer').inert = open;
     if (!open) setWorkMenu(false);
   }
   workButton.addEventListener('click', () => setWorkMenu(workMenu.hidden));
@@ -106,7 +108,10 @@
     outside.hidden = open;
     inside.hidden = !open;
     selectObject(null);
-    if (focus) (open ? exit : enter).focus({preventScroll:true});
+    if (focus) {
+      (open ? exit : enter).focus({preventScroll:true});
+      window.scrollTo({top:0,behavior:'instant'});
+    }
   }
   enter.addEventListener('click', () => setShopInterior(true, true));
   exit.addEventListener('click', () => setShopInterior(false, true));

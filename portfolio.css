@@ -29,6 +29,7 @@ html[data-ruopan] #dc-root,html[data-ruopan] #dc-root>.sc-host {
 }
 html[data-ruopan] #rp-pet-shell {height:0;min-height:0;padding:0;overflow:visible;background:transparent;color-scheme:dark}
 #rp-pet-shell::before,#rp-pet-shell::after {display:none}
+#rp-locale-bridge {display:none!important}
 #rp-site {font:400 20px/1.45 var(--rp-serif);isolation:isolate}
 #rp-site *,#rp-site *::before,#rp-site *::after {box-sizing:border-box}
 #rp-site :where(h1,h2,h3,h4,p,figure,fieldset,ol,ul,dl,dd) {margin:0}
@@ -71,7 +72,8 @@ html[lang^="en"] #rp-site .v-en {display:inline}
 .rp-outside,.rp-inside {width:83.33334%;margin-inline:auto}
 .rp-intro {font-size:32px;font-weight:400;line-height:1.32;letter-spacing:-.016em;text-align:left;text-wrap:pretty}
 .rp-intro em {font-style:italic}
-.rp-ink {text-decoration:underline dotted;text-decoration-thickness:1px;text-underline-offset:.15em}
+#rp-site .rp-ink {text-decoration:underline dotted;text-decoration-thickness:1px;text-underline-offset:.15em}
+#rp-site .rp-ink:hover {color:var(--rp-purple)}
 .rp-storefront {position:relative;isolation:isolate;margin-top:32px;aspect-ratio:2/1;border-radius:32px}
 #rp-site .rp-enter {display:block;position:relative;overflow:hidden;width:100%;height:100%;border-radius:inherit;cursor:pointer}
 .rp-enter img {display:block;width:100%;height:100%;object-fit:cover;object-position:50% 56%}
@@ -98,8 +100,7 @@ html[lang^="en"] #rp-site .v-en {display:inline}
 .rp-seasons input:focus-visible+span {outline:2px solid var(--rp-purple);outline-offset:4px}
 .rp-invite {margin-top:28px!important;color:var(--rp-muted);font:400 16px/1.5 var(--rp-sans)}
 .rp-invite a {display:inline-flex;vertical-align:middle;align-items:center;justify-content:center;min-width:20px}
-.rp-inside {position:relative}
-.rp-inside {width:100%}
+.rp-inside {position:relative;width:100%}
 .rp-shelf {position:relative;width:min(285px,72%);margin-inline:auto}
 .rp-shelf img {display:block;width:100%;height:auto}
 .rp-hotspots {position:absolute;inset:0}
@@ -232,7 +233,7 @@ html[lang^="en"] #rp-site .v-en {display:inline}
   .rp-drop a {padding:5px 10px}
   .rp-outside,.rp-inside {width:100%}
   .rp-intro {font-size:24px;line-height:1.34;letter-spacing:0}
-  .rp-storefront {aspect-ratio:1.38/1;border-radius:28px;margin-top:28px}
+  .rp-storefront {aspect-ratio:1.38/1;border-radius:28px;margin-top:24px}
   .rp-enter-tag {left:27%;font-size:13px}
   #rp-site .rp-pause {width:29px;height:29px;right:11px;bottom:11px}
   .rp-seasons {gap:24px}
