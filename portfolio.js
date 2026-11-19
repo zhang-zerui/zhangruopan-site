@@ -61,7 +61,9 @@
   };
   function describeSeason() {
     const season = seasons[storefront.dataset.season];
-    shopArt.alt = inEnglish() ? 'Ruopan’s portfolio shop in the Shenzhen hills in ' + season[1] : '若磐的作品小店，深圳山脚的' + season[0] + '街景';
+    shopArt.alt = inEnglish()
+      ? 'A storefront in the Shenzhen hills in ' + season[1] + ', with World Mall painted in cursive above the entrance.'
+      : '深圳山脚的' + season[0] + '店面，招牌上用英文连笔写着 World Mall';
   }
   one('.rp-seasons').addEventListener('change', event => {
     const season = event.target.value;
