@@ -1,0 +1,40 @@
+name: Portfolio demo checks
+
+on:
+  push:
+    paths:
+      - 'demos/**'
+      - 'index.html'
+      - 'portfolio.js'
+      - 'portfolio.css'
+      - '.github/workflows/demo-checks.yml'
+  pull_request:
+    paths:
+      - 'demos/**'
+      - 'index.html'
+      - 'portfolio.js'
+      - 'portfolio.css'
+      - '.github/workflows/demo-checks.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  interactive-demos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: demos
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --ignore-scripts --no-audit --no-fund
+      - run: npm run typecheck && npm run build && npm test
+      - run: git diff --exit-code -- interactive.js
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:browser

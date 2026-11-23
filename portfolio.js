@@ -240,6 +240,7 @@
     if (changed || anchor === 'home') setShopInterior(false, false);
     views.forEach(view => { view.hidden = view.id !== section; });
     currentView = section;
+    document.dispatchEvent(new Event('ruopan:view'));
     if (initial && !anchor) return;
     requestAnimationFrame(() => {
       if (anchor === 'projects' || anchor === 'contact') {
