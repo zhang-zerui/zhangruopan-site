@@ -40,7 +40,7 @@ namespace RuopanDemo {
         </Panel>
         <Panel title={t('模拟通知卡片','Simulated notifications')}>
           {!confirmed&&<p className="dx-muted">{t('以下是样稿。确认规则后显示模拟发送回执。','These are previews. Confirm the rule to simulate delivery receipts.')}</p>}
-          {(confirmed?delivered:plan.send).map(d=><article className="dx-message-card" key={d.id}><span className="dx-label">{confirmed?t('模拟已触达','Simulated delivery'):t('待确认 · 样稿','Unconfirmed preview')}</span>
+          {(confirmed?delivered:plan.send).map(d=><article className="dx-message-card" key={d.id}><Badge/><span className="dx-label">{confirmed?t('模拟已触达','Simulated delivery'):t('待确认 · 样稿','Unconfirmed preview')}</span>
             <h4>{rule.primaryRecheck?t('物流尾款待处理','Freight balance due'):t('新品等待审批','New product awaiting approval')}</h4><p>{d.owner} · {d.id}</p><button className="dx-link" onClick={()=>open(d)}>{t('去 ERP 核对原单','Review ERP document')} ↗</button>
             {confirmed&&<div className="dx-options dx-votes">{(['up','down'] as const).map(v=><button key={v} aria-pressed={votes[d.id]===v} onClick={()=>cast(d.id,v)}>{v==='up'?t('有用','Useful'):t('不准确','Inaccurate')}</button>)}</div>}</article>)}
           {plan.send.length===0&&<p className="dx-empty">{t('没有可发送的单据。','No eligible documents.')}</p>}

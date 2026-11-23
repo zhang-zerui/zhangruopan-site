@@ -44,6 +44,7 @@ try {
         await current.getByRole('button',{name:'采纳',exact:true}).click();
         await current.getByRole('button',{name:/B · 中可信/}).click();
         assert.ok(await current.getByText(/±2%/).isVisible());
+        assert.ok(await current.getByText('AD-DEMO-01').isVisible());
         await current.getByRole('button',{name:/C · 低可信/}).click();
         assert.equal(await current.getByRole('button',{name:'采纳',exact:true}).count(),0);
         await current.getByRole('button',{name:/模拟业务强行绕过/}).click();
@@ -73,6 +74,9 @@ try {
         assert.ok(await write.isDisabled());
         await current.locator('#dx-field-container').fill('DEMU0000891');
         await current.locator('#dx-field-gross').fill('8000');
+        assert.equal(await current.locator('#demo-source-gross').getAttribute('aria-pressed'),'true');
+        const scan=await current.locator('.dx-scan').boundingBox(), box=await current.locator('#demo-source-gross').boundingBox();
+        assert.ok(box.y>=scan.y-2 && box.y+box.height<=scan.y+scan.height+2,'Selected source field outside its scan pane');
         for(const cb of await current.getByRole('checkbox').all())await cb.check();
         assert.ok(await write.isEnabled());await write.click();
         assert.ok(await current.getByText(/"weight_kg": 8000/).isVisible());
@@ -80,6 +84,17 @@ try {
       await checkWidth(page,id+' prototype',width);
     }
     await page.goBack();await page.locator('#demo-support:not([hidden])').waitFor();
+    await page.locator('#rp-theme').click();
+    await page.locator('[data-language]').click();
+    await page.locator('html[lang^="en"]').waitFor({state:'attached'});
+    await page.goto(site.href+'#demos');
+    await page.getByRole('heading',{name:'Ad spend & sellable stock'}).waitFor();
+    await checkWidth(page,'English dark theme index',width);
+    await page.goto(site.href+'#demo-rules');
+    await page.getByRole('tab',{name:'Working prototype'}).click();
+    await page.getByRole('button',{name:'Translate & dry-run'}).click();
+    assert.equal(await page.locator('.dx-records li').count(),3);
+    await checkWidth(page,'English dark theme rule trial',width);
     await context.close(); console.log(width+'px passed');
   }
   assert.deepEqual(failures,[]);

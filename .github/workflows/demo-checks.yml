@@ -38,3 +38,24 @@ jobs:
       - run: git diff --exit-code -- interactive.js
       - run: npx playwright install --with-deps chromium
       - run: npm run test:browser
+      - name: Package the tested static site for local preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-preview
+          retention-days: 7
+          if-no-files-found: error
+          path: |
+            index.html
+            portfolio.css
+            portfolio.js
+            resources.js
+            support.js
+            vendor/
+            assets/
+            media/
+            Zhangruopan-AI-Homepage-Bookline-v2.mp4
+            zhangruopan-cv.pdf
+            demos/demos.css
+            demos/loader.js
+            demos/interactive.js
+            demos/illustrations.js
