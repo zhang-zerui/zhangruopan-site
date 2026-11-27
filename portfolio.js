@@ -232,7 +232,7 @@
   let currentView = 'home';
   const detailIds = new Set(views.map(view => view.id));
   function showRoute({initial = false} = {}) {
-    const anchor = location.hash.slice(1);
+    const [anchor] = location.hash.slice(1).split('?');
     const section = anchor === 'contact' ? currentView : detailIds.has(anchor) ? anchor : 'home';
     if (dialog.open) dialog.close();
     setMobileMenu(false);

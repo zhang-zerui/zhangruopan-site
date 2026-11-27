@@ -12,11 +12,11 @@ namespace RuopanDemo {
     const t=useWords();
     return <div className="dx-hub-list">{studies.map(s=><article className="dx-hub-card" key={s.id}><Badge/>
       <div className="dx-hub-body"><div><h2><a href={'#demo-'+s.id}>{t(...s.title)}</a></h2><p>{t(...s.question)}</p></div><Motif id={s.id}/></div>
-      <a className="dx-entry" href={'#demo-'+s.id}>{t(...s.action)} <span aria-hidden="true">↗</span></a></article>)}</div>;
+      <a className="dx-entry" href={'#demo-'+s.id+'?tab=prototype'}>{t(...s.action)} <span aria-hidden="true">↗</span></a></article>)}</div>;
   }
-  function CaseView({study}:{study:Study}) {
+  function CaseView({study,initialTab}:{study:Study;initialTab:number}) {
     const t=useWords();
-    const [tab,setTab]=React.useState(0),[visited,visit]=React.useState(false);
+    const [tab,setTab]=React.useState(initialTab),[visited,visit]=React.useState(initialTab===1);
     const id='dx-'+study.id;
     function activate(i:number){setTab(i);if(i===1)visit(true);}
     return <><p className="dx-question">{t(...study.question)}</p><div className="dx-tabs" role="tablist" aria-label={t('演示内容','Demo content')}>
@@ -34,6 +34,7 @@ namespace RuopanDemo {
     if(!el||!root)return;
     const lang:Language=document.documentElement.lang.toLowerCase().startsWith('en')?'en':'zh';
     const study=studies.find(s=>s.id===el.dataset.dxMount);
-    root.render(<Locale.Provider value={lang}>{study?<CaseView key={study.id} study={study}/>:<Hub/>}</Locale.Provider>);
+    const initialTab=new URLSearchParams(location.hash.split('?')[1]).get('tab')==='prototype'?1:0;
+    root.render(<Locale.Provider value={lang}>{study?<CaseView key={study.id+'-'+initialTab} study={study} initialTab={initialTab}/>:<Hub/>}</Locale.Provider>);
   }
 }

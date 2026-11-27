@@ -777,14 +777,14 @@ var RuopanDemo;
                         React.createElement("a", { href: '#demo-' + s.id }, t(...s.title))),
                     React.createElement("p", null, t(...s.question))),
                 React.createElement(Motif, { id: s.id })),
-            React.createElement("a", { className: "dx-entry", href: '#demo-' + s.id },
+            React.createElement("a", { className: "dx-entry", href: '#demo-' + s.id + '?tab=prototype' },
                 t(...s.action),
                 " ",
                 React.createElement("span", { "aria-hidden": "true" }, "\u2197")))));
     }
-    function CaseView({ study }) {
+    function CaseView({ study, initialTab }) {
         const t = RuopanDemo.useWords();
-        const [tab, setTab] = React.useState(0), [visited, visit] = React.useState(false);
+        const [tab, setTab] = React.useState(initialTab), [visited, visit] = React.useState(initialTab === 1);
         const id = 'dx-' + study.id;
         function activate(i) { setTab(i); if (i === 1)
             visit(true); }
@@ -815,7 +815,8 @@ var RuopanDemo;
             return;
         const lang = document.documentElement.lang.toLowerCase().startsWith('en') ? 'en' : 'zh';
         const study = RuopanDemo.studies.find(s => s.id === el.dataset.dxMount);
-        root.render(React.createElement(RuopanDemo.Locale.Provider, { value: lang }, study ? React.createElement(CaseView, { key: study.id, study: study }) : React.createElement(Hub, null)));
+        const initialTab = new URLSearchParams(location.hash.split('?')[1]).get('tab') === 'prototype' ? 1 : 0;
+        root.render(React.createElement(RuopanDemo.Locale.Provider, { value: lang }, study ? React.createElement(CaseView, { key: study.id + '-' + initialTab, study: study, initialTab: initialTab }) : React.createElement(Hub, null)));
     }
     RuopanDemo.renderPage = renderPage;
 })(RuopanDemo || (RuopanDemo = {}));

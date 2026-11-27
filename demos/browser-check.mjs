@@ -26,6 +26,8 @@ try {
     await page.locator('.dx-hub-card').first().waitFor();
     assert.equal(await page.locator('.dx-hub-card .dx-badge').count(),4);
     await checkWidth(page,'index',width);
+    await page.getByRole('link',{name:'试跑规则并核对原单'}).click();
+    await page.getByRole('button',{name:'转译并试跑'}).waitFor();
     for(const id of ['ads','rules','support','documents']){
       await page.goto(site.href+'#demo-'+id);
       const current=page.locator('#demo-'+id);

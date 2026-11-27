@@ -20,7 +20,7 @@ test('four deep links, two rule views, connected graphs and visible labels', () 
   assert.equal(demo.studies.flatMap(s => s.graphs).length, 5);
   for (const s of demo.studies) {
     assert.ok(html.includes('id="demo-' + s.id + '" data-view'));
-    assert.ok(html.includes('href="#demo-' + s.id + '"'));
+    assert.ok(html.includes('href="#demo-' + s.id + '?tab=prototype"'));
     assert.ok(html.includes('id="' + s.project + '" data-view'));
     for (const g of s.graphs) {
       const ids = new Set(g.nodes.map(n => n.id));

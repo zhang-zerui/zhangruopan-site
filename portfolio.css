@@ -75,6 +75,9 @@ html[lang^="en"] #rp-site .v-en {display:inline}
 #rp-site .rp-ink {text-decoration:underline dotted;text-decoration-thickness:1px;text-underline-offset:.15em}
 #rp-site .rp-ink:hover {color:var(--rp-purple)}
 .rp-intro-copy {position:relative;text-align:left}
+#rp-site .rp-featured-links {display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin-top:16px}
+.rp-featured-links>span {color:var(--rp-muted);font:500 14px/1.5 var(--rp-sans)}
+#rp-site .rp-featured-links a {display:inline-flex;align-items:center;min-height:32px}
 #rp-site .rp-intro-copy .rp-ink {
   display:inline;margin:0;font:inherit;letter-spacing:inherit;vertical-align:baseline;cursor:help;
 }
