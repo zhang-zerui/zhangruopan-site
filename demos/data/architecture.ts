@@ -42,16 +42,16 @@ namespace RuopanDemo {
       ],[['form','prefill'],['dsl'],['trial'],['confirm'],['scan'],['push'],['monitor']],
       [['form','dsl'],['prefill','dsl'],['dsl','trial'],['trial','confirm'],['confirm','scan'],['scan','push'],['push','monitor']]),
       graph(['Dify 管控台与权限','Dify control plane'],[
-        n('org','source','飞书组织架构','Feishu organisation','用组织成员与岗位识别身份，变更沿 ERP 既有权限关系生效。','Resolve people and roles through the organisation and its existing ERP grants.'),
-        n('erp','rule','复用 ERP 权限底座','Reuse ERP permissions','权限直接读取既有底座，避免两套授权表双写和回收延迟。','Read the existing entitlement source to avoid duplicate writes and stale revocations.'),
+        n('org','source','飞书组织架构','Feishu organisation','用飞书组织架构识别成员和岗位。','Identify members and roles from the Feishu organisation.'),
+        n('org-grants','rule','复用飞书组织权限','Reuse Feishu permissions','网关依据已有组织权限判断用户能否调用工具。','Use existing organisation permissions to decide which tools a user can call.'),
         n('auth','rule','统一鉴权网关','Shared access gateway','把身份、角色和额度交给网关核验。工作流调用也需同样授权。','The gateway checks identity, role and quota, including calls originating in a workflow.'),
         n('mcp','rule','MCP 过滤与审计','MCP filter & audit','按用户先过滤工具再允许调用，授权及回收都有记录。','Filter the tool list per user before invocation and audit grants and revocations.'),
         n('image','model','外部生图与费用托管','Image API & spend controls','示例 Nano Banana 先过额度检查，再提交轻量生图流程，费用记在网关。','A sample Nano Banana workflow checks quota before generation and attributes usage at the gateway.'),
         n('ops','human','运营问数端','Operations workspace','运营只能访问授权工具和业务结果。工作流配置保留在开发端。','Operators see approved tools and business results. Workflow configuration stays in the developer workspace.'),
         n('dev','human','开发配置端','Developer workspace','研发可以维护工作流、账户额度和工具配置，变更进入回归。','Developers maintain workflows, quotas and tools, then run regression checks.'),
         n('assert','rule','PRD 断言与 Mock 快照回归','Assertions & mock snapshots','用原问题核对工具可见性、拒绝原因与输出字段。一键回归使用固定模拟快照。','Replay a fixed mock snapshot against PRD assertions for tool visibility, denials and output fields.')
-      ],[['org'],['erp'],['auth'],['mcp','image'],['ops','dev'],['assert']],
-      [['org','erp'],['erp','auth'],['auth','mcp'],['auth','image'],['mcp','ops'],['image','ops'],['mcp','dev'],['image','dev'],['dev','assert']])]},
+      ],[['org'],['org-grants'],['auth'],['mcp','image'],['ops','dev'],['assert']],
+      [['org','org-grants'],['org-grants','auth'],['auth','mcp'],['auth','image'],['mcp','ops'],['image','ops'],['mcp','dev'],['image','dev'],['dev','assert']])]},
     {id:'support',project:'project-support',title:['Shopee 硬件客服与售后 Agent','Shopee hardware support'],
       question:['买家突然要求退款时，正在进行的排障会怎样？','What happens when a refund request interrupts troubleshooting?'],
       action:['运行三段买家对话','Play three buyer conversations'],graphs:[graph(['售后消息链路','After-sales workflow'],[

@@ -41,6 +41,11 @@ try {
       }
       await current.getByRole('tab',{name:'可操作核心原型'}).click();
       if(id==='ads'){
+        const channel=current.getByLabel('渠道与口径');
+        await channel.selectOption('shopee');
+        assert.ok(await current.getByText(/站点 ROAS 复盘的需求与口径/).isVisible());
+        assert.equal(await current.getByRole('button',{name:'采纳',exact:true}).count(),0);
+        await channel.selectOption('tiktok');
         await current.getByRole('button',{name:'采纳',exact:true}).click();
         await current.getByRole('button',{name:/B · 中可信/}).click();
         assert.ok(await current.getByText(/±2%/).isVisible());

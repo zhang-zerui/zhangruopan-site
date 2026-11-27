@@ -36,15 +36,15 @@ var RuopanDemo;
                     n('monitor', 'rule', '回执、重试与静默告警', 'Receipts, retries & silence', '记录发送结果、失败重试和单条评价。有预期命中却持续为零时发监控告警。', 'Track receipts, retries and per-message feedback. Flag unexpected zero hits on a monitored run.')
                 ], [['form', 'prefill'], ['dsl'], ['trial'], ['confirm'], ['scan'], ['push'], ['monitor']], [['form', 'dsl'], ['prefill', 'dsl'], ['dsl', 'trial'], ['trial', 'confirm'], ['confirm', 'scan'], ['scan', 'push'], ['push', 'monitor']]),
                 graph(['Dify 管控台与权限', 'Dify control plane'], [
-                    n('org', 'source', '飞书组织架构', 'Feishu organisation', '用组织成员与岗位识别身份，变更沿 ERP 既有权限关系生效。', 'Resolve people and roles through the organisation and its existing ERP grants.'),
-                    n('erp', 'rule', '复用 ERP 权限底座', 'Reuse ERP permissions', '权限直接读取既有底座，避免两套授权表双写和回收延迟。', 'Read the existing entitlement source to avoid duplicate writes and stale revocations.'),
+                    n('org', 'source', '飞书组织架构', 'Feishu organisation', '用飞书组织架构识别成员和岗位。', 'Identify members and roles from the Feishu organisation.'),
+                    n('org-grants', 'rule', '复用飞书组织权限', 'Reuse Feishu permissions', '网关依据已有组织权限判断用户能否调用工具。', 'Use existing organisation permissions to decide which tools a user can call.'),
                     n('auth', 'rule', '统一鉴权网关', 'Shared access gateway', '把身份、角色和额度交给网关核验。工作流调用也需同样授权。', 'The gateway checks identity, role and quota, including calls originating in a workflow.'),
                     n('mcp', 'rule', 'MCP 过滤与审计', 'MCP filter & audit', '按用户先过滤工具再允许调用，授权及回收都有记录。', 'Filter the tool list per user before invocation and audit grants and revocations.'),
                     n('image', 'model', '外部生图与费用托管', 'Image API & spend controls', '示例 Nano Banana 先过额度检查，再提交轻量生图流程，费用记在网关。', 'A sample Nano Banana workflow checks quota before generation and attributes usage at the gateway.'),
                     n('ops', 'human', '运营问数端', 'Operations workspace', '运营只能访问授权工具和业务结果。工作流配置保留在开发端。', 'Operators see approved tools and business results. Workflow configuration stays in the developer workspace.'),
                     n('dev', 'human', '开发配置端', 'Developer workspace', '研发可以维护工作流、账户额度和工具配置，变更进入回归。', 'Developers maintain workflows, quotas and tools, then run regression checks.'),
                     n('assert', 'rule', 'PRD 断言与 Mock 快照回归', 'Assertions & mock snapshots', '用原问题核对工具可见性、拒绝原因与输出字段。一键回归使用固定模拟快照。', 'Replay a fixed mock snapshot against PRD assertions for tool visibility, denials and output fields.')
-                ], [['org'], ['erp'], ['auth'], ['mcp', 'image'], ['ops', 'dev'], ['assert']], [['org', 'erp'], ['erp', 'auth'], ['auth', 'mcp'], ['auth', 'image'], ['mcp', 'ops'], ['image', 'ops'], ['mcp', 'dev'], ['image', 'dev'], ['dev', 'assert']])
+                ], [['org'], ['org-grants'], ['auth'], ['mcp', 'image'], ['ops', 'dev'], ['assert']], [['org', 'org-grants'], ['org-grants', 'auth'], ['auth', 'mcp'], ['auth', 'image'], ['mcp', 'ops'], ['image', 'ops'], ['mcp', 'dev'], ['image', 'dev'], ['dev', 'assert']])
             ] },
         { id: 'support', project: 'project-support', title: ['Shopee 硬件客服与售后 Agent', 'Shopee hardware support'],
             question: ['买家突然要求退款时，正在进行的排障会怎样？', 'What happens when a refund request interrupts troubleshooting?'],
@@ -379,7 +379,8 @@ var RuopanDemo;
         const t = RuopanDemo.useWords();
         const [index, choose] = React.useState(0), [channel, setChannel] = React.useState('tiktok');
         const [logs, setLogs] = React.useState([]);
-        const s = RuopanDemo.adScenarios[index], decision = RuopanDemo.assessAd(s), rows = s.figures[channel], metric = channel === 'tiktok' ? 'ROI' : 'ROAS';
+        const s = RuopanDemo.adScenarios[index], decision = RuopanDemo.assessAd(s), rows = s.figures[channel];
+        const isTikTok = channel === 'tiktok', metric = isTikTok ? 'ROI' : 'ROAS';
         const totals = [RuopanDemo.periodTotals(rows, 0), RuopanDemo.periodTotals(rows, 2)];
         const adopted = logs.some(l => l.sku === s.sku && l.channel === channel && l.event === 'adopt');
         const record = (event) => setLogs(prev => {
@@ -397,7 +398,8 @@ var RuopanDemo;
                     React.createElement(RuopanDemo.Panel, { title: t('两期投放复盘', 'Two-period ad review') },
                         React.createElement("label", { className: "dx-labelrow" },
                             t('渠道与口径', 'Channel & metric'),
-                            React.createElement("select", { value: channel, onChange: e => setChannel(e.target.value) }, Object.entries(RuopanDemo.channelLabels).map(([key, label]) => React.createElement("option", { key: key, value: key }, label)))),
+                            React.createElement("select", { value: channel, onChange: e => setChannel(e.target.value) }, Object.entries(RuopanDemo.channelLabels).map(([key, label]) => React.createElement("option", { key: key, value: key }, key === 'shopee' ? label + t('（口径示例）', ' (metric example)') : label)))),
+                        !isTikTok && React.createElement("p", { className: "dx-muted" }, t('Shopee 项目范围是站点 ROAS 复盘的需求与口径梳理。下表使用模拟数据。', 'The Shopee work defined requirements and metrics for site-level ROAS reviews. The table uses synthetic data.')),
                         React.createElement("p", { className: "dx-id" },
                             s.site,
                             " \u00B7 ",
@@ -434,7 +436,7 @@ var RuopanDemo;
                                         fmt(r[2]),
                                         " / ",
                                         fmt(r[3])))))))),
-                    React.createElement(RuopanDemo.Panel, { title: t('可售库存与建议', 'Stock & recommendation') },
+                    isTikTok && React.createElement(RuopanDemo.Panel, { title: t('可售库存与建议', 'Stock & recommendation') },
                         React.createElement(RuopanDemo.Status, { tone: decision.grade },
                             t('工程置信度', 'Engineering confidence'),
                             " \u00B7 ",
@@ -470,7 +472,7 @@ var RuopanDemo;
                                     React.createElement("strong", null, t('已拦截 · 组合 SKU 映射缺失', 'On hold · missing bundle mapping')),
                                     React.createElement("p", null, t('本站点可售量尚未核准。即使回报高，也无法生成放量建议。', 'Sellable units for this site are unverified. Higher returns cannot clear this hold.')),
                                     React.createElement("button", { onClick: () => record('bypass') }, t('模拟业务强行绕过（记录周复盘留痕）', 'Simulate an operator bypass · log for review'))))),
-                React.createElement(RuopanDemo.Panel, { title: t('周复盘留痕', 'Weekly review log') },
+                isTikTok && React.createElement(RuopanDemo.Panel, { title: t('周复盘留痕', 'Weekly review log') },
                     React.createElement("p", { className: "dx-muted" }, t('仅记录本次演示中的人工决定。预算不会自动执行。', 'These entries record this demo’s operator decisions. Budget changes are manual.')),
                     React.createElement("div", { "aria-live": "polite" }, logs.length === 0 ? React.createElement("p", { className: "dx-empty" }, t('尚无操作记录', 'No decisions recorded yet.')) : React.createElement("ol", { className: "dx-log" }, logs.map(l => React.createElement("li", { key: l.id },
                         React.createElement("strong", null, l.event === 'bypass' ? t('业务绕过 · 待周复盘', 'Business bypass · review due') : t('建议已采纳 · 待人工执行', 'Adopted · pending execution')),
